@@ -1,12 +1,39 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier",
+    "tailwindcss"
+  ],
   "rules": {
-    "prettier/prettier": "error",
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off"
-  }
+    "@next/next/no-html-link-for-pages": "off",
+    "react/jsx-key": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "prettier/prettier": "warn"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": [
+        "cn"
+      ],
+      "config": "tailwind.config.js"
+    },
+    "next": {
+      "rootDir": [
+        "./"
+      ]
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
 }

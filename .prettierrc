@@ -1,20 +1,44 @@
 {
   "$schema": "https://json.schemastore.org/prettierrc",
-  "semi": false,
+  "endOfLine": "lf",
+  "semi": true,
+  "bracketSpacing": true,
   "tabWidth": 2,
   "singleQuote": true,
+  "jsxSingleQuote": true,
   "printWidth": 100,
   "singleAttributePerLine": true,
   "trailingComma": "none",
   "plugins": [
-    "prettier-plugin-tailwindcss",
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-organize-attributes"
   ],
   "attributeGroups": [
-    "^class$",
     "^(id|name)$",
+    "^(class|className)$",
     "$DEFAULT",
     "^aria-"
+  ],
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^types$",
+    "^@/types/(.*)$",
+    "^@/config/(.*)$",
+    "^@/lib/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/components/ui/(.*)$",
+    "^@/components/(.*)$",
+    "^@/styles/(.*)$",
+    "^@/app/(.*)$",
+    "",
+    "^[./]"
+  ],
+  "importOrderParserPlugins": [
+    "typescript",
+    "jsx",
+    "decorators-legacy"
   ]
 }
