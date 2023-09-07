@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { RiPauseFill, RiPlayFill } from 'react-icons/ri';
 
 import { Badge } from '@/components/ui/badge';
@@ -16,8 +16,6 @@ export default function SpotifyPlayBadge(props: Props) {
   const [trackDuration, setTrackDuration] = useState(0);
   const [trackCurrentTime, setTrackCurrentTime] = useState(0);
 
-  function onLoaded() {}
-
   function handlePlay() {
     if (audioRef.current?.paused) {
       audioRef.current?.play();
@@ -26,23 +24,22 @@ export default function SpotifyPlayBadge(props: Props) {
     }
   }
 
-  useEffect(() => {
-    console.log(props.url);
-  }, [props.url]);
-
   return (
     <>
-      <audio
-        ref={audioRef}
-        src={props.url}
-        onTimeUpdate={(e) => {
-          setTrackCurrentTime(parseInt(e.currentTarget.currentTime.toString()));
-        }}
-        onDurationChange={(e) => {
-          setTrackDuration(e.currentTarget.duration);
-        }}
-        onLoadedData={() => setLoaded(true)}
-      />
+      {props.url ? (
+        <audio
+          ref={audioRef}
+          src={props.url ?? ''}
+          onTimeUpdate={(e) => {
+            setTrackCurrentTime(parseInt(e.currentTarget.currentTime.toString()));
+          }}
+          onDurationChange={(e) => {
+            setTrackDuration(e.currentTarget.duration);
+          }}
+          onLoadedData={() => setLoaded(true)}
+        />
+      ) : null}
+
       <Badge
         variant='secondary'
         className='w-full space-x-4 py-0 pl-0'
