@@ -1,5 +1,5 @@
 import AboutTabs from '@/components/home-sections/about/about-tabs';
-import Section from '@/components/layout/section';
+import Section from '@/components/section/section';
 
 type Props = {};
 export default function AboutSection(props: Props) {
@@ -10,8 +10,8 @@ export default function AboutSection(props: Props) {
       subtitle='Discover who I am'
       parentClassName='bg-muted/30'
     >
-      <div className='grid gap-20 md:grid-cols-3 md:gap-8'>
-        <div className='space-y-2 md:col-span-2'>
+      <div className='grid gap-20 md:grid-cols-2 md:gap-8 2xl:grid-cols-3'>
+        <div className='space-y-2 2xl:col-span-2'>
           <p>
             In 2015, I embarked on a journey into the vast world of programming, initiating my
             learning in game development through the Udemy platform. Since then, my path has led me
@@ -34,22 +34,6 @@ export default function AboutSection(props: Props) {
         </div>
         <div>
           <AboutTabs />
-          {/*<ul className='space-y-4'>*/}
-          {/*  {socialLinks.map(({ label, icon: Icon, href }) => (*/}
-          {/*    <li key={href}>*/}
-          {/*      <Button asChild>*/}
-          {/*        <Link*/}
-          {/*          href={href}*/}
-          {/*          target='_blank'*/}
-          {/*          className='space-x-2'*/}
-          {/*        >*/}
-          {/*          <Icon />*/}
-          {/*          <span>{label}</span>*/}
-          {/*        </Link>*/}
-          {/*      </Button>*/}
-          {/*    </li>*/}
-          {/*  ))}*/}
-          {/*</ul>*/}
         </div>
       </div>
     </Section>

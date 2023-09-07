@@ -1,15 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { SiDiscord, SiGithub, SiSpotify } from 'react-icons/si';
+import { SiGithub, SiSpotify } from 'react-icons/si';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import DiscordCard from '@/components/discord-card';
-import GithubCard from '@/components/github-card';
-import SpotifyCard from '@/components/spotify-card';
+import GithubCard from '@/components/home-sections/about/github-card';
+import SpotifyCard from '@/components/home-sections/about/spotify-card';
 
 type Props = {};
 
@@ -26,7 +23,7 @@ export default function AboutTabs(props: Props) {
     // },
     {
       label: 'Spotify',
-      key: 'spotify',
+      key: '_spotify',
       icon: SiSpotify,
       content: SpotifyCard
     },
@@ -78,11 +75,12 @@ export default function AboutTabs(props: Props) {
         ))}
       </TabsList>
 
-      {cards.map(({ content: Content, key, label }) => (
+      {cards.map(({ content: Content, key }) => (
         <TabsContent
           key={key}
           value={key}
-          className='w-full'
+          className='w-full data-[state="active"]:block data-[state="inactive"]:hidden'
+          forceMount
         >
           <Content />
         </TabsContent>

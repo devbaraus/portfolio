@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { RiArrowRightLine, RiMenu2Fill } from 'react-icons/ri';
+import { RiArrowRightLine, RiEyeFill, RiMenu2Fill } from 'react-icons/ri';
 
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import ButtonTheme from '@/components/layout/button-theme';
 import NavLink from '@/components/layout/navlink';
+import IconAnimated from '@/components/motion/icon-animated';
 
 export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function Navbar() {
         <nav className='container flex w-full space-x-4'>
           <div className='flex flex-1 items-center justify-start'>
             <Link
-              href=''
+              href='/'
               className='text-lg font-bold uppercase'
             >
               baraus
@@ -46,7 +47,10 @@ export default function Navbar() {
               variant='default'
             >
               Get in touch
-              <RiArrowRightLine className='ml-2 inline-block ' />
+              <IconAnimated
+                iconVisible={RiArrowRightLine}
+                iconAppear={RiArrowRightLine}
+              />
             </NavLink>
           </div>
           <ButtonTheme className='md:hidden' />

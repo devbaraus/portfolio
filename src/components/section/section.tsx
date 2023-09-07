@@ -1,6 +1,9 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
+import SectionDescription from '@/components/section/section-description';
+import SectionSubtitle from '@/components/section/section-subtitle';
+import SectionTitle from '@/components/section/section-title';
 
 type Props = {
   subtitle?: string;
@@ -25,9 +28,9 @@ export default function Section({
         {...props}
         className={cn('container space-y-4', className)}
       >
-        {subtitle ? <span className='uppercase text-secondary/60'>{subtitle}</span> : null}
-        {title ? <h2 className='text-3xl font-bold text-primary'>{title}</h2> : null}
-        {description ? <p className='text-lg text-secondary/80 md:w-1/2'>{description}</p> : null}
+        {subtitle ? <SectionSubtitle>{subtitle}</SectionSubtitle> : null}
+        {title ? <SectionTitle>{title}</SectionTitle> : null}
+        {description ? <SectionDescription>{description}</SectionDescription> : null}
         {children}
       </section>
     </div>

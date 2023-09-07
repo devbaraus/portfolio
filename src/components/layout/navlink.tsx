@@ -28,7 +28,7 @@ export default function NavLink({
       asChild
       onClick={() => action?.()}
       className={cn(
-        'flex items-center rounded p-4 uppercase transition-colors duration-300 ease-in-out ',
+        'group flex items-center rounded p-4 uppercase transition-colors duration-300 ease-in-out',
         isCurrent && 'text-primary',
         className
       )}
