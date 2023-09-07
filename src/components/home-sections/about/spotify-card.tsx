@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RiFolder2Fill, RiFolderFill, RiPlayFill, RiUserFollowFill } from 'react-icons/ri';
@@ -18,11 +18,30 @@ type Props = {};
 
 export default function SpotifyCard(props: Props) {
   const [data, setData] = useState<SpotifyData>();
+  const timer = useRef<NodeJS.Timeout>();
 
-  useEffect(() => {
+  function fetchSpotifyData() {
     fetch('/api/spotify')
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        setData(data);
+
+        if (data.currentlyPlaying) {
+          const duration = data?.currentlyPlaying?.duration_ms;
+
+          timer.current = setTimeout(() => {
+            fetchSpotifyData();
+          }, duration / 2);
+        }
+      });
+  }
+
+  useEffect(() => {
+    fetchSpotifyData();
+
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
   }, []);
 
   if (!data) return null;
