@@ -2,14 +2,14 @@ import './globals.css';
 
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Aleo, Poppins } from 'next/font/google';
+import { Aleo, Inter, Poppins } from 'next/font/google';
 
+import { TooltipProvider } from '@/components/ui/tooltip';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
+const poppins = Inter({
   subsets: ['latin']
 });
 
@@ -30,9 +30,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           defaultTheme='system'
           enableSystem
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <TooltipProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

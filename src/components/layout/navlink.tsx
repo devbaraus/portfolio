@@ -1,31 +1,39 @@
 'use client';
 
-import { HTMLAttributes, PropsWithChildren, ReactNode } from 'react';
-import Link, { type LinkProps } from 'next/link';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
+import { Button, ButtonProps } from '@/components/ui/button';
 
-type Props = {
+export type NavLinkProps = {
   action?: Function;
-} & LinkProps &
-  PropsWithChildren &
-  HTMLAttributes<HTMLAnchorElement>;
-export default function NavLink({ children, className, action, ...props }: Props) {
+  href: string;
+} & ButtonProps;
+export default function NavLink({
+  children,
+  className,
+  action,
+  href,
+  variant = 'ghost',
+  ...props
+}: NavLinkProps) {
   const pathname = usePathname();
-  const isCurrent = props.href === pathname;
+  const isCurrent = href === pathname;
 
   return (
-    <Link
+    <Button
       {...props}
+      variant={variant}
+      asChild
       onClick={() => action?.()}
       className={cn(
-        'flex items-center rounded-full px-4 py-1 uppercase transition-colors duration-300 ease-in-out hover:bg-muted',
-        isCurrent && 'md:border',
+        'flex items-center rounded p-4 uppercase transition-colors duration-300 ease-in-out ',
+        isCurrent && 'text-primary',
         className
       )}
     >
-      {children}
-    </Link>
+      <Link href={href}>{children}</Link>
+    </Button>
   );
 }

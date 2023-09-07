@@ -1,9 +1,10 @@
 export default function HeroSection() {
   return (
-    <section className='container flex h-screen flex-col justify-center bg-cover md:items-center'>
-      <span className='self-start text-lg'>Strategy, Develop & Create</span>
+    <section className='container flex flex-col justify-center bg-cover py-72'>
+      <span className='self-start text-lg'>Plan, Develop & Create</span>
       <h1 className='text-6xl font-bold uppercase tracking-tight md:text-8xl'>
-        FREELANCE <span className='text-primary'>FULL STACK</span> WEB DEVELOPER
+        FREELANCE FULL STACK <br />
+        <span className='text-primary'>WEB DEVELOPER</span>
       </h1>
     </section>
   );
