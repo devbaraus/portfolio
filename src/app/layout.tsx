@@ -31,6 +31,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const isProduction = process.env.NODE_ENV === 'production';
+
   return (
     <html lang={siteLanguage}>
       <body className={poppins.className}>
@@ -44,6 +46,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {children}
             <Footer />
             <Toaster />
+            {isProduction ? (
+              <script
+                defer
+                data-domain='baraus.dev'
+                src='https://plausible.lab.baraus.dev/js/script.js'
+              />
+            ) : null}
           </TooltipProvider>
         </ThemeProvider>
       </body>
