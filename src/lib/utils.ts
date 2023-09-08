@@ -45,6 +45,9 @@ export async function fetcherGQL<T>(
       Authorization: `Bearer ${process.env.NEXT_PRIVATE_API_TOKEN}`
     },
     body: JSON.stringify({ query: print(query), variables }),
+    next: {
+      revalidate: 60 * 5
+    },
     ...options
   });
   const json = await res.json();
