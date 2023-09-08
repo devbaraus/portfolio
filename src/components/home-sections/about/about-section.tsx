@@ -7,7 +7,7 @@ export default function AboutSection(props: Props) {
     <Section
       id='about'
       title='Bruno de Araújo Alves'
-      subtitle='Discover who I am'
+      subtitle='Who I am'
       parentClassName='bg-muted/30'
     >
       <div className='grid gap-20 md:grid-cols-2 md:gap-8 2xl:grid-cols-3'>

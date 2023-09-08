@@ -1,5 +1,6 @@
 import {
   RiBuilding2Fill,
+  RiClipboardFill,
   RiDiscordFill,
   RiEyeFill,
   RiGithubFill,
@@ -22,23 +23,74 @@ import {
   SiWebstorm
 } from 'react-icons/si';
 
+import { useToast } from '@/components/ui/use-toast';
+
 export const siteLanguage = 'en';
-export const siteName = 'My Site';
-export const siteDescription = 'My site description';
-export const siteKeywords = 'my,site,keywords';
-export const siteUrl = 'https://my-site.com';
+export const siteName = 'BARAUS';
+export const siteDescription =
+  'Looking for a freelance web developer to take your website to the next level? I am a freelance full stack web developer based in Brazil.';
+export const siteKeywords = 'portfolio, web developer, full stack, freelance';
+export const siteUrl = 'https://baraus.dev';
 export const siteImage = `${siteUrl}/images/og-image.jpg`;
 
 export const contact = [
   {
     label: 'Email',
-    action: () => {},
+    action: (toast: Function) => {
+      navigator.clipboard
+        .writeText('me@baraus.dev')
+        .then(() => {
+          toast({
+            title: (
+              <p className='space-x-2'>
+                <RiClipboardFill className='inline-block text-xl' />
+                <span>Copied to clipboard!</span>
+              </p>
+            )
+          });
+        })
+        .catch(() => {
+          toast({
+            variant: 'destructive',
+            title: (
+              <p className='space-x-2'>
+                <RiClipboardFill className='inline-block text-xl' />
+                <span>Failed to copy to clipboard!</span>
+              </p>
+            )
+          });
+        });
+    },
     content: 'me@baraus.dev'
   },
   {
     label: 'Phone',
-    action: () => {},
-    content: '+55 11 99999-9999'
+    action: (toast: Function) => {
+      navigator.clipboard
+        .writeText('+5562993794290')
+        .then(() => {
+          toast({
+            title: (
+              <p className='space-x-2'>
+                <RiClipboardFill className='inline-block text-xl' />
+                <span>Copied to clipboard!</span>
+              </p>
+            )
+          });
+        })
+        .catch(() => {
+          toast({
+            variant: 'destructive',
+            title: (
+              <p className='space-x-2'>
+                <RiClipboardFill className='inline-block text-xl' />
+                <span>Failed to copy to clipboard!</span>
+              </p>
+            )
+          });
+        });
+    },
+    content: '+55 62 99379-4290'
   }
 ];
 export const socialLinks = [
@@ -50,7 +102,7 @@ export const socialLinks = [
   {
     label: 'LinkedIn',
     icon: RiLinkedinFill,
-    href: 'https://discord.com/users/765572736214761512'
+    href: 'https://linkedin.com/in/devbaraus/'
   },
   {
     label: 'Discord',

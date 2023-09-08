@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className='container flex min-h-screen flex-col justify-center space-y-4 bg-cover py-72'>
+    <section className='container flex min-h-screen flex-col justify-center space-y-4 bg-cover py-20'>
       <span className='self-start text-lg animate-in'>Plan, Develop & Create</span>
       <h1 className='text-6xl font-bold uppercase tracking-tight md:text-8xl'>
         FREELANCE FULL STACK <br />

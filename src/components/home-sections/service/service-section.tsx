@@ -5,13 +5,11 @@ import { motion } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import ServiceCard, {
   SerivceCardChildVariant,
   ServiceCardContainerVariant
 } from '@/components/home-sections/service/service-card';
-import { TextAnimatedAppearVariant } from '@/components/motion/text-animated-appear';
 import Section from '@/components/section/section';
 import SectionDescription from '@/components/section/section-description';
 import SectionSubtitle from '@/components/section/section-subtitle';
@@ -29,11 +27,11 @@ export default function ServiceSection(props: Props) {
         <div>
           <div className='sticky top-24 space-y-12'>
             <div className='space-y-4'>
-              <SectionSubtitle className='text-background/60'>Services</SectionSubtitle>
+              <SectionSubtitle className='text-background/60'>Some services</SectionSubtitle>
               <SectionTitle className='text-3xl font-bold text-primary'>
                 How Can I Help
               </SectionTitle>
-              <SectionDescription className='text-background/80'>
+              <SectionDescription className='text-background/80 md:w-full'>
                 I specialise in offering bespoke web development services to small and medium
                 businesses alike. My aim is to help businesses establish a online presence and
                 connect with their target audience effectively.

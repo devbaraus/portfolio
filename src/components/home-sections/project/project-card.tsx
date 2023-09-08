@@ -2,16 +2,13 @@
 
 import Link from 'next/link';
 import { Project } from '@/gql/graphql';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { RiEyeFill } from 'react-icons/ri';
 
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
 import DirectusImage from '@/components/directus-image';
 import { CardVariants } from '@/components/motion';
 import IconAnimated from '@/components/motion/icon-animated';
-import TextAnimatedAppear, {
-  TextAnimatedAppearVariant
-} from '@/components/motion/text-animated-appear';
 
 type Props = {
   project: Project;
@@ -41,26 +38,15 @@ export default function ProjectCard({
               height={300}
             />
             <IconAnimated
-              className='absolute bottom-4 right-4 h-16 w-16 rounded-full bg-secondary text-background'
+              className='absolute bottom-4 right-4 h-12 w-12 rounded-full bg-secondary text-background md:h-16 md:w-16'
               iconVisible={RiEyeFill}
               iconAppear={RiEyeFill}
-              iconsClassName='text-3xl'
+              iconsClassName='text-2xl md:text-3xl'
             />
           </CardContent>
         </motion.div>
 
         <CardFooter className='flex-col items-start px-0'>
-          <motion.div
-            variants={TextAnimatedAppearVariant}
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <CardTitle className='line-clamp-2 text-xl uppercase transition-colors duration-300 group-hover:text-primary'>
-              <TextAnimatedAppear text={title!} />
-            </CardTitle>
-          </motion.div>
-
           <motion.div
             initial={{
               opacity: 0,
@@ -68,13 +54,20 @@ export default function ProjectCard({
             }}
             whileInView={{
               opacity: 1,
-              y: 0
+              y: 0,
+              transition: {
+                duration: 0.5
+              }
             }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <CardDescription className='mt-auto line-clamp-4 text-base'>
-              {description}
-            </CardDescription>
+            <CardTitle className='line-clamp-2 text-xl uppercase transition-colors duration-300 group-hover:text-primary'>
+              {title}
+            </CardTitle>
+
+            {/*<CardDescription className='mt-auto line-clamp-4 text-base'>*/}
+            {/*  {description}*/}
+            {/*</CardDescription>*/}
           </motion.div>
         </CardFooter>
       </Card>

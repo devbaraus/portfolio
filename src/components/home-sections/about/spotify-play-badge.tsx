@@ -4,6 +4,7 @@ import { RiPauseFill, RiPlayFill } from 'react-icons/ri';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
 import { Slider } from '@/components/ui/slider';
 
 type Props = {
@@ -52,15 +53,10 @@ export default function SpotifyPlayBadge(props: Props) {
         >
           {audioRef.current?.paused ? <RiPlayFill /> : <RiPauseFill />}
         </Button>
-        <Slider
+        <Progress
           className='grow'
-          value={[trackCurrentTime]}
-          max={trackDuration}
-          disabled={!loaded}
-          // onChange={(e) => {
-          //   audioRef.current?.currentTime = Number(e.currentTarget.value);
-          // }}
-        ></Slider>
+          value={(trackCurrentTime * 100) / trackDuration}
+        />
       </Badge>
     </>
   );

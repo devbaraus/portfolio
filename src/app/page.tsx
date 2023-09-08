@@ -16,9 +16,7 @@ export default function HomePage() {
         <ServiceSection />
         <PostSection />
         <Separator />
-        <Suspense>
-          <AboutSection />
-        </Suspense>
+        <AboutSection />
       </main>
     </>
   );

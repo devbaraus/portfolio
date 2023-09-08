@@ -2,8 +2,10 @@ import './globals.css';
 
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Aleo, Inter, Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { siteDescription, siteKeywords, siteLanguage, siteName, siteUrl } from '@/site.config';
 
+import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
@@ -15,15 +17,22 @@ const poppins = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | baraus.dev',
-    default: 'baraus.dev' // a default is required when creating a template
+    template: `%s | ${siteName}`,
+    default: siteName
   },
-  description: ''
+  description: siteDescription,
+  keywords: siteKeywords,
+  openGraph: {
+    type: 'website',
+    locale: siteLanguage,
+    url: siteUrl,
+    siteName: siteName
+  }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='pt'>
+    <html lang={siteLanguage}>
       <body className={poppins.className}>
         <ThemeProvider
           attribute='class'
@@ -34,6 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Navbar />
             {children}
             <Footer />
+            <Toaster />
           </TooltipProvider>
         </ThemeProvider>
       </body>

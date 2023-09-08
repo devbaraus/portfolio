@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { siteName } from '@/site.config';
 import { RiArrowRightLine, RiEyeFill, RiMenu2Fill } from 'react-icons/ri';
 
 import { Button } from '@/components/ui/button';
@@ -15,9 +16,9 @@ export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/projects', label: 'Projects' }
+    { href: '/', label: 'Home' }
+    // { href: '/about', label: 'About' },
+    // { href: '/projects', label: 'Projects' }
   ];
 
   return (
@@ -29,7 +30,7 @@ export default function Navbar() {
               href='/'
               className='text-lg font-bold uppercase'
             >
-              baraus
+              {siteName}
             </Link>
           </div>
           <menu className='hidden items-center gap-4 justify-self-center md:flex'>
@@ -43,7 +44,7 @@ export default function Navbar() {
             <ButtonTheme />
             <Separator className='w-8 rotate-90' />
             <NavLink
-              href='/contact'
+              href='/#contact'
               variant='default'
             >
               Get in touch
@@ -87,7 +88,7 @@ export default function Navbar() {
                   </li>
                 ))}
                 <NavLink
-                  href='/contact'
+                  href='/#contact'
                   variant='default'
                   className='justify-start'
                   onClickCapture={() => setMobileNavOpen(false)}
