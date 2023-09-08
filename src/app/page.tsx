@@ -1,6 +1,3 @@
-import { Suspense } from 'react';
-
-import { Separator } from '@/components/ui/separator';
 import AboutSection from '@/components/home-sections/about/about-section';
 import HeroSection from '@/components/home-sections/hero-section';
 import PostSection from '@/components/home-sections/post/post-section';
@@ -15,7 +12,6 @@ export default function HomePage() {
         <ProjectSection />
         <ServiceSection />
         <PostSection />
-        <Separator />
         <AboutSection />
       </main>
     </>

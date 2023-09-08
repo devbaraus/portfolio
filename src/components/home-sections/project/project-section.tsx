@@ -38,7 +38,7 @@ export default async function ProjectSection(props: Props) {
       id='projects'
       title='A few selected works'
       description='My web projects showcases the work that I have delivered. Have a look into my portfolio, highlighting the diverse range of websites projects for various clients.'
-      subtitle='Check out'
+      subtitle='Check it out'
     >
       <div className='grid gap-20 md:grid-cols-2 md:gap-8'>
         {project.map((project) => (

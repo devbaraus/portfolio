@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributes, ReactElement, ReactNode, ReactPortal } from 'react';
 
 import { cn } from '@/lib/utils';
 import SectionDescription from '@/components/section/section-description';

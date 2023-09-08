@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { HTMLMotionProps, motion, Variants } from 'framer-motion';
 import { IconType } from 'react-icons';
 
 import { cn } from '@/lib/utils';
@@ -36,7 +36,7 @@ export const SerivceCardChildVariant = {
 };
 
 type Service = {
-  title: string;
+  label: string;
   description: string;
   icon: IconType;
 };
@@ -44,27 +44,28 @@ type Service = {
 type Props = {
   service: Service;
   variants: Variants;
-} & HTMLAttributes<HTMLDivElement>;
+} & HTMLMotionProps<'div'>;
 
 export default function ServiceCard({
-  service: { title, description, icon: Icon },
+  service: { label, description, icon: Icon },
   className,
   variants,
   ...props
 }: Props) {
   return (
-    <motion.div variants={variants}>
-      <Card
-        className={cn('sticky', className)}
-        {...props}
-      >
+    <motion.div
+      variants={variants}
+      className={cn('sticky', className)}
+      {...props}
+    >
+      <Card>
         <CardHeader>
           <div className='flex gap-4'>
             <Badge className='aspect-square'>
               <Icon className='text-4xl' />
             </Badge>
             <div>
-              <CardTitle className='text-2xl'>{title}</CardTitle>
+              <CardTitle className='text-2xl'>{label}</CardTitle>
             </div>
           </div>
         </CardHeader>

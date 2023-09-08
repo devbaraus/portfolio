@@ -41,7 +41,7 @@ export const contact = [
         .writeText('me@baraus.dev')
         .then(() => {
           toast({
-            title: (
+            label: (
               <p className='space-x-2'>
                 <RiClipboardFill className='inline-block text-xl' />
                 <span>Copied to clipboard!</span>
@@ -52,7 +52,7 @@ export const contact = [
         .catch(() => {
           toast({
             variant: 'destructive',
-            title: (
+            label: (
               <p className='space-x-2'>
                 <RiClipboardFill className='inline-block text-xl' />
                 <span>Failed to copy to clipboard!</span>
@@ -70,7 +70,7 @@ export const contact = [
         .writeText('+5562993794290')
         .then(() => {
           toast({
-            title: (
+            label: (
               <p className='space-x-2'>
                 <RiClipboardFill className='inline-block text-xl' />
                 <span>Copied to clipboard!</span>
@@ -81,7 +81,7 @@ export const contact = [
         .catch(() => {
           toast({
             variant: 'destructive',
-            title: (
+            label: (
               <p className='space-x-2'>
                 <RiClipboardFill className='inline-block text-xl' />
                 <span>Failed to copy to clipboard!</span>
@@ -113,25 +113,25 @@ export const socialLinks = [
 
 export const serviceCards = [
   {
-    title: 'Web Development',
+    label: 'Web Development',
     description:
       'Your website is the face of your business, which is why you need to invest as much energy into it as you do into the look and feel. That is why we focus on creating websites that are adaptable and customer-focused so they perfectly suit the needs of your business.',
     icon: RiLayout2Fill
   },
   {
-    title: 'Website Audit',
+    label: 'Website Audit',
     description:
       "Is your website not performing to your expectations, and isn't it delivering the results you desire? Allow me to provide you with a free website review and help you identify opportunities for improvement and get on the path to online success.",
     icon: RiEyeFill
   },
   {
-    title: 'Helping You Grow',
+    label: 'Helping You Grow',
     description:
       "Starting a business can be challenging, but your branding and website should not be one of them. That's where I come in. I provide thorough web design, Webflow development and branding services so startups can get ahead on their way to reaching their online goals.",
     icon: RiRocketFill
   },
   {
-    title: 'Helping Established Businesses',
+    label: 'Helping Established Businesses',
     description:
       "Established businesses recognise the significance of an impressive online presence to thrive in today's market. To support your journey towards digital success, I offer a suite of specialised services like web design, Webflow development, and website re-designs. Together, we can unlock your business's full potential and secure a prominent position in the digital realm.",
     icon: RiBuilding2Fill

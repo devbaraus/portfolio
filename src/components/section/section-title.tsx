@@ -19,7 +19,7 @@ export default function SectionTitle({ children, className, ...props }: Props) {
       viewport={{ once: true, amount: 0.5 }}
     >
       <h2
-        className={cn('text-3xl font-bold text-primary', className)}
+        className={cn('text-3xl font-bold uppercase text-primary', className)}
         {...props}
       >
         <TextAnimatedAppear text={children as string} />

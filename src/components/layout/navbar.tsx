@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const links = [
     { href: '/', label: 'Home' }
-    // { href: '/about', label: 'About' },
+    // { href: '/contact', label: 'About' },
     // { href: '/projects', label: 'Projects' }
   ];
 
@@ -44,8 +44,9 @@ export default function Navbar() {
             <ButtonTheme />
             <Separator className='w-8 rotate-90' />
             <NavLink
-              href='/#contact'
+              href='/contact'
               variant='default'
+              className='text-background'
             >
               Get in touch
               <IconAnimated
@@ -88,7 +89,7 @@ export default function Navbar() {
                   </li>
                 ))}
                 <NavLink
-                  href='/#contact'
+                  href='/contact'
                   variant='default'
                   className='justify-start'
                   onClickCapture={() => setMobileNavOpen(false)}

@@ -45,7 +45,7 @@ export default function PostCard({ article: { title, lead, cover, published_on }
             <DirectusImage
               id={cover!.id}
               alt='Muggs Shop'
-              className='z-10 aspect-video h-full w-full object-cover transition-transform duration-300 group-hover:scale-105'
+              className='z-10 aspect-video h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
               width={500}
               height={300}
             />
@@ -73,7 +73,7 @@ export default function PostCard({ article: { title, lead, cover, published_on }
             }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <CardTitle className='line-clamp-2 text-xl uppercase transition-colors duration-300 group-hover:text-primary'>
+            <CardTitle className='line-clamp-2 text-xl uppercase transition-colors duration-500 group-hover:text-primary'>
               {title}
             </CardTitle>
 
