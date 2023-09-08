@@ -4,6 +4,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 import * as types from './graphql';
 
 const documents: any = [];
+
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  *

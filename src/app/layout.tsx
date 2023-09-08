@@ -16,7 +16,7 @@ const poppins = Inter({
 });
 
 export const metadata: Metadata = {
-  label: {
+  title: {
     template: `%s | ${siteName}`,
     default: siteName
   },
