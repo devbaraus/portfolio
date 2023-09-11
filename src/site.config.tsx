@@ -133,7 +133,7 @@ export const socialLinks = [
   {
     label: '+55 62 99379-4290',
     title: 'Phone',
-    href: 'https://api.whatsapp.com/send?phone=+5562993794290',
+    href: 'https://api.whatsapp.com/send?phone=+5562993794290&text=Hello%20BARAUS!',
     icon: SiWhatsapp
   },
   {
