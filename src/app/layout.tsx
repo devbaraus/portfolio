@@ -22,10 +22,35 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: siteKeywords,
+  robots: {
+    follow: true,
+    index: true
+  },
+  twitter: {
+    title: siteName,
+    description: siteDescription,
+    images: [
+      {
+        url: `${siteUrl}/logo_og-image.png`,
+        width: 1200,
+        height: 630
+      }
+    ],
+    creator: '@devbaraus',
+    site: siteUrl
+  },
   openGraph: {
     type: 'website',
     locale: siteLanguage,
-    url: `${siteUrl}/logo-light.png`,
+    url: siteUrl,
+    title: siteName,
+    images: [
+      {
+        url: `${siteUrl}/logo_og-image.png`,
+        width: 1200,
+        height: 630
+      }
+    ],
     siteName: siteName
   }
 };

@@ -11,8 +11,8 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import ButtonTheme from '@/components/layout/button-theme';
+import Logo from '@/components/layout/logo';
 import NavLink from '@/components/layout/navlink';
-import Logo2 from '@/components/logo-2';
 import IconAnimated from '@/components/motion/icon-animated';
 
 function FloatingButton() {
@@ -54,7 +54,7 @@ export default function Navbar() {
               href='/'
               className='inline-flex items-center gap-2 text-xl font-bold uppercase'
             >
-              <Logo2 className='block h-6 text-primary' />
+              <Logo className='block h-6 text-primary' />
               {siteName}
             </Link>
           </div>
