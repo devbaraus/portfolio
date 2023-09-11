@@ -32,7 +32,7 @@ export const siteName = 'BARAUS';
 export const siteDescription =
   'Looking for a freelance web developer to take your website to the next level? I am a freelance full stack web developer based in Brazil.';
 export const siteKeywords = 'portfolio, web developer, full stack, freelance';
-export const siteUrl = 'https://wwww.baraus.dev';
+export const siteUrl = 'https://www.baraus.dev';
 export const siteImage = `${siteUrl}/logo_og-image.png`;
 
 export const contact = [
