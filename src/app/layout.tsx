@@ -3,7 +3,14 @@ import './globals.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { siteDescription, siteKeywords, siteLanguage, siteName, siteUrl } from '@/site.config';
+import {
+  siteDescription,
+  siteImage,
+  siteKeywords,
+  siteLanguage,
+  siteName,
+  siteUrl
+} from '@/site.config';
 
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -31,7 +38,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `${siteUrl}/logo_og-image.png`,
+        url: siteImage,
         width: 1200,
         height: 630
       }
@@ -46,7 +53,7 @@ export const metadata: Metadata = {
     title: siteName,
     images: [
       {
-        url: `${siteUrl}/logo_og-image.png`,
+        url: siteImage,
         width: 1200,
         height: 630
       }
