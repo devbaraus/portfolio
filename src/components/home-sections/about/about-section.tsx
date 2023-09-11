@@ -10,7 +10,7 @@ export default function AboutSection(props: Props) {
       subtitle='Who I am'
       parentClassName='bg-muted/30'
     >
-      <div className='grid gap-20 md:grid-cols-2 md:gap-8 2xl:grid-cols-3'>
+      <div className='grid gap-12 md:grid-cols-2 md:gap-8 2xl:grid-cols-3'>
         <div className='space-y-2 2xl:col-span-2'>
           <p>
             In 2015, I embarked on a journey into the vast world of programming, initiating my

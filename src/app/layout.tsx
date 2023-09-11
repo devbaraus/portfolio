@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: siteLanguage,
-    url: siteUrl,
+    url: `${siteUrl}/logo-light.png`,
     siteName: siteName
   }
 };

@@ -22,18 +22,19 @@ export default function NavLink({
   const isCurrent = href === pathname;
 
   return (
-    <Button
-      {...props}
-      variant={variant}
-      asChild
-      onClick={() => action?.()}
-      className={cn(
-        'group flex items-center rounded p-4 uppercase transition-colors duration-500 ease-in-out',
-        isCurrent && 'text-primary',
-        className
-      )}
-    >
-      <Link href={href}>{children}</Link>
-    </Button>
+    <Link href={href}>
+      <Button
+        {...props}
+        variant={variant}
+        onClick={() => action?.()}
+        className={cn(
+          'group flex items-center rounded p-4 uppercase transition-colors duration-500 ease-in-out',
+          isCurrent && 'text-primary',
+          className
+        )}
+      >
+        {children}
+      </Button>
+    </Link>
   );
 }

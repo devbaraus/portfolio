@@ -23,7 +23,7 @@ export default function ServiceSection(props: Props) {
       parentClassName='bg-foreground text-background'
       id='services'
     >
-      <div className='grid gap-20 md:grid-cols-2 md:gap-8'>
+      <div className='grid gap-12 md:grid-cols-2 md:gap-8'>
         <div>
           <div className='sticky top-24 space-y-12'>
             <div className='space-y-4'>

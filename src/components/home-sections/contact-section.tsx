@@ -1,23 +1,47 @@
+'use client';
+
 import Link from 'next/link';
 import { socialLinks } from '@/site.config';
+import { RiArrowRightLine } from 'react-icons/ri';
 
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 import IconAnimated from '@/components/motion/icon-animated';
 import Section from '@/components/section/section';
+import SectionDescription from '@/components/section/section-description';
+import SectionSubtitle from '@/components/section/section-subtitle';
+import SectionTitle from '@/components/section/section-title';
 
 type Props = {};
 
-export default function ContactSection(props: Props) {
+export default function ServiceSection(props: Props) {
   return (
-    <>
-      <Section
-        className='sticky top-44 p-0'
-        subtitle='Have an idea?'
-        title="Let's work together"
-        description='Looking for a freelance web designer or developer to take your website to the next level? Get in touch today to learn more.'
-      >
-        <ul className='w-max space-y-4'>
-          {socialLinks.map(({ label, href, icon: Icon }) => {
+    <Section id='contact'>
+      <div className='grid gap-4 md:grid-cols-2'>
+        <div>
+          <SectionSubtitle>Have an idea?</SectionSubtitle>
+          <SectionTitle>Contact me</SectionTitle>
+          <SectionDescription>
+            Get in touch today and let’s work together to bring your idea to life.
+          </SectionDescription>
+        </div>
+        <Link
+          href='/contact'
+          className='self-end md:ml-auto'
+        >
+          <Button>
+            Get in touch
+            <IconAnimated
+              iconVisible={RiArrowRightLine}
+              iconAppear={RiArrowRightLine}
+            />
+          </Button>
+        </Link>
+      </div>
+      <ul className='grid grid-cols-1 space-y-4 sm:grid-cols-2 md:grid-cols-4'>
+        {socialLinks
+          .filter((i) => i.footer)
+          .map(({ label, href, icon: Icon }) => {
             const render = () => (
               <>
                 <IconAnimated
@@ -52,8 +76,7 @@ export default function ContactSection(props: Props) {
               </li>
             );
           })}
-        </ul>
-      </Section>
-    </>
+      </ul>
+    </Section>
   );
 }

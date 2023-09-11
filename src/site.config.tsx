@@ -1,17 +1,20 @@
 import {
   RiBuilding2Fill,
   RiClipboardFill,
-  RiDiscordFill,
   RiEyeFill,
   RiGithubFill,
   RiLayout2Fill,
-  RiLinkedinFill,
+  RiMailFill,
+  RiMap2Fill,
   RiRocketFill
 } from 'react-icons/ri';
 import {
   SiBootstrap,
+  SiDiscord,
   SiDjango,
   SiFigma,
+  SiInstagram,
+  SiLinkedin,
   SiMongodb,
   SiNextdotjs,
   SiPostgresql,
@@ -20,17 +23,16 @@ import {
   SiTailwindcss,
   SiVisualstudiocode,
   SiVuedotjs,
-  SiWebstorm
+  SiWebstorm,
+  SiWhatsapp
 } from 'react-icons/si';
-
-import { useToast } from '@/components/ui/use-toast';
 
 export const siteLanguage = 'en';
 export const siteName = 'BARAUS';
 export const siteDescription =
   'Looking for a freelance web developer to take your website to the next level? I am a freelance full stack web developer based in Brazil.';
 export const siteKeywords = 'portfolio, web developer, full stack, freelance';
-export const siteUrl = 'https://baraus.dev';
+export const siteUrl = process.env.VERCEL_URL || 'https://wwww.baraus.dev';
 export const siteImage = `${siteUrl}/images/og-image.jpg`;
 
 export const contact = [
@@ -95,19 +97,49 @@ export const contact = [
 ];
 export const socialLinks = [
   {
-    label: 'GitHub',
+    label: 'devbaraus',
+    title: 'GitHub',
     icon: RiGithubFill,
-    href: 'https://github.com/devbaraus'
+    href: 'https://github.com/devbaraus',
+    footer: true
   },
   {
-    label: 'LinkedIn',
-    icon: RiLinkedinFill,
-    href: 'https://linkedin.com/in/devbaraus/'
+    label: 'devbaraus',
+    title: 'LinkedIn',
+    href: 'https://linkedin.com/in/devbaraus',
+    icon: SiLinkedin,
+    footer: true
   },
   {
-    label: 'Discord',
-    icon: RiDiscordFill,
-    href: 'https://discord.com/users/765572736214761512'
+    label: '@devbaraus',
+    title: 'Instagram',
+    href: 'https://instagram.com/devbaraus',
+    icon: SiInstagram,
+    footer: true
+  },
+  {
+    label: 'baraus.dev',
+    title: 'Discord',
+    href: 'https://discord.com/users/765572736214761512',
+    icon: SiDiscord,
+    footer: true
+  },
+  {
+    label: 'me@baraus.dev',
+    title: 'Email',
+    href: 'mailto:me@baraus.dev',
+    icon: RiMailFill
+  },
+  {
+    label: '+55 62 99379-4290',
+    title: 'Phone',
+    href: 'https://api.whatsapp.com/send?phone=+5562993794290',
+    icon: SiWhatsapp
+  },
+  {
+    label: 'Anápolis, Goiás, Brazil',
+    title: 'Location',
+    icon: RiMap2Fill
   }
 ];
 

@@ -35,7 +35,7 @@ export default async function PostSection(props: Props) {
       description='I write about web development, design and other stuff.'
       subtitle='Latest posts'
     >
-      <div className='grid gap-20 md:grid-cols-2 md:gap-8 lg:grid-cols-4'>
+      <div className='grid gap-12 md:grid-cols-2 md:gap-8 lg:grid-cols-4'>
         {article.map((article) => (
           <PostCard
             article={article}

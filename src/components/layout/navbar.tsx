@@ -2,22 +2,46 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { siteName } from '@/site.config';
-import { RiArrowRightLine, RiEyeFill, RiMenu2Fill } from 'react-icons/ri';
+import { RiArrowRightLine, RiMenu2Fill } from 'react-icons/ri';
 
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import ButtonTheme from '@/components/layout/button-theme';
 import NavLink from '@/components/layout/navlink';
+import Logo2 from '@/components/logo-2';
 import IconAnimated from '@/components/motion/icon-animated';
+
+function FloatingButton() {
+  'use client';
+
+  const pathname = usePathname();
+
+  return (
+    <Link
+      href='/contact'
+      className={cn(
+        'fixed bottom-0 right-0 z-50 m-4 md:hidden',
+        pathname === '/contact' && 'hidden'
+      )}
+    >
+      <Button size='icon'>
+        <span className='sr-only'>Get in touch</span>
+        <RiArrowRightLine className='text-2xl' />
+      </Button>
+    </Link>
+  );
+}
 
 export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const links = [
-    { href: '/', label: 'Home' }
-    // { href: '/contact', label: 'About' },
+    { href: '/', label: 'Home' },
+    { href: '/contact', label: 'Contact' }
     // { href: '/projects', label: 'Projects' }
   ];
 
@@ -28,8 +52,9 @@ export default function Navbar() {
           <div className='flex flex-1 items-center justify-start'>
             <Link
               href='/'
-              className='text-lg font-bold uppercase'
+              className='inline-flex items-center gap-2 text-xl font-bold uppercase'
             >
+              <Logo2 className='block h-6 text-primary' />
               {siteName}
             </Link>
           </div>
@@ -46,7 +71,7 @@ export default function Navbar() {
             <NavLink
               href='/contact'
               variant='default'
-              className='text-background'
+              className='text-primary-foreground'
             >
               Get in touch
               <IconAnimated
@@ -91,7 +116,7 @@ export default function Navbar() {
                 <NavLink
                   href='/contact'
                   variant='default'
-                  className='justify-start'
+                  className='justify-start text-primary-foreground'
                   onClickCapture={() => setMobileNavOpen(false)}
                 >
                   Get in touch
@@ -101,6 +126,7 @@ export default function Navbar() {
           </Sheet>
         </nav>
       </header>
+      <FloatingButton />
     </>
   );
 }
