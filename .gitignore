@@ -34,6 +34,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
+# local env files
 !.env.example
 .env
+
+# yarn and pnpm lock files
+yarn.lock
+pnpm-lock.yaml
