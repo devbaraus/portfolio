@@ -3,14 +3,7 @@ import './globals.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import {
-  siteDescription,
-  siteImage,
-  siteKeywords,
-  siteLanguage,
-  siteName,
-  siteUrl
-} from '@/site.config';
+import { siteDescription, siteKeywords, siteLanguage, siteName, siteUrl } from '@/site.config';
 
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -21,6 +14,19 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 const poppins = Inter({
   subsets: ['latin']
 });
+
+const ogImages = [
+  {
+    url: `${siteUrl}/og-wide.png`,
+    width: 1200,
+    height: 630
+  },
+  {
+    url: `${siteUrl}/og-square.png`,
+    width: 512,
+    height: 512
+  }
+];
 
 export const metadata: Metadata = {
   title: {
@@ -36,13 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     title: siteName,
     description: siteDescription,
-    images: [
-      {
-        url: siteImage,
-        width: 1200,
-        height: 630
-      }
-    ],
+    images: ogImages,
     creator: '@devbaraus',
     site: siteUrl
   },
@@ -51,13 +51,7 @@ export const metadata: Metadata = {
     locale: siteLanguage,
     url: siteUrl,
     title: siteName,
-    images: [
-      {
-        url: siteImage,
-        width: 1200,
-        height: 630
-      }
-    ],
+    images: ogImages,
     siteName: siteName
   }
 };
