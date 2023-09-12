@@ -46,7 +46,7 @@ export default function ServiceSection(props: Props) {
                       {tools.map(({ label, icon: Icon }, jindex) => (
                         <li key={jindex}>
                           <Tooltip>
-                            <TooltipTrigger asChild>
+                            <TooltipTrigger className='cursor-default'>
                               <Badge
                                 variant='secondary'
                                 className='aspect-square p-2 '

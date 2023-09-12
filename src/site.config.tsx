@@ -10,13 +10,17 @@ import {
 } from 'react-icons/ri';
 import {
   SiBootstrap,
+  SiDirectus,
   SiDiscord,
   SiDjango,
+  SiDocker,
   SiFigma,
+  SiGit,
   SiInstagram,
   SiLinkedin,
   SiMongodb,
   SiNextdotjs,
+  SiPlausibleanalytics,
   SiPostgresql,
   SiPycharm,
   SiSvelte,
@@ -182,13 +186,13 @@ export const serviceStack = [
     {
       label: 'Django',
       icon: SiDjango
-    }
-  ],
-  [
+    },
     {
       label: 'NextJS',
       icon: SiNextdotjs
-    },
+    }
+  ],
+  [
     {
       label: 'VueJS',
       icon: SiVuedotjs
@@ -208,10 +212,6 @@ export const serviceStack = [
   ],
   [
     {
-      label: 'Figma',
-      icon: SiFigma
-    },
-    {
       label: 'WebStorm',
       icon: SiWebstorm
     },
@@ -222,6 +222,28 @@ export const serviceStack = [
     {
       label: 'Visual Studio Code',
       icon: SiVisualstudiocode
+    },
+    {
+      label: 'Git',
+      icon: SiGit
+    }
+  ],
+  [
+    {
+      label: 'Directus',
+      icon: SiDirectus
+    },
+    {
+      label: 'Figma',
+      icon: SiFigma
+    },
+    {
+      label: 'Plausible Analytics',
+      icon: SiPlausibleanalytics
+    },
+    {
+      label: 'Docker',
+      icon: SiDocker
     }
   ]
 ];
