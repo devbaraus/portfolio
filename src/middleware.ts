@@ -4,8 +4,10 @@ import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
 export const defaultLocale = 'en-US';
+export const defaultLocalePrefix = defaultLocale.split('-')[0];
+
 const locales = [defaultLocale, 'pt-BR'];
-const localesPrefixes = ['en', 'pt'];
+const localesPrefixes = locales.map((locale) => locale.split('-')[0]);
 const cookieName = 'locale';
 
 export function getLocaleFromCookies(cookies: ResponseCookies | RequestCookies) {
@@ -37,16 +39,12 @@ export function middleware(request: NextRequest) {
   if (!locale) {
     locale = getLocale(request);
     locale = locale.replace(/-\w*/g, '');
-
-    if (!request.cookies.has(cookieName)) {
-      const response = NextResponse.next();
-      response.cookies.set(cookieName, locale);
-      return response;
-    }
   }
 
   const newUrl = new URL(`/${locale}${pathname}`, request.nextUrl);
-  return NextResponse.rewrite(newUrl);
+  const response = NextResponse.rewrite(newUrl);
+  response.cookies.set(cookieName, locale);
+  return response;
 }
 
 export const config = {
