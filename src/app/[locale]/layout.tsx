@@ -1,15 +1,15 @@
-import './globals.css';
+import '../globals.css';
 
 import { ReactNode } from 'react';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { siteDescription, siteKeywords, siteLanguage, siteName, siteUrl } from '@/site.config';
+import { siteDescription, siteKeywords, siteName, siteUrl } from '@/site.config';
+import { PageParams } from '@/types';
 
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const poppins = Inter({
   subsets: ['latin']
@@ -28,39 +28,46 @@ const ogImages = [
   }
 ];
 
-export const metadata: Metadata = {
-  title: {
-    template: `%s | ${siteName}`,
-    default: siteName
-  },
-  description: siteDescription,
-  keywords: siteKeywords,
-  robots: {
-    follow: true,
-    index: true
-  },
-  twitter: {
-    title: siteName,
+export function generateMetadata({ params: { locale } }: PageParams) {
+  return {
+    title: {
+      template: `%s | ${siteName}`,
+      default: siteName
+    },
     description: siteDescription,
-    images: ogImages,
-    creator: '@devbaraus',
-    site: siteUrl
-  },
-  openGraph: {
-    type: 'website',
-    locale: siteLanguage,
-    url: siteUrl,
-    title: siteName,
-    images: ogImages,
-    siteName: siteName
-  }
-};
+    keywords: siteKeywords,
+    robots: {
+      follow: true,
+      index: true
+    },
+    twitter: {
+      title: siteName,
+      description: siteDescription,
+      images: ogImages,
+      creator: '@devbaraus',
+      site: siteUrl
+    },
+    openGraph: {
+      type: 'website',
+      locale: locale,
+      url: siteUrl,
+      title: siteName,
+      images: ogImages,
+      siteName: siteName
+    }
+  };
+}
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+  params: { locale }
+}: {
+  children: ReactNode;
+} & PageParams) {
   const isProduction = process.env.NODE_ENV === 'production';
 
   return (
-    <html lang={siteLanguage}>
+    <html lang={locale}>
       <body className={poppins.className}>
         <ThemeProvider
           attribute='class'
