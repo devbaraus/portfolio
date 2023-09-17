@@ -1,16 +1,16 @@
 'use client';
 
 import { HTMLAttributes } from 'react';
-import Link from 'next/link';
+import locales from '@/locales';
 import { RiCopyrightLine } from 'react-icons/ri';
 
 import { cn } from '@/lib/utils';
-import { useToast } from '@/components/ui/use-toast';
+import { useLocale } from '@/hooks/use-locale';
 
 type Props = HTMLAttributes<HTMLDivElement>;
 
 export default function Footer({ className, ...props }: Props) {
-  const { toast } = useToast();
+  const locale = useLocale();
 
   return (
     <footer
@@ -78,37 +78,7 @@ export default function Footer({ className, ...props }: Props) {
           </p>
         </div>
         <div className='flex justify-center md:flex-1'>
-          <p className='[&_>_a]:underline hover:[&_>_a]:text-primary '>
-            Built with{' '}
-            <Link
-              href='https://nextjs.org/'
-              target='_blank'
-            >
-              Next.js
-            </Link>{' '}
-            and{' '}
-            <Link
-              href='https://ui.shadcn.com/'
-              target='_blank'
-            >
-              shadcn/ui
-            </Link>
-            , deployed at{' '}
-            <Link
-              href='https://vercel.com/'
-              target='_blank'
-            >
-              Vercel
-            </Link>
-            . All text is set in the{' '}
-            <Link
-              href='https://rsms.me/inter/'
-              target='_blank'
-            >
-              Inter
-            </Link>{' '}
-            typeface.
-          </p>
+          <p className='[&_>_a]:underline hover:[&_>_a]:text-primary '>{locales[locale].footer}</p>
         </div>
         {/*<div className='flex flex-1 justify-end'></div>*/}
       </div>

@@ -1,9 +1,12 @@
 'use client';
 
-import { serviceCards, serviceStack } from '@/site.config';
+import locales from '@/locales';
+import localeServiceCards from '@/locales/service/cards';
+import { serviceStack } from '@/site.config';
 import { motion } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
+import { useLocale } from '@/hooks/use-locale';
 import { Badge } from '@/components/ui/badge';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import ServiceCard, {
@@ -18,6 +21,9 @@ import SectionTitle from '@/components/section/section-title';
 type Props = {};
 
 export default function ServiceSection(props: Props) {
+  const locale = useLocale();
+  const serviceCards = localeServiceCards[locale];
+
   return (
     <Section
       parentClassName='bg-foreground text-background'
@@ -27,18 +33,20 @@ export default function ServiceSection(props: Props) {
         <div>
           <div className='sticky top-24 space-y-12'>
             <div className='space-y-4'>
-              <SectionSubtitle className='text-background/60'>Some services</SectionSubtitle>
+              <SectionSubtitle className='text-background/60'>
+                {locales[locale].service.subtitle}
+              </SectionSubtitle>
               <SectionTitle className='text-3xl font-bold text-primary'>
-                How Can I Help
+                {locales[locale].service.title}
               </SectionTitle>
               <SectionDescription className='text-background/80 md:w-full'>
-                I specialise in offering bespoke web development services to small and medium
-                businesses alike. My aim is to help businesses establish a online presence and
-                connect with their target audience effectively.
+                {locales[locale].service.description}
               </SectionDescription>
             </div>
             <div className='space-y-4'>
-              <h3 className='mb-4 mt-12 text-2xl font-bold text-primary'>Tools I might use</h3>
+              <h3 className='mb-4 mt-12 text-2xl font-bold text-primary'>
+                {locales[locale].service.stackMessage}
+              </h3>
               <ul className='space-y-4'>
                 {serviceStack.map((tools, index) => (
                   <li key={index}>

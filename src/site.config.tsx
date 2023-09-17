@@ -1,13 +1,4 @@
-import {
-  RiBuilding2Fill,
-  RiClipboardFill,
-  RiEyeFill,
-  RiGithubFill,
-  RiLayout2Fill,
-  RiMailFill,
-  RiMap2Fill,
-  RiRocketFill
-} from 'react-icons/ri';
+import { RiClipboardFill, RiGithubFill, RiMailFill, RiMap2Fill } from 'react-icons/ri';
 import {
   SiBootstrap,
   SiDirectus,
@@ -31,7 +22,6 @@ import {
   SiWhatsapp
 } from 'react-icons/si';
 
-export const siteLanguage = 'en';
 export const siteName = 'BARAUS';
 export const siteDescription =
   'Looking for a freelance web developer to take your website to the next level? I am a freelance full stack web developer based in Brazil.';
@@ -143,33 +133,6 @@ export const socialLinks = [
     label: 'Anápolis, Goiás, Brazil',
     title: 'Location',
     icon: RiMap2Fill
-  }
-];
-
-export const serviceCards = [
-  {
-    label: 'Web Development',
-    description:
-      'Your website is the face of your business, which is why you need to invest as much energy into it as you do into the look and feel. That is why we focus on creating websites that are adaptable and customer-focused so they perfectly suit the needs of your business.',
-    icon: RiLayout2Fill
-  },
-  {
-    label: 'Website Audit',
-    description:
-      "Is your website not performing to your expectations, and isn't it delivering the results you desire? Allow me to provide you with a free website review and help you identify opportunities for improvement and get on the path to online success.",
-    icon: RiEyeFill
-  },
-  {
-    label: 'Helping You Grow',
-    description:
-      "Starting a business can be challenging, but your branding and website should not be one of them. That's where I come in. I provide thorough web design, Webflow development and branding services so startups can get ahead on their way to reaching their online goals.",
-    icon: RiRocketFill
-  },
-  {
-    label: 'Helping Established Businesses',
-    description:
-      "Established businesses recognise the significance of an impressive online presence to thrive in today's market. To support your journey towards digital success, I offer a suite of specialised services like web design, Webflow development, and website re-designs. Together, we can unlock your business's full potential and secure a prominent position in the digital realm.",
-    icon: RiBuilding2Fill
   }
 ];
 

@@ -3,16 +3,19 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import locales from '@/locales/navbar';
 import { siteName } from '@/site.config';
 import { RiArrowRightLine, RiMenu2Fill } from 'react-icons/ri';
 
 import { cn } from '@/lib/utils';
+import { useLocale } from '@/hooks/use-locale';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import ButtonTheme from '@/components/layout/button-theme';
 import Logo from '@/components/layout/logo';
 import NavLink from '@/components/layout/navlink';
+import LangSwitcher from '@/components/locale-switcher';
 import IconAnimated from '@/components/motion/icon-animated';
 
 function FloatingButton() {
@@ -37,11 +40,13 @@ function FloatingButton() {
 }
 
 export default function Navbar() {
+  const locale = useLocale();
+
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/contact', label: 'Contact' }
+    { href: '/', label: locales[locale].home },
+    { href: '/contact', label: locales[locale].contact }
     // { href: '/projects', label: 'Projects' }
   ];
 
@@ -66,6 +71,7 @@ export default function Navbar() {
             ))}
           </menu>
           <div className='hidden flex-1 items-center justify-end md:flex'>
+            <LangSwitcher />
             <ButtonTheme />
             <Separator className='w-8 rotate-90' />
             <NavLink
@@ -73,13 +79,14 @@ export default function Navbar() {
               variant='default'
               className='text-primary-foreground'
             >
-              Get in touch
+              {locales[locale].button}
               <IconAnimated
                 iconVisible={RiArrowRightLine}
                 iconAppear={RiArrowRightLine}
               />
             </NavLink>
           </div>
+          <LangSwitcher className='md:hidden' />
           <ButtonTheme className='md:hidden' />
           <Sheet
             open={mobileNavOpen}
@@ -116,10 +123,10 @@ export default function Navbar() {
                 <NavLink
                   href='/contact'
                   variant='default'
-                  className='justify-start text-primary-foreground'
+                  className='mt-4 justify-start text-primary-foreground'
                   onClickCapture={() => setMobileNavOpen(false)}
                 >
-                  Get in touch
+                  {locales[locale].button}
                 </NavLink>
               </menu>
             </SheetContent>

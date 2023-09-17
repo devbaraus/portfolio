@@ -3,11 +3,13 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import locales from '@/locales/about/cards';
+import { GitHubUser } from '@/types';
 import { RiFolder2Fill, RiFolderFill, RiUserFollowFill } from 'react-icons/ri';
 import { SiGithub } from 'react-icons/si';
 
+import { useLocale } from '@/hooks/use-locale';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import IconAnimated from '@/components/motion/icon-animated';
@@ -16,6 +18,8 @@ type Props = {};
 
 export default function GithubCard(props: Props) {
   const [data, setData] = useState<GitHubUser>();
+
+  const locale = useLocale();
 
   useEffect(() => {
     fetch('https://api.github.com/users/devbaraus')
@@ -69,21 +73,27 @@ export default function GithubCard(props: Props) {
             className='space-x-2'
           >
             <RiUserFollowFill />
-            <span>{data.followers} Followers</span>
+            <span>
+              {data.followers} {locales[locale].github.followers}
+            </span>
           </Badge>
           <Badge
             variant='secondary'
             className='space-x-2'
           >
             <RiFolder2Fill />
-            <span>{data.public_repos} Repositories</span>
+            <span>
+              {data.public_repos} {locales[locale].github.repositories}
+            </span>
           </Badge>
           <Badge
             variant='secondary'
             className='space-x-2'
           >
             <RiFolderFill />
-            <span>{data.public_gists} Gists</span>
+            <span>
+              {data.public_gists} {locales[locale].github.gists}
+            </span>
           </Badge>
         </div>
       </CardFooter>

@@ -1,11 +1,15 @@
+import locales from '@/locales/contact';
+import { PageParams } from '@/types';
+
 import ContactSection from '@/components/contact-sections/contact-section';
 import FormSection from '@/components/contact-sections/form-section';
 
-export const metadata = {
-  title: 'Get in touch',
-  description:
-    'Looking for a freelance web designer or developer to take your website to the next level? Get in touch today to learn more.'
-};
+export function generateMetadata({ params: { locale } }: PageParams) {
+  return {
+    title: locales[locale].title,
+    description: locales[locale].description
+  };
+}
 
 export default function ContactPage() {
   return (

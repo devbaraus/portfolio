@@ -1,15 +1,17 @@
+import locales from '@/locales';
+
+import { useLocaleServer } from '@/hooks/use-locale-server';
+
 export default function HeroSection() {
+  const locale = useLocaleServer();
+
   return (
     <section className='container flex min-h-screen flex-col justify-center space-y-4 bg-cover py-20'>
-      <span className='self-start text-lg animate-in'>Plan, Develop & Create</span>
-      <h1 className='text-6xl font-bold uppercase tracking-tight md:text-8xl'>
-        FREELANCE FULL STACK <br />
-        <span className='text-primary'>WEB DEVELOPER</span>
+      <span className='self-start text-lg animate-in'>{locales[locale].hero.lead}</span>
+      <h1 className='text-5xl font-bold uppercase tracking-tight md:text-8xl'>
+        {locales[locale].hero.title}
       </h1>
-      <p className='text-lg'>
-        Focused on crafting clean & user‑friendly experiences, I am passionate about building
-        high‑quality websites.
-      </p>
+      <p className='text-lg'>{locales[locale].hero.subtitle}</p>
     </section>
   );
 }

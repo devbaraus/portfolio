@@ -1,4 +1,4 @@
-type GitHubUser = {
+export type GitHubUser = {
   login: string;
   id: number;
   node_id: string;
@@ -121,7 +121,19 @@ type RecentlyPlayed = {
   context: Context;
 };
 
-type SpotifyData = {
+export type SpotifyData = {
   currentlyPlaying: CurrentlyPlaying | null;
   recentlyPlayed: RecentlyPlayed;
+};
+
+export type Lang = 'en' | 'pt';
+
+export type LocaleParam = {
+  locale: Lang;
+};
+
+export type PageParams = {
+  params: {
+    [key: string]: string | string[];
+  } & LocaleParam;
 };

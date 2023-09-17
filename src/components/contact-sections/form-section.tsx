@@ -1,18 +1,20 @@
 'use client';
 
 import { HTMLAttributes } from 'react';
+import locales from '@/locales/contact';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { cn } from '@/lib/utils';
+import { useLocale } from '@/hooks/use-locale';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { TextArea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import Section from '@/components/section/section';
-import { formSubmit } from '@/app/contact/actions';
+import { formSubmit } from '@/app/[locale]/contact/actions';
 
 function FloatingLabel({
   children,
@@ -51,6 +53,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export default function FormSection(props: Props) {
   const { toast } = useToast();
+  const locale = useLocale();
 
   const {
     register,
@@ -102,7 +105,7 @@ export default function FormSection(props: Props) {
           onSubmit={handleSubmit(onSubmit)}
         >
           <fieldset className='space-y-12'>
-            <legend className='text-lg uppercase'>YOUR DETAILS*</legend>
+            <legend className='text-lg uppercase'>{locales[locale].form.fieldsetDetails}*</legend>
             <div className='grid gap-12 md:grid-cols-2 '>
               <div className='relative'>
                 <Input
@@ -116,7 +119,7 @@ export default function FormSection(props: Props) {
                 {errors.first_name && (
                   <span className='text-xs text-destructive'>{errors.first_name.message}</span>
                 )}
-                <FloatingLabel htmlFor='first_name'>First Name</FloatingLabel>
+                <FloatingLabel htmlFor='first_name'>{locales[locale].form.firstName}</FloatingLabel>
               </div>
               <div className='relative'>
                 <Input
@@ -130,7 +133,7 @@ export default function FormSection(props: Props) {
                 {errors.last_name && (
                   <span className='text-xs text-destructive'>{errors.last_name.message}</span>
                 )}
-                <FloatingLabel htmlFor='last_name'>Last Name</FloatingLabel>
+                <FloatingLabel htmlFor='last_name'>{locales[locale].form.lastName}</FloatingLabel>
               </div>
             </div>
             <div className='grid gap-12 md:grid-cols-2'>
@@ -146,7 +149,7 @@ export default function FormSection(props: Props) {
                 {errors.email && (
                   <span className='text-xs text-destructive'>{errors.email.message}</span>
                 )}
-                <FloatingLabel htmlFor='email'>E-mail</FloatingLabel>
+                <FloatingLabel htmlFor='email'>{locales[locale].form.email}</FloatingLabel>
               </div>
               <div className='relative'>
                 <Input
@@ -160,18 +163,18 @@ export default function FormSection(props: Props) {
                 {errors.phone && (
                   <span className='text-xs text-destructive'>{errors.phone.message}</span>
                 )}
-                <FloatingLabel htmlFor='phone'>Phone</FloatingLabel>
+                <FloatingLabel htmlFor='phone'>{locales[locale].form.phone}</FloatingLabel>
               </div>
             </div>
           </fieldset>
           <fieldset className='space-y-12'>
-            <legend className='text-lg uppercase'>Tell me about your project*</legend>
+            <legend className='text-lg uppercase'>{locales[locale].form.fieldsetProject}*</legend>
             <div className='relative'>
               <TextArea
                 {...register('message')}
                 id='message'
                 className='peer placeholder:uppercase focus:border-b-secondary'
-                placeholder='Your message...'
+                placeholder={locales[locale].form.message}
                 required
                 rows={5}
               />
@@ -185,7 +188,7 @@ export default function FormSection(props: Props) {
             className='float-right uppercase'
             size='lg'
           >
-            send
+            {locales[locale].form.button}
           </Button>
           <div className='clear-both' />
         </form>

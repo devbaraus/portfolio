@@ -3,14 +3,14 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RiFolder2Fill, RiFolderFill, RiPlayFill, RiUserFollowFill } from 'react-icons/ri';
+import locales from '@/locales/about/cards';
+import { SpotifyData } from '@/types';
 import { SiSpotify } from 'react-icons/si';
 
+import { useLocale } from '@/hooks/use-locale';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Slider } from '@/components/ui/slider';
 import SpotifyPlayBadge from '@/components/home-sections/about/spotify-play-badge';
 import IconAnimated from '@/components/motion/icon-animated';
 
@@ -19,6 +19,9 @@ type Props = {};
 export default function SpotifyCard(props: Props) {
   const [data, setData] = useState<SpotifyData>();
   const timer = useRef<NodeJS.Timeout>();
+
+  const locale = useLocale();
+  const dictionary = locales[locale];
 
   function fetchSpotifyData() {
     fetch('/api/spotify')
@@ -64,7 +67,9 @@ export default function SpotifyCard(props: Props) {
           height={500}
         />
         <Badge className='absolute left-2 top-2 bg-opacity-60'>
-          {data.currentlyPlaying ? 'Now Playing' : 'Recently Played'}
+          {data.currentlyPlaying
+            ? locales[locale].spotify.nowPlaying
+            : locales[locale].spotify.recentlyPlayed}
         </Badge>
       </CardContent>
       <CardFooter className='relative block space-y-4'>

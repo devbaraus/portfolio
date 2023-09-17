@@ -11,6 +11,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.4.2",
     "@hookform/resolvers": "^3.3.1",
     "@octokit/core": "^5.0.0",
     "@radix-ui/react-dialog": "^1.0.4",
@@ -28,7 +29,9 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
+    "graphql-tag": "^2.12.6",
     "lodash": "^4.17.21",
+    "negotiator": "^0.6.3",
     "next": "13.4.19",
     "next-themes": "^0.2.1",
     "postcss": "8.4.29",
@@ -36,6 +39,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.46.1",
     "react-icons": "^4.10.1",
+    "server-only": "^0.0.1",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.7",
@@ -50,6 +54,7 @@
     "@graphql-codegen/typescript-resolvers": "^4.0.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@types/lodash": "^4.14.198",
+    "@types/negotiator": "^0.6.1",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",

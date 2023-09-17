@@ -1,20 +1,24 @@
 import Link from 'next/link';
+import locales from '@/locales/contact';
 import { socialLinks } from '@/site.config';
 
 import { cn } from '@/lib/utils';
+import { useLocaleServer } from '@/hooks/use-locale-server';
 import IconAnimated from '@/components/motion/icon-animated';
 import Section from '@/components/section/section';
 
 type Props = {};
 
 export default function ContactSection(props: Props) {
+  const locale = useLocaleServer();
+
   return (
     <>
       <Section
         className='sticky top-44 p-0'
-        subtitle='Have an idea?'
-        title="Let's work together"
-        description='Looking for a freelance web designer or developer to take your website to the next level? Get in touch today to learn more.'
+        subtitle={locales[locale].subtitle}
+        title={locales[locale].title}
+        description={locales[locale].description}
       >
         <ul className='w-max space-y-4'>
           {socialLinks.map(({ label, href, icon: Icon }) => {
