@@ -33,6 +33,12 @@ function getLocale(request: NextRequest) {
 }
 
 export function middleware(request: NextRequest) {
+  const match = /\/(sitemap|(?!_next|api|.+\.\w*).*)/.test(request.nextUrl.pathname);
+
+  if (!match) {
+    return NextResponse.next();
+  }
+
   let locale = getLocaleFromCookies(request.cookies);
   const pathname = request.nextUrl.pathname;
 
@@ -51,10 +57,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next|api|favicon.ico).*)'
-    // Optional: only run on root (/) URL
-    // '/'
-  ]
+
 };
