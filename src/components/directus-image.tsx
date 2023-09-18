@@ -1,18 +1,13 @@
-import { ImgHTMLAttributes } from 'react';
+import Image, { ImageProps } from 'next/image';
 
-import { directusImageAsset, generateImageSrcSet } from '@/lib/utils';
+import { directusImageLoader } from '@/lib/utils';
 
-type Props = {
-  id: string;
-  widths?: number[];
-  alt: string;
-} & Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'srcSet'>;
-
-export default function DirectusImage({ id, widths = [128, 256, 384, 512, 640], ...props }: Props) {
+type Props = { alt: string } & ImageProps;
+export default function DirectusImage({ alt, ...props }: Props) {
   return (
-    <img
-      src={directusImageAsset(id)}
-      srcSet={generateImageSrcSet(id, widths)}
+    <Image
+      loader={directusImageLoader}
+      alt={alt}
       {...props}
     />
   );

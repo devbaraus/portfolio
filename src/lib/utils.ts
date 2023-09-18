@@ -6,31 +6,26 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function directusImageAsset(ID: string, options?: Record<string, any>) {
-  const url = new URL(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/assets/${ID}`);
+export function directusImageLoader({
+  src,
+  width,
+  quality
+}: {
+  src: string;
+  width?: number;
+  quality?: number;
+}) {
+  const url = new URL(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/assets/${src}`);
 
-  options = {
+  const options = {
     format: 'webp',
-    ...options
+    width,
+    quality: quality || 75
   };
 
-  url.search = new URLSearchParams(options).toString();
+  url.search = new URLSearchParams(options as Record<string, any>).toString();
 
   return url.toString();
-}
-
-export function generateImageSrcSet(ID: string, widths: number[]) {
-  const sources = widths.reduce(
-    (acc, width) => {
-      const url = directusImageAsset(ID, { width });
-      return { ...acc, [width]: url };
-    },
-    {} as Record<string, number>
-  );
-
-  return Object.entries(sources)
-    .map(([key, value]) => `${value} ${key}w`)
-    .join(', ');
 }
 
 export async function fetcherGQL<T>(

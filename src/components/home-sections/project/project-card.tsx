@@ -31,7 +31,7 @@ export default function ProjectCard({
               className='absolute left-0 top-0 z-20 h-full w-full skew-x-12 bg-background'
             />
             <DirectusImage
-              id={cover!.id}
+              src={cover!.id}
               alt={title!}
               className='z-10 aspect-video h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
               width={500}
