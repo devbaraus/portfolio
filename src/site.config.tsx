@@ -27,8 +27,14 @@ export const siteDescription = {
   en: 'Looking for a freelance web developer to take your website to the next level? I am a full stack web developer based in Brazil.',
   pt: 'Procurando um desenvolvedor web freelance para levar seu site para o próximo nível? Sou um desenvolvedor web full stack no Brasil.'
 };
+
 export const siteKeywords = 'portfolio, web developer, full stack, freelance';
 export const siteUrl = 'https://www.baraus.dev';
+
+export const siteTitle = {
+  en: `Full Stack Web Developer | ${siteName}`,
+  pt: `Desenvolvedor Web Full Stack | ${siteName}`
+};
 
 export const socialLinks = [
   {

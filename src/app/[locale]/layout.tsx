@@ -2,7 +2,7 @@ import '../globals.css';
 
 import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
-import { siteDescription, siteKeywords, siteName, siteUrl } from '@/site.config';
+import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/site.config';
 import { PageParams } from '@/types';
 
 import { Toaster } from '@/components/ui/toaster';
@@ -32,9 +32,7 @@ export function generateMetadata({ params: { locale } }: PageParams) {
   return {
     title: {
       template: `%s | ${siteName}`,
-      default: `${
-        { en: 'Full Stack Web Developer', pt: 'Desenvolvedor Web Full Stack' }[locale]
-      } | ${siteName}`
+      default: siteTitle[locale]
     },
     description: siteDescription[locale],
     keywords: siteKeywords,
@@ -43,7 +41,7 @@ export function generateMetadata({ params: { locale } }: PageParams) {
       index: true
     },
     twitter: {
-      title: siteName,
+      title: siteTitle[locale],
       description: siteDescription[locale],
       images: ogImages,
       creator: '@devbaraus',
@@ -53,7 +51,7 @@ export function generateMetadata({ params: { locale } }: PageParams) {
       type: 'website',
       locale: locale,
       url: siteUrl,
-      title: siteName,
+      title: siteTitle[locale],
       images: ogImages,
       siteName: siteName
     }
