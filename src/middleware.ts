@@ -20,30 +20,20 @@ export function getLocaleFromCookies(cookies: ResponseCookies | RequestCookies) 
   return null;
 }
 
-export function getLocaleFromHeaders(headers: Headers) {
+function getLocaleFromHeaders(request: NextRequest) {
+  const headers = new Headers(request.headers);
   const headersObject = Object.fromEntries(headers.entries());
   const languages = new Negotiator({ headers: headersObject }).languages(locales);
 
   return match(languages, locales, defaultLocale);
 }
 
-function getLocale(request: NextRequest) {
-  const headers = new Headers(request.headers);
-  return getLocaleFromHeaders(headers);
-}
-
 export function middleware(request: NextRequest) {
-  const match = /\/(sitemap|(?!_next|api|.+\.\w*).*)/.test(request.nextUrl.pathname);
-
-  if (!match) {
-    return NextResponse.next();
-  }
-
   let locale = getLocaleFromCookies(request.cookies);
   const pathname = request.nextUrl.pathname;
 
   if (!locale) {
-    locale = getLocale(request);
+    locale = getLocaleFromHeaders(request);
     locale = locale.replace(/-\w*/g, '');
   }
 
@@ -57,5 +47,13 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-
+  matcher: [
+    // Skip all internal paths (_next)
+    // '/((?!_next|api|favicon.ico).*)'
+    // Optional: only run on root (/) URL
+    '/',
+    '/contact/thank-you',
+    '/contact',
+    '/sitemap.xml'
+  ]
 };
