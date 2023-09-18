@@ -43,6 +43,7 @@ export function middleware(request: NextRequest) {
 
   const newUrl = new URL(`/${locale}${pathname}`, request.nextUrl);
   const response = NextResponse.rewrite(newUrl);
+  response.headers.set('x-locale', locale);
   response.cookies.set(cookieName, locale, {
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365)
   });
