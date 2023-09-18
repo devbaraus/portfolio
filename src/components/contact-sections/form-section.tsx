@@ -60,14 +60,14 @@ export default function FormSection(props: Props) {
     handleSubmit,
     formState: { errors }
   } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      first_name: 'Bruno',
-      last_name: 'Araujo',
-      email: 'teste@gmail.com',
-      phone: '+5562993794290',
-      message: 'Teste'
-    }
+    resolver: zodResolver(formSchema)
+    // defaultValues: {
+    //   first_name: 'Bruno',
+    //   last_name: 'Araujo',
+    //   email: 'teste@gmail.com',
+    //   phone: '+5562993794290',
+    //   message: 'Teste'
+    // }
   });
 
   function onSubmit(data: FormValues) {
