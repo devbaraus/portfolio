@@ -32,9 +32,11 @@ export function generateMetadata({ params: { locale } }: PageParams) {
   return {
     title: {
       template: `%s | ${siteName}`,
-      default: siteName
+      default: `${
+        { en: 'Full Stack Web Developer', pt: 'Desenvolvedor Web Full Stack' }[locale]
+      } | ${siteName}`
     },
-    description: siteDescription,
+    description: siteDescription[locale],
     keywords: siteKeywords,
     robots: {
       follow: true,
@@ -42,7 +44,7 @@ export function generateMetadata({ params: { locale } }: PageParams) {
     },
     twitter: {
       title: siteName,
-      description: siteDescription,
+      description: siteDescription[locale],
       images: ogImages,
       creator: '@devbaraus',
       site: siteUrl

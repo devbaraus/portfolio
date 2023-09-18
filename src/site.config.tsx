@@ -1,4 +1,4 @@
-import { RiClipboardFill, RiGithubFill, RiMailFill, RiMap2Fill } from 'react-icons/ri';
+import { RiGithubFill, RiMailFill, RiMap2Fill } from 'react-icons/ri';
 import {
   SiBootstrap,
   SiDirectus,
@@ -23,71 +23,13 @@ import {
 } from 'react-icons/si';
 
 export const siteName = 'BARAUS';
-export const siteDescription =
-  'Looking for a freelance web developer to take your website to the next level? I am a freelance full stack web developer based in Brazil.';
+export const siteDescription = {
+  en: 'Looking for a freelance web developer to take your website to the next level? I am a full stack web developer based in Brazil.',
+  pt: 'Procurando um desenvolvedor web freelance para levar seu site para o próximo nível? Sou um desenvolvedor web full stack no Brasil.'
+};
 export const siteKeywords = 'portfolio, web developer, full stack, freelance';
 export const siteUrl = 'https://www.baraus.dev';
 
-export const contact = [
-  {
-    label: 'Email',
-    action: (toast: Function) => {
-      navigator.clipboard
-        .writeText('me@baraus.dev')
-        .then(() => {
-          toast({
-            label: (
-              <p className='space-x-2'>
-                <RiClipboardFill className='inline-block text-xl' />
-                <span>Copied to clipboard!</span>
-              </p>
-            )
-          });
-        })
-        .catch(() => {
-          toast({
-            variant: 'destructive',
-            label: (
-              <p className='space-x-2'>
-                <RiClipboardFill className='inline-block text-xl' />
-                <span>Failed to copy to clipboard!</span>
-              </p>
-            )
-          });
-        });
-    },
-    content: 'me@baraus.dev'
-  },
-  {
-    label: 'Phone',
-    action: (toast: Function) => {
-      navigator.clipboard
-        .writeText('+5562993794290')
-        .then(() => {
-          toast({
-            label: (
-              <p className='space-x-2'>
-                <RiClipboardFill className='inline-block text-xl' />
-                <span>Copied to clipboard!</span>
-              </p>
-            )
-          });
-        })
-        .catch(() => {
-          toast({
-            variant: 'destructive',
-            label: (
-              <p className='space-x-2'>
-                <RiClipboardFill className='inline-block text-xl' />
-                <span>Failed to copy to clipboard!</span>
-              </p>
-            )
-          });
-        });
-    },
-    content: '+55 62 99379-4290'
-  }
-];
 export const socialLinks = [
   {
     label: 'devbaraus',
