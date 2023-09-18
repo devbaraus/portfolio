@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.4.2",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@hookform/resolvers": "^3.3.1",
     "@octokit/core": "^5.0.0",
     "@radix-ui/react-dialog": "^1.0.4",
@@ -28,6 +29,7 @@
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "dotenv": "^16.3.1",
     "framer-motion": "^10.16.4",
     "graphql": "^16.8.0",
     "graphql-tag": "^2.12.6",
