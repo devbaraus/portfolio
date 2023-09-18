@@ -53,7 +53,6 @@ export const config = {
     // Optional: only run on root (/) URL
     '/',
     '/contact/thank-you',
-    '/contact',
-    '/sitemap.xml'
+    '/contact'
   ]
 };
