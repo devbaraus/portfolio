@@ -8,9 +8,6 @@ import { RiBookmark3Fill } from 'react-icons/ri';
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
 import DirectusImage from '@/components/directus-image';
 import IconAnimated from '@/components/motion/icon-animated';
-import TextAnimatedAppear, {
-  TextAnimatedAppearVariant
-} from '@/components/motion/text-animated-appear';
 
 type Props = {
   article: Article;

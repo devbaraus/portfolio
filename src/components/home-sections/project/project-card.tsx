@@ -5,7 +5,7 @@ import { Project } from '@/gql/graphql';
 import { motion } from 'framer-motion';
 import { RiEyeFill } from 'react-icons/ri';
 
-import { Card, CardContent, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import DirectusImage from '@/components/directus-image';
 import { CardVariants } from '@/components/motion';
 import IconAnimated from '@/components/motion/icon-animated';
