@@ -29,6 +29,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
+    "graphql": "^16.8.0",
     "graphql-tag": "^2.12.6",
     "lodash": "^4.17.21",
     "negotiator": "^0.6.3",
