@@ -60,41 +60,30 @@ export default function FormSection(props: Props) {
     handleSubmit,
     formState: { errors }
   } = useForm<FormValues>({
-    resolver: zodResolver(formSchema)
-    // defaultValues: {
-    //   first_name: 'Bruno',
-    //   last_name: 'Araujo',
-    //   email: 'teste@gmail.com',
-    //   phone: '+5562993794290',
-    //   message: 'Teste'
-    // }
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      first_name: 'Bruno',
+      last_name: 'Araujo',
+      email: 'teste@gmail.com',
+      phone: '+5562993794290',
+      message: 'Teste'
+    }
   });
 
   function onSubmit(data: FormValues) {
-    // Get client IP
-    fetch('https://api.ipify.org?format=json')
-      .then((res) => res.json())
-      .then((res) => {
-        const ip = res.ip;
-        const body = {
-          ...data,
-          ip
-        };
+    const formData = new FormData();
 
-        const formData = new FormData();
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
 
-        Object.entries(body).forEach(([key, value]) => {
-          formData.append(key, value);
-        });
-
-        formSubmit(formData).catch(() => {
-          toast({
-            title: 'Error',
-            description: 'An error occurred while sending your message',
-            variant: 'destructive'
-          });
-        });
+    formSubmit(formData).catch(() => {
+      toast({
+        title: 'Error',
+        description: 'An error occurred while sending your message',
+        variant: 'destructive'
       });
+    });
   }
 
   return (

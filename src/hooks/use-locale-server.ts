@@ -1,4 +1,4 @@
-import { headers } from 'next/headers';
+import { cookies } from 'next/headers';
 
 import 'server-only';
 
@@ -6,5 +6,5 @@ import { defaultLocalePrefix } from '@/middleware';
 import { Lang } from '@/types';
 
 export function useLocaleServer() {
-  return (headers().get('x-locale') || defaultLocalePrefix) as Lang;
+  return (cookies().get('locale')?.value || defaultLocalePrefix) as Lang;
 }
