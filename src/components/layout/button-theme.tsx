@@ -1,22 +1,44 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 
+import { cn } from '@/lib/utils';
 import { Button, ButtonProps } from '@/components/ui/button';
 
 type Props = ButtonProps;
-export default function ButtonTheme(props: Props) {
-  const { setTheme, theme } = useTheme();
+
+type Theme = 'dark' | 'light' | 'system';
+
+export default function ButtonTheme({ className, ...props }: Props) {
+  const { setTheme, theme, systemTheme } = useTheme();
+
+  const oppositeTheme = useMemo(() => {
+    let oppositeTheme: Theme;
+
+    if (theme === 'system') {
+      oppositeTheme = systemTheme === 'dark' ? 'light' : 'dark';
+    } else {
+      oppositeTheme = theme === 'dark' ? 'light' : 'dark';
+    }
+
+    return oppositeTheme;
+  }, [theme, systemTheme]);
 
   return (
     <Button
       {...props}
+      className={cn('rounded-full', className)}
       variant='ghost'
       size='icon'
-      onClick={() => setTheme(theme == 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(oppositeTheme)}
     >
-      {theme == 'dark' ? <RiMoonFill className='text-xl' /> : <RiSunFill className='text-xl' />}
+      {oppositeTheme == 'light' ? (
+        <RiMoonFill className='text-xl' />
+      ) : (
+        <RiSunFill className='text-xl' />
+      )}
       <span className='sr-only'>Toggle theme</span>
     </Button>
   );

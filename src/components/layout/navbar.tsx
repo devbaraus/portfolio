@@ -53,7 +53,7 @@ export default function Navbar() {
   return (
     <>
       <header className='fixed left-0 top-0 z-50 flex h-16 w-full items-center justify-center border-b bg-background/80 py-4 backdrop-blur'>
-        <nav className='container flex w-full space-x-4'>
+        <nav className='container flex w-full md:gap-4'>
           <div className='flex flex-1 items-center justify-start'>
             <Link
               href='/'
@@ -71,8 +71,8 @@ export default function Navbar() {
             ))}
           </menu>
           <div className='hidden flex-1 items-center justify-end md:flex'>
-            <LangSwitcher />
             <ButtonTheme />
+            <LangSwitcher />
             <Separator className='w-8 rotate-90' />
             <NavLink
               href='/contact'
@@ -86,8 +86,11 @@ export default function Navbar() {
               />
             </NavLink>
           </div>
-          <LangSwitcher className='md:hidden' />
-          <ButtonTheme className='md:hidden' />
+          <div className='flex md:hidden'>
+            <ButtonTheme />
+            <LangSwitcher />
+          </div>
+
           <Sheet
             open={mobileNavOpen}
             onOpenChange={(open) => setMobileNavOpen(open)}
