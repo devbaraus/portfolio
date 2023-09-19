@@ -11,7 +11,9 @@ const en = {
       </>
     ),
     subtitle:
-      'Focused on crafting clean & user‑friendly experiences, I am passionate about building high‑quality websites.'
+      'Focused on crafting clean & user‑friendly experiences, I am passionate about building high‑quality websites.',
+    buttonSecondary: 'Learn more',
+    buttonMain: 'Get in touch'
   },
   project: {
     title: 'A few selected works',
@@ -110,7 +112,9 @@ const pt = {
       </>
     ),
     subtitle:
-      'Focado em criar experiências limpas e amigáveis, sou apaixonado por construir sites de alta qualidade.'
+      'Focado em criar experiências limpas e amigáveis, sou apaixonado por construir sites de alta qualidade.',
+    buttonSecondary: 'Saiba mais',
+    buttonMain: 'Entre em contato'
   },
   project: {
     title: 'Alguns trabalhos selecionados',

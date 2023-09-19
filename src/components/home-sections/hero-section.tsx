@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import locales from '@/locales';
 
 import { useLocaleServer } from '@/hooks/use-locale-server';
+import { Button } from '@/components/ui/button';
 
 export default function HeroSection() {
   const locale = useLocaleServer();
@@ -12,6 +14,14 @@ export default function HeroSection() {
         {locales[locale].hero.title}
       </h1>
       <p className='text-lg'>{locales[locale].hero.subtitle}</p>
+      <div className='flex gap-4'>
+        <Link href='/#projects'>
+          <Button variant='outline'>{locales[locale].hero.buttonSecondary}</Button>
+        </Link>
+        <Link href='/contact'>
+          <Button variant='default'>{locales[locale].hero.buttonMain}</Button>
+        </Link>
+      </div>
     </section>
   );
 }
