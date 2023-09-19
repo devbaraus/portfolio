@@ -1,6 +1,5 @@
 'use client';
 
-import { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 
@@ -14,17 +13,15 @@ type Theme = 'dark' | 'light' | 'system';
 export default function ButtonTheme({ className, ...props }: Props) {
   const { setTheme, theme, systemTheme } = useTheme();
 
-  const oppositeTheme = useMemo(() => {
-    let oppositeTheme: Theme;
+  let oppositeTheme: Theme;
 
-    if (theme === 'system') {
-      oppositeTheme = systemTheme === 'dark' ? 'light' : 'dark';
-    } else {
-      oppositeTheme = theme === 'dark' ? 'light' : 'dark';
-    }
+  if (theme === 'system') {
+    oppositeTheme = systemTheme === 'dark' ? 'light' : 'dark';
+  } else {
+    oppositeTheme = theme === 'dark' ? 'light' : 'dark';
+  }
 
-    return oppositeTheme;
-  }, [theme, systemTheme]);
+  console.log(oppositeTheme);
 
   return (
     <Button
@@ -34,7 +31,7 @@ export default function ButtonTheme({ className, ...props }: Props) {
       size='icon'
       onClick={() => setTheme(oppositeTheme)}
     >
-      {oppositeTheme == 'light' ? (
+      {oppositeTheme != 'light' ? (
         <RiMoonFill className='text-xl' />
       ) : (
         <RiSunFill className='text-xl' />
