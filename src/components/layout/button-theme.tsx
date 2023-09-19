@@ -21,8 +21,6 @@ export default function ButtonTheme({ className, ...props }: Props) {
     oppositeTheme = theme === 'dark' ? 'light' : 'dark';
   }
 
-  console.log(oppositeTheme);
-
   return (
     <Button
       {...props}
