@@ -39,23 +39,23 @@ const en = {
     message: (
       <>
         <p>
-          In 2015, I embarked on a journey into the vast world of programming, initiating my
-          learning in game development through the Udemy platform. Since then, my path has led me to
-          significant achievements. Currently, I hold a degree in Computer Science granted by IFG
-          Anápolis. My journey has been enriched by building a variety of applications, serving
-          diverse clients, private companies, and educational institutions.
+          In 2015, I embarked on a journey into the vast world of programming, which has led me to
+          significant achievements. Currently, I hold a degree in Computer Science from IFG Anápolis
+          and work as a Web Developer, building various solutions that cater to the needs of
+          clients, private companies, and institutions.
         </p>
         <p>
-          Today, my central focus is on developing an application aimed at individual risk analysis,
-          a challenge I embrace at the Management Risk Analysis company. Additionally, I dedicate
-          myself to helping others solve problems through the application of technology.
-          Simultaneously, I maintain my own applications, including Spotiminy and Muggs Shop.
+          Today, I have experience in building intelligent models and am focused on creating web
+          solutions and automating internal processes. I also dedicate myself to helping others
+          solve problems through the application of technology. Additionally, I take on challenges
+          and personal projects in pursuit of new knowledge and the advancement of my professional
+          skills.
         </p>
         <p>
-          In precious leisure moments, I share the company of my wife and daughter. On other
-          occasions, I dive into the exploration of new methods and technologies. I fuel my
-          imagination with movies about history and science fiction. And sometimes, I find myself
-          immersed in one of my favorite games.
+          In precious moments of leisure, I enjoy the company of my wife and daughter. On other
+          occasions, I dive into exploring new methods and technologies. I also fuel my imagination
+          with movies about history and science fiction, and at times, I find myself immersed in
+          some of my favorite games.
         </p>
       </>
     )
@@ -140,25 +140,23 @@ const pt = {
     message: (
       <>
         <p>
-          Em 2015, embarquei em uma jornada de vasto mundo da programação, iniciando minha
-          aprendizagem na criação de jogos através da plataforma Udemy. Desde então, minha
-          trajetória me levou a conquistas significativas. Atualmente, possuo diploma em Ciência da
-          Computação concedido pelo IFG Anápolis. Minha jornada foi enriquecida pela construção de
-          uma variedade de aplicações, abrangendo clientes diversificados, empresas privadas e
-          instituições de ensino.
+          Em 2015, embarquei em uma jornada no vasto mundo da programação, essa jornada me levou a
+          conquistas significativas. Atualmente, sou formado em Ciência da Computação pelo IFG
+          Anápolis e atuo como Desenvolvedor Web, construindo variadas soluções que atendem a dor
+          clientes, empresas privadas e instituições.
         </p>
         <p>
-          Hoje, meu foco central reside em desenvolver uma aplicação voltada à análise de risco de
-          indivíduos, desafio que abraço na empresa Management Risk Analysis. Além disso, dedico-me
-          a auxiliar outras pessoas a solucionar problemas por meio da aplicação da tecnologia.
-          Paralelamente, mantenho minhas próprias aplicações, entre elas o Spotiminy e o Muggs Shop.
+          Hoje tenho experiência na construção de modelos inteligentes e sou focado na criação de
+          soluções web e automatizações de processos internos. Também me dedico a auxiliar outras
+          pessoas a solucionar problemas por meio da aplicação da tecnologia. Paralelamente, realizo
+          desafios e projetos pessoais na busca de novos conhecimentos e evolução da minha
+          capacidade profissional.
         </p>
-
         <p>
           Nos preciosos momentos de lazer, compartilho a companhia da minha esposa e filha. Noutras
-          ocasiões, mergulho na exploração de novos métodos e tecnologias. Nutro minha imaginação
-          com filmes sobre história e ficção científica. E em algumas vezes me vejo imerso em um dos
-          meus jogos prediletos.
+          ocasiões, mergulho na exploração de novos métodos e tecnologias. Ainda, nutro minha
+          imaginação com filmes sobre história e ficção científica e em algumas vezes me vejo imerso
+          em um alguns dos meus jogos favoritos.
         </p>
       </>
     )

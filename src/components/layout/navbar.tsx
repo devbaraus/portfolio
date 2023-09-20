@@ -47,7 +47,6 @@ export default function Navbar() {
   const links = [
     { href: '/', label: locales[locale].home },
     { href: '/contact', label: locales[locale].contact }
-    // { href: '/projects', label: 'Projects' }
   ];
 
   return (
