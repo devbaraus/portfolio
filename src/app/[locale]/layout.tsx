@@ -30,6 +30,7 @@ const ogImages = [
 
 export function generateMetadata({ params: { locale } }: PageParams) {
   return {
+    metadataBase: new URL('https://acme.com'),
     title: {
       template: `%s | ${siteName}`,
       default: siteTitle[locale]
