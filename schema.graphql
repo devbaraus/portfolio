@@ -1,670 +1,537 @@
 # This file was generated. Do not edit manually.
 
 schema {
-    query: Query
-    subscription: Subscription
+  query: Query
+  subscription: Subscription
 }
 
 type Query {
-    article(filter: article_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [article!]!
-    article_aggregated(filter: article_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [article_aggregated!]!
-    article_by_id(id: ID!): article
-    experience(filter: experience_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [experience!]!
-    experience_aggregated(filter: experience_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [experience_aggregated!]!
-    experience_by_id(id: ID!): experience
-    main: main
-    main_article(filter: main_article_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_article!]!
-    main_article_aggregated(filter: main_article_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_article_aggregated!]!
-    main_article_by_id(id: ID!): main_article
-    main_experience(filter: main_experience_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_experience!]!
-    main_experience_aggregated(filter: main_experience_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_experience_aggregated!]!
-    main_experience_by_id(id: ID!): main_experience
-    main_project(filter: main_project_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_project!]!
-    main_project_aggregated(filter: main_project_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_project_aggregated!]!
-    main_project_by_id(id: ID!): main_project
-    project(filter: project_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [project!]!
-    project_aggregated(filter: project_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [project_aggregated!]!
-    project_by_id(id: ID!): project
+  article(filter: article_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [article!]!
+  article_aggregated(filter: article_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [article_aggregated!]!
+  article_by_id(id: ID!): article
+  experience(filter: experience_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [experience!]!
+  experience_aggregated(filter: experience_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [experience_aggregated!]!
+  experience_by_id(id: ID!): experience
+  project(filter: project_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [project!]!
+  project_aggregated(filter: project_filter, groupBy: [String], limit: Int, offset: Int, page: Int, search: String, sort: [String]): [project_aggregated!]!
+  project_by_id(id: ID!): project
 }
 
 type Subscription {
-    article_mutated(event: EventEnum): article_mutated
-    directus_activity_mutated(event: EventEnum): directus_activity_mutated
-    directus_dashboards_mutated(event: EventEnum): directus_dashboards_mutated
-    directus_files_mutated(event: EventEnum): directus_files_mutated
-    directus_flows_mutated(event: EventEnum): directus_flows_mutated
-    directus_folders_mutated(event: EventEnum): directus_folders_mutated
-    directus_notifications_mutated(event: EventEnum): directus_notifications_mutated
-    directus_panels_mutated(event: EventEnum): directus_panels_mutated
-    directus_permissions_mutated(event: EventEnum): directus_permissions_mutated
-    directus_presets_mutated(event: EventEnum): directus_presets_mutated
-    directus_roles_mutated(event: EventEnum): directus_roles_mutated
-    directus_settings_mutated(event: EventEnum): directus_settings_mutated
-    directus_shares_mutated(event: EventEnum): directus_shares_mutated
-    directus_translations_mutated(event: EventEnum): directus_translations_mutated
-    directus_users_mutated(event: EventEnum): directus_users_mutated
-    experience_mutated(event: EventEnum): experience_mutated
-    main_article_mutated(event: EventEnum): main_article_mutated
-    main_experience_mutated(event: EventEnum): main_experience_mutated
-    main_mutated(event: EventEnum): main_mutated
-    main_project_mutated(event: EventEnum): main_project_mutated
-    project_mutated(event: EventEnum): project_mutated
+  article_mutated(event: EventEnum): article_mutated
+  directus_activity_mutated(event: EventEnum): directus_activity_mutated
+  directus_dashboards_mutated(event: EventEnum): directus_dashboards_mutated
+  directus_files_mutated(event: EventEnum): directus_files_mutated
+  directus_flows_mutated(event: EventEnum): directus_flows_mutated
+  directus_folders_mutated(event: EventEnum): directus_folders_mutated
+  directus_notifications_mutated(event: EventEnum): directus_notifications_mutated
+  directus_panels_mutated(event: EventEnum): directus_panels_mutated
+  directus_permissions_mutated(event: EventEnum): directus_permissions_mutated
+  directus_presets_mutated(event: EventEnum): directus_presets_mutated
+  directus_roles_mutated(event: EventEnum): directus_roles_mutated
+  directus_settings_mutated(event: EventEnum): directus_settings_mutated
+  directus_shares_mutated(event: EventEnum): directus_shares_mutated
+  directus_translations_mutated(event: EventEnum): directus_translations_mutated
+  directus_users_mutated(event: EventEnum): directus_users_mutated
+  experience_mutated(event: EventEnum): experience_mutated
+  project_mutated(event: EventEnum): project_mutated
 }
 
 type article {
-    content: String
-    cover(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
-    date_created: Date
-    date_created_func: datetime_functions
-    date_updated: Date
-    date_updated_func: datetime_functions
-    id: ID!
-    lead: String
-    published_at: Date
-    published_at_func: date_functions
-    published_on: String
-    status: String
-    tags: [String]
-    title: String
+  content: String
+  cover(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  date_created: Date
+  date_created_func: datetime_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  featured: Boolean
+  id: ID!
+  lead: String
+  published_at: Date
+  published_at_func: date_functions
+  published_on: String
+  status: String
+  tags: [String]
+  title: String
 }
 
 type article_aggregated {
-    count: article_aggregated_count
-    countAll: Int
-    countDistinct: article_aggregated_count
-    group: JSON
+  count: article_aggregated_count
+  countAll: Int
+  countDistinct: article_aggregated_count
+  group: JSON
 }
 
 type article_aggregated_count {
-    content: Int
-    cover: Int
-    date_created: Int
-    date_updated: Int
-    id: Int
-    lead: Int
-    published_at: Int
-    published_on: Int
-    status: Int
-    tags: Int
-    title: Int
+  content: Int
+  cover: Int
+  date_created: Int
+  date_updated: Int
+  featured: Int
+  id: Int
+  lead: Int
+  published_at: Int
+  published_on: Int
+  status: Int
+  tags: Int
+  title: Int
 }
 
 type article_mutated {
-    data: article
-    event: EventEnum
-    key: ID!
+  data: article
+  event: EventEnum
+  key: ID!
 }
 
 type count_functions {
-    count: Int
+  count: Int
 }
 
 type date_functions {
-    day: Int
-    month: Int
-    week: Int
-    weekday: Int
-    year: Int
+  day: Int
+  month: Int
+  week: Int
+  weekday: Int
+  year: Int
 }
 
 type datetime_functions {
-    day: Int
-    hour: Int
-    minute: Int
-    month: Int
-    second: Int
-    week: Int
-    weekday: Int
-    year: Int
+  day: Int
+  hour: Int
+  minute: Int
+  month: Int
+  second: Int
+  week: Int
+  weekday: Int
+  year: Int
 }
 
 type directus_activity {
-    action: String!
-    collection: String!
-    comment: String
-    id: ID!
-    ip: String
-    item: String!
-    origin: String
-    timestamp: Date
-    timestamp_func: datetime_functions
-    user(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
-    user_agent: String
+  action: String!
+  collection: String!
+  comment: String
+  id: ID!
+  ip: String
+  item: String!
+  origin: String
+  timestamp: Date
+  timestamp_func: datetime_functions
+  user(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  user_agent: String
 }
 
 type directus_activity_mutated {
-    data: directus_activity
-    event: EventEnum
-    key: ID!
+  data: directus_activity
+  event: EventEnum
+  key: ID!
 }
 
 type directus_dashboards {
-    color: String
-    date_created: Date
-    date_created_func: datetime_functions
-    icon: String
-    id: ID!
-    name: String!
-    note: String
-    panels(filter: directus_panels_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_panels]
-    panels_func: count_functions
-    user_created(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  color: String
+  date_created: Date
+  date_created_func: datetime_functions
+  icon: String
+  id: ID!
+  name: String!
+  note: String
+  panels(filter: directus_panels_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_panels]
+  panels_func: count_functions
+  user_created(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
 }
 
 type directus_dashboards_mutated {
-    data: directus_dashboards
-    event: EventEnum
-    key: ID!
+  data: directus_dashboards
+  event: EventEnum
+  key: ID!
 }
 
 type directus_files {
-    charset: String
-    description: String
-    duration: Int
-    embed: String
-    filename_disk: String
-    filename_download: String!
-    filesize: GraphQLBigInt
-    folder(filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_folders
-    height: Int
-    id: ID!
-    location: String
-    metadata: JSON
-    metadata_func: count_functions
-    modified_by(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
-    modified_on: Date
-    modified_on_func: datetime_functions
-    storage: String!
-    tags: JSON
-    tags_func: count_functions
-    title: String
-    type: String
-    uploaded_by(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
-    uploaded_on: Date
-    uploaded_on_func: datetime_functions
-    width: Int
+  charset: String
+  description: String
+  duration: Int
+  embed: String
+  filename_disk: String
+  filename_download: String!
+  filesize: GraphQLBigInt
+  folder(filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_folders
+  height: Int
+  id: ID!
+  location: String
+  metadata: JSON
+  metadata_func: count_functions
+  modified_by(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  modified_on: Date
+  modified_on_func: datetime_functions
+  storage: String!
+  tags: JSON
+  tags_func: count_functions
+  title: String
+  type: String
+  uploaded_by(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  uploaded_on: Date
+  uploaded_on_func: datetime_functions
+  width: Int
 }
 
 type directus_files_mutated {
-    data: directus_files
-    event: EventEnum
-    key: ID!
+  data: directus_files
+  event: EventEnum
+  key: ID!
 }
 
 type directus_flows {
-    color: String
-    icon: String
-    id: ID!
-    name: String!
-    options: JSON
-    options_func: count_functions
-    status: String
-    trigger: String
+  color: String
+  icon: String
+  id: ID!
+  name: String!
+  options: JSON
+  options_func: count_functions
+  status: String
+  trigger: String
 }
 
 type directus_flows_mutated {
-    data: directus_flows
-    event: EventEnum
-    key: ID!
+  data: directus_flows
+  event: EventEnum
+  key: ID!
 }
 
 type directus_folders {
-    id: ID!
-    name: String!
-    parent(filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_folders
+  id: ID!
+  name: String!
+  parent(filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_folders
 }
 
 type directus_folders_mutated {
-    data: directus_folders
-    event: EventEnum
-    key: ID!
+  data: directus_folders
+  event: EventEnum
+  key: ID!
 }
 
 type directus_notifications {
-    collection: String
-    id: ID!
-    item: String
-    message: String
-    recipient(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
-    sender(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
-    status: String
-    subject: String!
-    timestamp: Date
-    timestamp_func: datetime_functions
+  collection: String
+  id: ID!
+  item: String
+  message: String
+  recipient(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  sender(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  status: String
+  subject: String!
+  timestamp: Date
+  timestamp_func: datetime_functions
 }
 
 type directus_notifications_mutated {
-    data: directus_notifications
-    event: EventEnum
-    key: ID!
+  data: directus_notifications
+  event: EventEnum
+  key: ID!
 }
 
 type directus_panels {
-    color: String
-    dashboard(filter: directus_dashboards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_dashboards
-    date_created: Date
-    date_created_func: datetime_functions
-    height: Int!
-    icon: String
-    id: ID!
-    name: String
-    note: String
-    options: JSON
-    options_func: count_functions
-    position_x: Int!
-    position_y: Int!
-    show_header: Boolean!
-    type: String!
-    user_created(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
-    width: Int!
+  color: String
+  dashboard(filter: directus_dashboards_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_dashboards
+  date_created: Date
+  date_created_func: datetime_functions
+  height: Int!
+  icon: String
+  id: ID!
+  name: String
+  note: String
+  options: JSON
+  options_func: count_functions
+  position_x: Int!
+  position_y: Int!
+  show_header: Boolean!
+  type: String!
+  user_created(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  width: Int!
 }
 
 type directus_panels_mutated {
-    data: directus_panels
-    event: EventEnum
-    key: ID!
+  data: directus_panels
+  event: EventEnum
+  key: ID!
 }
 
 type directus_permissions {
-    action: String!
-    collection: String!
-    fields: [String]
-    id: ID!
-    permissions: JSON
-    permissions_func: count_functions
-    presets: JSON
-    presets_func: count_functions
-    role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
-    validation: JSON
-    validation_func: count_functions
+  action: String!
+  collection: String!
+  fields: [String]
+  id: ID!
+  permissions: JSON
+  permissions_func: count_functions
+  presets: JSON
+  presets_func: count_functions
+  role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
+  validation: JSON
+  validation_func: count_functions
 }
 
 type directus_permissions_mutated {
-    data: directus_permissions
-    event: EventEnum
-    key: ID!
+  data: directus_permissions
+  event: EventEnum
+  key: ID!
 }
 
 type directus_presets {
-    bookmark: String
-    collection: String
-    color: String
-    filter: JSON
-    filter_func: count_functions
-    icon: String
-    id: ID!
-    layout: String
-    layout_options: JSON
-    layout_options_func: count_functions
-    layout_query: JSON
-    layout_query_func: count_functions
-    refresh_interval: Int
-    role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
-    search: String
-    user(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  bookmark: String
+  collection: String
+  color: String
+  filter: JSON
+  filter_func: count_functions
+  icon: String
+  id: ID!
+  layout: String
+  layout_options: JSON
+  layout_options_func: count_functions
+  layout_query: JSON
+  layout_query_func: count_functions
+  refresh_interval: Int
+  role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
+  search: String
+  user(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
 }
 
 type directus_presets_mutated {
-    data: directus_presets
-    event: EventEnum
-    key: ID!
+  data: directus_presets
+  event: EventEnum
+  key: ID!
 }
 
 type directus_roles {
-    admin_access: Boolean!
-    app_access: Boolean
-    description: String
-    enforce_tfa: Boolean!
-    icon: String
-    id: ID!
-    ip_access: [String]
-    name: String!
-    users(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_users]
-    users_func: count_functions
+  admin_access: Boolean!
+  app_access: Boolean
+  description: String
+  enforce_tfa: Boolean!
+  icon: String
+  id: ID!
+  ip_access: [String]
+  name: String!
+  users(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [directus_users]
+  users_func: count_functions
 }
 
 type directus_roles_mutated {
-    data: directus_roles
-    event: EventEnum
-    key: ID!
+  data: directus_roles
+  event: EventEnum
+  key: ID!
 }
 
 type directus_settings {
-    auth_login_attempts: Int
-    auth_password_policy: String
-    basemaps: JSON
-    basemaps_func: count_functions
-    custom_aspect_ratios: JSON
-    custom_aspect_ratios_func: count_functions
-    custom_css: String
-    default_language: String
-    id: ID!
-    mapbox_key: String
-    module_bar: JSON
-    module_bar_func: count_functions
-    "$t:field_options.directus_settings.project_color_note"
-    project_color: String
-    project_descriptor: String
-    project_logo(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
-    project_name: String
-    project_url: String
-    public_background(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
-    public_foreground(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
-    public_note: String
-    storage_asset_presets: JSON
-    storage_asset_presets_func: count_functions
-    storage_asset_transform: String
-    storage_default_folder(filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_folders
+  auth_login_attempts: Int
+  auth_password_policy: String
+  basemaps: JSON
+  basemaps_func: count_functions
+  custom_aspect_ratios: JSON
+  custom_aspect_ratios_func: count_functions
+  custom_css: String
+  default_language: String
+  id: ID!
+  mapbox_key: String
+  module_bar: JSON
+  module_bar_func: count_functions
+  "$t:field_options.directus_settings.project_color_note"
+  project_color: String
+  project_descriptor: String
+  project_logo(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  project_name: String
+  project_url: String
+  public_background(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  public_foreground(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  public_note: String
+  storage_asset_presets: JSON
+  storage_asset_presets_func: count_functions
+  storage_asset_transform: String
+  storage_default_folder(filter: directus_folders_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_folders
 }
 
 type directus_settings_mutated {
-    data: directus_settings
-    event: EventEnum
-    key: ID!
+  data: directus_settings
+  event: EventEnum
+  key: ID!
 }
 
 type directus_shares {
-    collection: String!
-    date_created: Date
-    date_created_func: datetime_functions
-    "$t:shared_leave_blank_for_unlimited"
-    date_end: Date
-    date_end_func: datetime_functions
-    "$t:shared_leave_blank_for_unlimited"
-    date_start: Date
-    date_start_func: datetime_functions
-    id: ID!
-    item: String!
-    "$t:shared_leave_blank_for_unlimited"
-    max_uses: Int
-    name: String
-    "$t:shared_leave_blank_for_passwordless_access"
-    password: Hash
-    role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
-    times_used: Int
-    user_created(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
+  collection: String!
+  date_created: Date
+  date_created_func: datetime_functions
+  "$t:shared_leave_blank_for_unlimited"
+  date_end: Date
+  date_end_func: datetime_functions
+  "$t:shared_leave_blank_for_unlimited"
+  date_start: Date
+  date_start_func: datetime_functions
+  id: ID!
+  item: String!
+  "$t:shared_leave_blank_for_unlimited"
+  max_uses: Int
+  name: String
+  "$t:shared_leave_blank_for_passwordless_access"
+  password: Hash
+  role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
+  times_used: Int
+  user_created(filter: directus_users_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_users
 }
 
 type directus_shares_mutated {
-    data: directus_shares
-    event: EventEnum
-    key: ID!
+  data: directus_shares
+  event: EventEnum
+  key: ID!
 }
 
 type directus_translations {
-    id: ID!
-    key: String!
-    language: String!
-    value: String!
+  id: ID!
+  key: String!
+  language: String!
+  value: String!
 }
 
 type directus_translations_mutated {
-    data: directus_translations
-    event: EventEnum
-    key: ID!
+  data: directus_translations
+  event: EventEnum
+  key: ID!
 }
 
 type directus_users {
-    auth_data: JSON
-    auth_data_func: count_functions
-    avatar(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
-    description: String
-    email: String
-    email_notifications: Boolean
-    external_identifier: String
-    first_name: String
-    id: ID!
-    language: String
-    last_access: Date
-    last_access_func: datetime_functions
-    last_name: String
-    last_page: String
-    location: String
-    password: Hash
-    provider: String
-    role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
-    status: String
-    tags: JSON
-    tags_func: count_functions
-    tfa_secret: Hash
-    theme: String
-    title: String
-    token: Hash
+  auth_data: JSON
+  auth_data_func: count_functions
+  avatar(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  description: String
+  email: String
+  email_notifications: Boolean
+  external_identifier: String
+  first_name: String
+  id: ID!
+  language: String
+  last_access: Date
+  last_access_func: datetime_functions
+  last_name: String
+  last_page: String
+  location: String
+  password: Hash
+  provider: String
+  role(filter: directus_roles_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_roles
+  status: String
+  tags: JSON
+  tags_func: count_functions
+  tfa_secret: Hash
+  theme: String
+  title: String
+  token: Hash
 }
 
 type directus_users_mutated {
-    data: directus_users
-    event: EventEnum
-    key: ID!
+  data: directus_users
+  event: EventEnum
+  key: ID!
 }
 
 type experience {
-    date_created: Date
-    date_created_func: datetime_functions
-    date_finished: Date
-    date_finished_func: date_functions
-    date_started: Date
-    date_started_func: date_functions
-    date_updated: Date
-    date_updated_func: datetime_functions
-    description: String
-    id: ID!
-    links: JSON
-    links_func: count_functions
-    published_on: String
-    role: String
-    status: String
-    tags: [String]
-    title: String
+  date_created: Date
+  date_created_func: datetime_functions
+  date_finished: Date
+  date_finished_func: date_functions
+  date_started: Date
+  date_started_func: date_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  description: String
+  featured: Boolean
+  id: ID!
+  links: JSON
+  links_func: count_functions
+  published_on: String
+  role: String
+  status: String
+  tags: [String]
+  title: String
 }
 
 type experience_aggregated {
-    count: experience_aggregated_count
-    countAll: Int
-    countDistinct: experience_aggregated_count
-    group: JSON
+  count: experience_aggregated_count
+  countAll: Int
+  countDistinct: experience_aggregated_count
+  group: JSON
 }
 
 type experience_aggregated_count {
-    date_created: Int
-    date_finished: Int
-    date_started: Int
-    date_updated: Int
-    description: Int
-    id: Int
-    links: Int
-    published_on: Int
-    role: Int
-    status: Int
-    tags: Int
-    title: Int
+  date_created: Int
+  date_finished: Int
+  date_started: Int
+  date_updated: Int
+  description: Int
+  featured: Int
+  id: Int
+  links: Int
+  published_on: Int
+  role: Int
+  status: Int
+  tags: Int
+  title: Int
 }
 
 type experience_mutated {
-    data: experience
-    event: EventEnum
-    key: ID!
-}
-
-type main {
-    about: String
-    featured_articles(filter: main_article_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_article]
-    featured_articles_func: count_functions
-    featured_experiences(filter: main_experience_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_experience]
-    featured_experiences_func: count_functions
-    featured_projects(filter: main_project_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): [main_project]
-    featured_projects_func: count_functions
-    id: ID!
-}
-
-type main_article {
-    article_id(filter: article_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): article
-    id: ID!
-    main_id(filter: main_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): main
-}
-
-type main_article_aggregated {
-    avg: main_article_aggregated_fields
-    avgDistinct: main_article_aggregated_fields
-    count: main_article_aggregated_count
-    countAll: Int
-    countDistinct: main_article_aggregated_count
-    group: JSON
-    max: main_article_aggregated_fields
-    min: main_article_aggregated_fields
-    sum: main_article_aggregated_fields
-    sumDistinct: main_article_aggregated_fields
-}
-
-type main_article_aggregated_count {
-    article_id: Int
-    id: Int
-    main_id: Int
-}
-
-type main_article_aggregated_fields {
-    id: Float
-    main_id: Float
-}
-
-type main_article_mutated {
-    data: main_article
-    event: EventEnum
-    key: ID!
-}
-
-type main_experience {
-    experience_id(filter: experience_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): experience
-    id: ID!
-    main_id(filter: main_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): main
-}
-
-type main_experience_aggregated {
-    avg: main_experience_aggregated_fields
-    avgDistinct: main_experience_aggregated_fields
-    count: main_experience_aggregated_count
-    countAll: Int
-    countDistinct: main_experience_aggregated_count
-    group: JSON
-    max: main_experience_aggregated_fields
-    min: main_experience_aggregated_fields
-    sum: main_experience_aggregated_fields
-    sumDistinct: main_experience_aggregated_fields
-}
-
-type main_experience_aggregated_count {
-    experience_id: Int
-    id: Int
-    main_id: Int
-}
-
-type main_experience_aggregated_fields {
-    id: Float
-    main_id: Float
-}
-
-type main_experience_mutated {
-    data: main_experience
-    event: EventEnum
-    key: ID!
-}
-
-type main_mutated {
-    data: main
-    event: EventEnum
-    key: ID!
-}
-
-type main_project {
-    id: ID!
-    main_id(filter: main_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): main
-    project_id(filter: project_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): project
-}
-
-type main_project_aggregated {
-    avg: main_project_aggregated_fields
-    avgDistinct: main_project_aggregated_fields
-    count: main_project_aggregated_count
-    countAll: Int
-    countDistinct: main_project_aggregated_count
-    group: JSON
-    max: main_project_aggregated_fields
-    min: main_project_aggregated_fields
-    sum: main_project_aggregated_fields
-    sumDistinct: main_project_aggregated_fields
-}
-
-type main_project_aggregated_count {
-    id: Int
-    main_id: Int
-    project_id: Int
-}
-
-type main_project_aggregated_fields {
-    id: Float
-    main_id: Float
-}
-
-type main_project_mutated {
-    data: main_project
-    event: EventEnum
-    key: ID!
+  data: experience
+  event: EventEnum
+  key: ID!
 }
 
 type project {
-    cover(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
-    date_created: Date
-    date_created_func: datetime_functions
-    date_finished: Date
-    date_finished_func: date_functions
-    date_started: Date
-    date_started_func: date_functions
-    date_updated: Date
-    date_updated_func: datetime_functions
-    description: String
-    id: ID!
-    links: JSON
-    links_func: count_functions
-    published_on: String
-    status: String
-    tags: [String]
-    title: String
-    type: String
+  cover(filter: directus_files_filter, limit: Int, offset: Int, page: Int, search: String, sort: [String]): directus_files
+  date_created: Date
+  date_created_func: datetime_functions
+  date_finished: Date
+  date_finished_func: date_functions
+  date_started: Date
+  date_started_func: date_functions
+  date_updated: Date
+  date_updated_func: datetime_functions
+  description: String
+  featured: Boolean
+  id: ID!
+  links: JSON
+  links_func: count_functions
+  published_on: String
+  status: String
+  tags: [String]
+  title: String
+  type: String
 }
 
 type project_aggregated {
-    count: project_aggregated_count
-    countAll: Int
-    countDistinct: project_aggregated_count
-    group: JSON
+  count: project_aggregated_count
+  countAll: Int
+  countDistinct: project_aggregated_count
+  group: JSON
 }
 
 type project_aggregated_count {
-    cover: Int
-    date_created: Int
-    date_finished: Int
-    date_started: Int
-    date_updated: Int
-    description: Int
-    id: Int
-    links: Int
-    published_on: Int
-    status: Int
-    tags: Int
-    title: Int
-    type: Int
+  cover: Int
+  date_created: Int
+  date_finished: Int
+  date_started: Int
+  date_updated: Int
+  description: Int
+  featured: Int
+  id: Int
+  links: Int
+  published_on: Int
+  status: Int
+  tags: Int
+  title: Int
+  type: Int
 }
 
 type project_mutated {
-    data: project
-    event: EventEnum
-    key: ID!
+  data: project
+  event: EventEnum
+  key: ID!
 }
 
 enum EventEnum {
-    create
-    delete
-    update
+  create
+  delete
+  update
 }
 
 "ISO8601 Date values"
@@ -683,311 +550,277 @@ scalar Hash
 scalar JSON
 
 input article_filter {
-    _and: [article_filter]
-    _or: [article_filter]
-    content: string_filter_operators
-    cover: directus_files_filter
-    date_created: date_filter_operators
-    date_created_func: datetime_function_filter_operators
-    date_updated: date_filter_operators
-    date_updated_func: datetime_function_filter_operators
-    id: string_filter_operators
-    lead: string_filter_operators
-    published_at: date_filter_operators
-    published_at_func: date_function_filter_operators
-    published_on: string_filter_operators
-    status: string_filter_operators
-    tags: string_filter_operators
-    title: string_filter_operators
+  _and: [article_filter]
+  _or: [article_filter]
+  content: string_filter_operators
+  cover: directus_files_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  featured: boolean_filter_operators
+  id: string_filter_operators
+  lead: string_filter_operators
+  published_at: date_filter_operators
+  published_at_func: date_function_filter_operators
+  published_on: string_filter_operators
+  status: string_filter_operators
+  tags: string_filter_operators
+  title: string_filter_operators
 }
 
 input boolean_filter_operators {
-    _eq: Boolean
-    _neq: Boolean
-    _nnull: Boolean
-    _null: Boolean
+  _eq: Boolean
+  _neq: Boolean
+  _nnull: Boolean
+  _null: Boolean
 }
 
 input count_function_filter_operators {
-    count: number_filter_operators
+  count: number_filter_operators
 }
 
 input date_filter_operators {
-    _between: [GraphQLStringOrFloat]
-    _eq: String
-    _gt: String
-    _gte: String
-    _in: [String]
-    _lt: String
-    _lte: String
-    _nbetween: [GraphQLStringOrFloat]
-    _neq: String
-    _nin: [String]
-    _nnull: Boolean
-    _null: Boolean
+  _between: [GraphQLStringOrFloat]
+  _eq: String
+  _gt: String
+  _gte: String
+  _in: [String]
+  _lt: String
+  _lte: String
+  _nbetween: [GraphQLStringOrFloat]
+  _neq: String
+  _nin: [String]
+  _nnull: Boolean
+  _null: Boolean
 }
 
 input date_function_filter_operators {
-    day: number_filter_operators
-    month: number_filter_operators
-    week: number_filter_operators
-    weekday: number_filter_operators
-    year: number_filter_operators
+  day: number_filter_operators
+  month: number_filter_operators
+  week: number_filter_operators
+  weekday: number_filter_operators
+  year: number_filter_operators
 }
 
 input datetime_function_filter_operators {
-    day: number_filter_operators
-    hour: number_filter_operators
-    minute: number_filter_operators
-    month: number_filter_operators
-    second: number_filter_operators
-    week: number_filter_operators
-    weekday: number_filter_operators
-    year: number_filter_operators
+  day: number_filter_operators
+  hour: number_filter_operators
+  minute: number_filter_operators
+  month: number_filter_operators
+  second: number_filter_operators
+  week: number_filter_operators
+  weekday: number_filter_operators
+  year: number_filter_operators
 }
 
 input directus_dashboards_filter {
-    _and: [directus_dashboards_filter]
-    _or: [directus_dashboards_filter]
-    color: string_filter_operators
-    date_created: date_filter_operators
-    date_created_func: datetime_function_filter_operators
-    icon: string_filter_operators
-    id: string_filter_operators
-    name: string_filter_operators
-    note: string_filter_operators
-    panels: directus_panels_filter
-    panels_func: count_function_filter_operators
-    user_created: directus_users_filter
+  _and: [directus_dashboards_filter]
+  _or: [directus_dashboards_filter]
+  color: string_filter_operators
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  icon: string_filter_operators
+  id: string_filter_operators
+  name: string_filter_operators
+  note: string_filter_operators
+  panels: directus_panels_filter
+  panels_func: count_function_filter_operators
+  user_created: directus_users_filter
 }
 
 input directus_files_filter {
-    _and: [directus_files_filter]
-    _or: [directus_files_filter]
-    charset: string_filter_operators
-    description: string_filter_operators
-    duration: number_filter_operators
-    embed: string_filter_operators
-    filename_disk: string_filter_operators
-    filename_download: string_filter_operators
-    filesize: number_filter_operators
-    folder: directus_folders_filter
-    height: number_filter_operators
-    id: string_filter_operators
-    location: string_filter_operators
-    metadata: string_filter_operators
-    metadata_func: count_function_filter_operators
-    modified_by: directus_users_filter
-    modified_on: date_filter_operators
-    modified_on_func: datetime_function_filter_operators
-    storage: string_filter_operators
-    tags: string_filter_operators
-    tags_func: count_function_filter_operators
-    title: string_filter_operators
-    type: string_filter_operators
-    uploaded_by: directus_users_filter
-    uploaded_on: date_filter_operators
-    uploaded_on_func: datetime_function_filter_operators
-    width: number_filter_operators
+  _and: [directus_files_filter]
+  _or: [directus_files_filter]
+  charset: string_filter_operators
+  description: string_filter_operators
+  duration: number_filter_operators
+  embed: string_filter_operators
+  filename_disk: string_filter_operators
+  filename_download: string_filter_operators
+  filesize: number_filter_operators
+  folder: directus_folders_filter
+  height: number_filter_operators
+  id: string_filter_operators
+  location: string_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  modified_by: directus_users_filter
+  modified_on: date_filter_operators
+  modified_on_func: datetime_function_filter_operators
+  storage: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  title: string_filter_operators
+  type: string_filter_operators
+  uploaded_by: directus_users_filter
+  uploaded_on: date_filter_operators
+  uploaded_on_func: datetime_function_filter_operators
+  width: number_filter_operators
 }
 
 input directus_folders_filter {
-    _and: [directus_folders_filter]
-    _or: [directus_folders_filter]
-    id: string_filter_operators
-    name: string_filter_operators
-    parent: directus_folders_filter
+  _and: [directus_folders_filter]
+  _or: [directus_folders_filter]
+  id: string_filter_operators
+  name: string_filter_operators
+  parent: directus_folders_filter
 }
 
 input directus_panels_filter {
-    _and: [directus_panels_filter]
-    _or: [directus_panels_filter]
-    color: string_filter_operators
-    dashboard: directus_dashboards_filter
-    date_created: date_filter_operators
-    date_created_func: datetime_function_filter_operators
-    height: number_filter_operators
-    icon: string_filter_operators
-    id: string_filter_operators
-    name: string_filter_operators
-    note: string_filter_operators
-    options: string_filter_operators
-    options_func: count_function_filter_operators
-    position_x: number_filter_operators
-    position_y: number_filter_operators
-    show_header: boolean_filter_operators
-    type: string_filter_operators
-    user_created: directus_users_filter
-    width: number_filter_operators
+  _and: [directus_panels_filter]
+  _or: [directus_panels_filter]
+  color: string_filter_operators
+  dashboard: directus_dashboards_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  height: number_filter_operators
+  icon: string_filter_operators
+  id: string_filter_operators
+  name: string_filter_operators
+  note: string_filter_operators
+  options: string_filter_operators
+  options_func: count_function_filter_operators
+  position_x: number_filter_operators
+  position_y: number_filter_operators
+  show_header: boolean_filter_operators
+  type: string_filter_operators
+  user_created: directus_users_filter
+  width: number_filter_operators
 }
 
 input directus_roles_filter {
-    _and: [directus_roles_filter]
-    _or: [directus_roles_filter]
-    admin_access: boolean_filter_operators
-    app_access: boolean_filter_operators
-    description: string_filter_operators
-    enforce_tfa: boolean_filter_operators
-    icon: string_filter_operators
-    id: string_filter_operators
-    ip_access: string_filter_operators
-    name: string_filter_operators
-    users: directus_users_filter
-    users_func: count_function_filter_operators
+  _and: [directus_roles_filter]
+  _or: [directus_roles_filter]
+  admin_access: boolean_filter_operators
+  app_access: boolean_filter_operators
+  description: string_filter_operators
+  enforce_tfa: boolean_filter_operators
+  icon: string_filter_operators
+  id: string_filter_operators
+  ip_access: string_filter_operators
+  name: string_filter_operators
+  users: directus_users_filter
+  users_func: count_function_filter_operators
 }
 
 input directus_users_filter {
-    _and: [directus_users_filter]
-    _or: [directus_users_filter]
-    auth_data: string_filter_operators
-    auth_data_func: count_function_filter_operators
-    avatar: directus_files_filter
-    description: string_filter_operators
-    email: string_filter_operators
-    email_notifications: boolean_filter_operators
-    external_identifier: string_filter_operators
-    first_name: string_filter_operators
-    id: string_filter_operators
-    language: string_filter_operators
-    last_access: date_filter_operators
-    last_access_func: datetime_function_filter_operators
-    last_name: string_filter_operators
-    last_page: string_filter_operators
-    location: string_filter_operators
-    password: hash_filter_operators
-    provider: string_filter_operators
-    role: directus_roles_filter
-    status: string_filter_operators
-    tags: string_filter_operators
-    tags_func: count_function_filter_operators
-    tfa_secret: hash_filter_operators
-    theme: string_filter_operators
-    title: string_filter_operators
-    token: hash_filter_operators
+  _and: [directus_users_filter]
+  _or: [directus_users_filter]
+  auth_data: string_filter_operators
+  auth_data_func: count_function_filter_operators
+  avatar: directus_files_filter
+  description: string_filter_operators
+  email: string_filter_operators
+  email_notifications: boolean_filter_operators
+  external_identifier: string_filter_operators
+  first_name: string_filter_operators
+  id: string_filter_operators
+  language: string_filter_operators
+  last_access: date_filter_operators
+  last_access_func: datetime_function_filter_operators
+  last_name: string_filter_operators
+  last_page: string_filter_operators
+  location: string_filter_operators
+  password: hash_filter_operators
+  provider: string_filter_operators
+  role: directus_roles_filter
+  status: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  tfa_secret: hash_filter_operators
+  theme: string_filter_operators
+  title: string_filter_operators
+  token: hash_filter_operators
 }
 
 input experience_filter {
-    _and: [experience_filter]
-    _or: [experience_filter]
-    date_created: date_filter_operators
-    date_created_func: datetime_function_filter_operators
-    date_finished: date_filter_operators
-    date_finished_func: date_function_filter_operators
-    date_started: date_filter_operators
-    date_started_func: date_function_filter_operators
-    date_updated: date_filter_operators
-    date_updated_func: datetime_function_filter_operators
-    description: string_filter_operators
-    id: string_filter_operators
-    links: string_filter_operators
-    links_func: count_function_filter_operators
-    published_on: string_filter_operators
-    role: string_filter_operators
-    status: string_filter_operators
-    tags: string_filter_operators
-    title: string_filter_operators
+  _and: [experience_filter]
+  _or: [experience_filter]
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_finished: date_filter_operators
+  date_finished_func: date_function_filter_operators
+  date_started: date_filter_operators
+  date_started_func: date_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  description: string_filter_operators
+  featured: boolean_filter_operators
+  id: string_filter_operators
+  links: string_filter_operators
+  links_func: count_function_filter_operators
+  published_on: string_filter_operators
+  role: string_filter_operators
+  status: string_filter_operators
+  tags: string_filter_operators
+  title: string_filter_operators
 }
 
 input hash_filter_operators {
-    _empty: Boolean
-    _nempty: Boolean
-    _nnull: Boolean
-    _null: Boolean
-}
-
-input main_article_filter {
-    _and: [main_article_filter]
-    _or: [main_article_filter]
-    article_id: article_filter
-    id: number_filter_operators
-    main_id: main_filter
-}
-
-input main_experience_filter {
-    _and: [main_experience_filter]
-    _or: [main_experience_filter]
-    experience_id: experience_filter
-    id: number_filter_operators
-    main_id: main_filter
-}
-
-input main_filter {
-    _and: [main_filter]
-    _or: [main_filter]
-    about: string_filter_operators
-    featured_articles: main_article_filter
-    featured_articles_func: count_function_filter_operators
-    featured_experiences: main_experience_filter
-    featured_experiences_func: count_function_filter_operators
-    featured_projects: main_project_filter
-    featured_projects_func: count_function_filter_operators
-    id: number_filter_operators
-}
-
-input main_project_filter {
-    _and: [main_project_filter]
-    _or: [main_project_filter]
-    id: number_filter_operators
-    main_id: main_filter
-    project_id: project_filter
+  _empty: Boolean
+  _nempty: Boolean
+  _nnull: Boolean
+  _null: Boolean
 }
 
 input number_filter_operators {
-    _between: [GraphQLStringOrFloat]
-    _eq: GraphQLStringOrFloat
-    _gt: GraphQLStringOrFloat
-    _gte: GraphQLStringOrFloat
-    _in: [GraphQLStringOrFloat]
-    _lt: GraphQLStringOrFloat
-    _lte: GraphQLStringOrFloat
-    _nbetween: [GraphQLStringOrFloat]
-    _neq: GraphQLStringOrFloat
-    _nin: [GraphQLStringOrFloat]
-    _nnull: Boolean
-    _null: Boolean
+  _between: [GraphQLStringOrFloat]
+  _eq: GraphQLStringOrFloat
+  _gt: GraphQLStringOrFloat
+  _gte: GraphQLStringOrFloat
+  _in: [GraphQLStringOrFloat]
+  _lt: GraphQLStringOrFloat
+  _lte: GraphQLStringOrFloat
+  _nbetween: [GraphQLStringOrFloat]
+  _neq: GraphQLStringOrFloat
+  _nin: [GraphQLStringOrFloat]
+  _nnull: Boolean
+  _null: Boolean
 }
 
 input project_filter {
-    _and: [project_filter]
-    _or: [project_filter]
-    cover: directus_files_filter
-    date_created: date_filter_operators
-    date_created_func: datetime_function_filter_operators
-    date_finished: date_filter_operators
-    date_finished_func: date_function_filter_operators
-    date_started: date_filter_operators
-    date_started_func: date_function_filter_operators
-    date_updated: date_filter_operators
-    date_updated_func: datetime_function_filter_operators
-    description: string_filter_operators
-    id: string_filter_operators
-    links: string_filter_operators
-    links_func: count_function_filter_operators
-    published_on: string_filter_operators
-    status: string_filter_operators
-    tags: string_filter_operators
-    title: string_filter_operators
-    type: string_filter_operators
+  _and: [project_filter]
+  _or: [project_filter]
+  cover: directus_files_filter
+  date_created: date_filter_operators
+  date_created_func: datetime_function_filter_operators
+  date_finished: date_filter_operators
+  date_finished_func: date_function_filter_operators
+  date_started: date_filter_operators
+  date_started_func: date_function_filter_operators
+  date_updated: date_filter_operators
+  date_updated_func: datetime_function_filter_operators
+  description: string_filter_operators
+  featured: boolean_filter_operators
+  id: string_filter_operators
+  links: string_filter_operators
+  links_func: count_function_filter_operators
+  published_on: string_filter_operators
+  status: string_filter_operators
+  tags: string_filter_operators
+  title: string_filter_operators
+  type: string_filter_operators
 }
 
 input string_filter_operators {
-    _contains: String
-    _empty: Boolean
-    _ends_with: String
-    _eq: String
-    _icontains: String
-    _iends_with: String
-    _in: [String]
-    _istarts_with: String
-    _ncontains: String
-    _nempty: Boolean
-    _nends_with: String
-    _neq: String
-    _niends_with: String
-    _nin: [String]
-    _nistarts_with: String
-    _nnull: Boolean
-    _nstarts_with: String
-    _null: Boolean
-    _starts_with: String
+  _contains: String
+  _empty: Boolean
+  _ends_with: String
+  _eq: String
+  _icontains: String
+  _iends_with: String
+  _in: [String]
+  _istarts_with: String
+  _ncontains: String
+  _nempty: Boolean
+  _nends_with: String
+  _neq: String
+  _niends_with: String
+  _nin: [String]
+  _nistarts_with: String
+  _nnull: Boolean
+  _nstarts_with: String
+  _null: Boolean
+  _starts_with: String
 }

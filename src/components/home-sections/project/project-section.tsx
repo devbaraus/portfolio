@@ -11,7 +11,7 @@ type Props = {};
 
 const query = gql`
   query QueryProjectSection {
-    project(filter: { status: { _eq: "published" } }, limit: 4) {
+    project(filter: { status: { _eq: "published" }, featured: { _eq: true } }, limit: 4) {
       id
       title
       description

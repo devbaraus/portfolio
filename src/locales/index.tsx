@@ -83,21 +83,14 @@ const en = {
       >
         shadcn/ui
       </Link>
-      , deployed at{' '}
+      and deployed at{' '}
       <Link
         href='https://vercel.com/'
         target='_blank'
       >
         Vercel
       </Link>
-      . All text is set in the{' '}
-      <Link
-        href='https://rsms.me/inter/'
-        target='_blank'
-      >
-        Inter
-      </Link>{' '}
-      typeface.
+      .
     </>
   )
 };
@@ -185,20 +178,13 @@ const pt = {
       >
         shadcn/ui
       </Link>
-      , implantado na{' '}
+      e implantado na{' '}
       <Link
         href='https://vercel.com/'
         target='_blank'
       >
         Vercel
       </Link>
-      . Todo o texto é utiliza o typeface{' '}
-      <Link
-        href='https://rsms.me/inter/'
-        target='_blank'
-      >
-        Inter
-      </Link>{' '}
       .
     </>
   )
