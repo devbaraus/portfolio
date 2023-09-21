@@ -12,8 +12,9 @@ const en = {
     ),
     subtitle:
       'Focused on crafting clean & user‑friendly experiences, I am passionate about building high‑quality websites.',
-    buttonSecondary: 'Learn more',
-    buttonMain: 'Get in touch'
+    buttonLearnMore: 'Learn more',
+    buttonContact: 'Get in touch',
+    buttonCV: 'Download CV'
   },
   project: {
     title: 'A few selected works',
@@ -113,8 +114,9 @@ const pt = {
     ),
     subtitle:
       'Focado em criar experiências limpas e amigáveis, sou apaixonado por construir sites de alta qualidade.',
-    buttonSecondary: 'Saiba mais',
-    buttonMain: 'Entre em contato'
+    buttonLearnMore: 'Saiba mais',
+    buttonContact: 'Entre em contato',
+    buttonCV: 'Baixar CV'
   },
   project: {
     title: 'Alguns trabalhos selecionados',

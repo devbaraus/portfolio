@@ -52,7 +52,7 @@ export const socialLinks = [
     footer: true
   },
   {
-    label: '@devbaraus',
+    label: 'devbaraus',
     title: 'Instagram',
     href: 'https://instagram.com/devbaraus',
     icon: SiInstagram,
