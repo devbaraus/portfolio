@@ -14,7 +14,7 @@ export default function HeroSection() {
         {locales[locale].hero.title}
       </h1>
       <p className='text-lg'>{locales[locale].hero.subtitle}</p>
-      <div className='md:space-0 space-y-4 md:flex md:gap-4 [&_>_a]:block'>
+      <div className='space-y-4 md:flex md:gap-4 md:space-y-0 [&_>_a]:block'>
         <Link href='/#projects'>
           <Button
             variant='outline'
