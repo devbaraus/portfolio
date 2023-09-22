@@ -32,8 +32,8 @@ export const siteKeywords = 'portfolio, web developer, full stack, freelance';
 export const siteUrl = 'https://www.baraus.dev';
 
 export const siteTitle = {
-  en: `Full Stack Web Developer | ${siteName}`,
-  pt: `Desenvolvedor Web Full Stack | ${siteName}`
+  en: `Full Stack Web Developer • ${siteName}`,
+  pt: `Desenvolvedor Web Full Stack • ${siteName}`
 };
 
 export const socialLinks = [
