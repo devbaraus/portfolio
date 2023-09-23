@@ -1,5 +1,5 @@
 const en = {
-  title: 'Projects',
+  title: 'Projects I worked on',
   description: 'A list of projects I have worked on in my path.',
   table: {
     caption: 'Kind of projects: ',
@@ -19,7 +19,7 @@ const en = {
 };
 
 const pt = {
-  title: 'Projetos',
+  title: 'Projetos em que trabalhei',
   description: 'Uma lista de projetos em que trabalhei em minha trajetória.',
   table: {
     caption: 'Tipos de projetos: ',
