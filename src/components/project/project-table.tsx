@@ -73,7 +73,7 @@ export default async function ProjectTable(props: Props) {
 
   return (
     <Table>
-      <TableCaption>
+      <TableCaption className='text-left'>
         {tableLocale.caption}
         {Object.entries(tableLocale.kinds).map(([key, value]) => (
           <Badge
