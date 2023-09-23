@@ -1,10 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Octokit } from '@octokit/core';
 
-type ResponseData = {
-  message: string;
-};
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Octokit.js
   // https://github.com/octokit/core.js#readme

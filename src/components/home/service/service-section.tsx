@@ -12,7 +12,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import ServiceCard, {
   SerivceCardChildVariant,
   ServiceCardContainerVariant
-} from '@/components/home-sections/service/service-card';
+} from '@/components/home/service/service-card';
 import Section from '@/components/section/section';
 import SectionDescription from '@/components/section/section-description';
 import SectionSubtitle from '@/components/section/section-subtitle';
@@ -26,8 +26,8 @@ export default function ServiceSection(props: Props) {
 
   return (
     <Section
-      parentClassName='bg-foreground text-background'
       id='services'
+      parentClassName='bg-foreground text-background'
     >
       <div className='grid gap-12 md:grid-cols-2 md:gap-8'>
         <div>
@@ -56,8 +56,8 @@ export default function ServiceSection(props: Props) {
                           <Tooltip>
                             <TooltipTrigger className='cursor-default'>
                               <Badge
-                                variant='secondary'
                                 className='aspect-square p-2 '
+                                variant='secondary'
                               >
                                 <span className='sr-only'>{label}</span>
                                 <Icon className='text-4xl' />
@@ -75,16 +75,14 @@ export default function ServiceSection(props: Props) {
           </div>
         </div>
         <motion.div
-          variants={ServiceCardContainerVariant}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0 }}
           className='grid grid-rows-1 gap-8'
+          initial='hidden'
+          variants={ServiceCardContainerVariant}
+          viewport={{ once: true, amount: 0 }}
+          whileInView='visible'
         >
           {serviceCards.map((service, index) => (
             <ServiceCard
-              key={index}
-              variants={SerivceCardChildVariant}
               className={cn(
                 index === 0 && 'top-24',
                 index === 1 && 'top-28',
@@ -92,7 +90,9 @@ export default function ServiceSection(props: Props) {
                 index === 3 && 'top-36',
                 index === 4 && 'top-40'
               )}
+              key={index}
               service={service}
+              variants={SerivceCardChildVariant}
             />
           ))}
         </motion.div>

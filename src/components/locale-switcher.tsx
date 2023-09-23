@@ -23,19 +23,19 @@ export default function LangSwitcher({ className, ...props }: Props) {
   return (
     <div className={cn('flex gap-2 rounded-full bg-muted p-2', className)}>
       <Button
-        size='icon'
-        variant={locale === 'en' ? 'default' : 'secondary'}
         className='h-6 w-6 rounded-full text-xs'
         onClick={() => handleSwitchLocale('en')}
+        size='icon'
+        variant={locale === 'en' ? 'default' : 'secondary'}
       >
         en
       </Button>
 
       <Button
-        size='icon'
-        variant={locale === 'pt' ? 'default' : 'secondary'}
         className='h-6 w-6 rounded-full text-xs'
         onClick={() => handleSwitchLocale('pt')}
+        size='icon'
+        variant={locale === 'pt' ? 'default' : 'secondary'}
       >
         pt
       </Button>

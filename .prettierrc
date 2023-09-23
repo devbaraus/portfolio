@@ -10,14 +10,7 @@
   "singleAttributePerLine": true,
   "trailingComma": "none",
   "plugins": [
-    "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-organize-attributes"
-  ],
-  "attributeGroups": [
-    "^(id|name)$",
-    "^(class|className)$",
-    "$DEFAULT",
-    "^aria-"
+    "@ianvs/prettier-plugin-sort-imports"
   ],
   "importOrder": [
     "^(react/(.*)$)|^(react$)",

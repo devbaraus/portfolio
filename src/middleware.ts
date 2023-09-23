@@ -52,6 +52,8 @@ export const config = {
     // Optional: only run on root (/) URL
     '/',
     '/contact/thank-you',
-    '/contact'
+    '/contact',
+    '/projects',
+    '/about'
   ]
 };

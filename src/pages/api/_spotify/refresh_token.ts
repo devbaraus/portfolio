@@ -1,9 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-type ResponseData = {
-  message: string;
-};
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const refreshToken = process.env.NEXT_PRIVATE_SPOTIFY_REFRESH_TOKEN!;
 

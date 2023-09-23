@@ -6,8 +6,8 @@ type Props = { alt: string } & ImageProps;
 export default function DirectusImage({ alt, ...props }: Props) {
   return (
     <Image
-      loader={directusImageLoader}
       alt={alt}
+      loader={directusImageLoader}
       {...props}
     />
   );

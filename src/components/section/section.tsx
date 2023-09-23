@@ -10,6 +10,7 @@ type Props = {
   title?: string;
   description?: string;
   children?: ReactNode;
+  actionChild?: ReactNode;
   parentClassName?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
@@ -19,6 +20,7 @@ export default function Section({
   description,
   children,
   parentClassName,
+  actionChild,
   className,
   ...props
 }: Props) {
@@ -31,7 +33,11 @@ export default function Section({
         {subtitle ? <SectionSubtitle>{subtitle}</SectionSubtitle> : null}
         {title ? <SectionTitle>{title}</SectionTitle> : null}
         {description ? <SectionDescription>{description}</SectionDescription> : null}
+
         {children}
+        {actionChild ? (
+          <div className='mt-8 flex items-center justify-center'>{actionChild}</div>
+        ) : null}
       </section>
     </div>
   );

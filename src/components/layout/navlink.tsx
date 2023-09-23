@@ -25,13 +25,13 @@ export default function NavLink({
     <Link href={href}>
       <Button
         {...props}
-        variant={variant}
-        onClick={() => action?.()}
         className={cn(
           'group flex items-center rounded p-4 uppercase transition-colors duration-500 ease-in-out',
           isCurrent && 'text-primary',
           className
         )}
+        onClick={() => action?.()}
+        variant={variant}
       >
         {children}
       </Button>

@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react';
 import { HTMLMotionProps, motion, Variants } from 'framer-motion';
 import { IconType } from 'react-icons';
 
@@ -54,8 +53,8 @@ export default function ServiceCard({
 }: Props) {
   return (
     <motion.div
-      variants={variants}
       className={cn('sticky', className)}
+      variants={variants}
       {...props}
     >
       <Card>

@@ -13,10 +13,10 @@ type Props = {} & HTMLAttributes<HTMLHeadingElement>;
 export default function SectionTitle({ children, className, ...props }: Props) {
   return (
     <motion.div
-      variants={TextAnimatedAppearVariant}
       initial='hidden'
-      whileInView='visible'
+      variants={TextAnimatedAppearVariant}
       viewport={{ once: true, amount: 0.5 }}
+      whileInView='visible'
     >
       <h2
         className={cn('text-3xl font-bold uppercase text-primary', className)}

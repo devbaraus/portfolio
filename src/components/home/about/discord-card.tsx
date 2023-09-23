@@ -15,11 +15,11 @@ export default function DiscordCard(props: Props) {
       </CardHeader>
       <CardContent className='space-y-4'>
         <Image
-          src={'https://source.unsplash.com/random/?mockup&1'}
           alt='Muggs Shop'
           className='aspect-square h-full w-full rounded object-cover'
-          width={500}
           height={500}
+          src='https://source.unsplash.com/random/?mockup&1'
+          width={500}
         />
       </CardContent>
       <CardFooter className='justify-between'>

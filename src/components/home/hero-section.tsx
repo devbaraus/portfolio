@@ -17,27 +17,27 @@ export default function HeroSection() {
       <div className='space-y-4 md:flex md:gap-4 md:space-y-0 [&_>_a]:block'>
         <Link href='/#projects'>
           <Button
-            variant='outline'
             className='w-full'
+            variant='outline'
           >
             {locales[locale].hero.buttonLearnMore}
           </Button>
         </Link>
         <Link href='/contact'>
           <Button
-            variant='default'
             className='w-full'
+            variant='default'
           >
             {locales[locale].hero.buttonContact}
           </Button>
         </Link>
         <Link
-          href='/download/cv.pdf'
           download
+          href='/download/cv.pdf'
         >
           <Button
-            variant='secondary'
             className='w-full'
+            variant='secondary'
           >
             {locales[locale].hero.buttonCV}
           </Button>

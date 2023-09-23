@@ -1,9 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-type ResponseData = {
-  message: string;
-};
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const url = new URL('https://accounts.spotify.com/authorize');
 

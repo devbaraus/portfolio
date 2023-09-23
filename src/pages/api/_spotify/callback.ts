@@ -1,9 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { Octokit } from '@octokit/core';
-
-type ResponseData = {
-  message: string;
-};
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const code = req.query.code!;

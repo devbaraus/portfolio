@@ -20,7 +20,8 @@ const en = {
     title: 'A few selected works',
     description:
       'My web projects showcases the work that I have delivered. Have a look into my portfolio, highlighting the diverse range of websites projects for various clients.',
-    subtitle: 'Check it out'
+    subtitle: 'Check it out',
+    action: 'View all projects'
   },
   service: {
     title: 'How Can I Help',
@@ -82,7 +83,7 @@ const en = {
         target='_blank'
       >
         shadcn/ui
-      </Link>
+      </Link>{' '}
       and deployed at{' '}
       <Link
         href='https://vercel.com/'
@@ -115,7 +116,8 @@ const pt = {
     title: 'Alguns trabalhos selecionados',
     description:
       'Meus projetos web mostram o trabalho que entreguei. Dê uma olhada no meu portfólio, destacando a ampla gama de projetos de sites para vários clientes.',
-    subtitle: 'Confira'
+    subtitle: 'Confira',
+    action: 'Ver todos os projetos'
   },
   service: {
     title: 'Como posso ajudar',
@@ -177,7 +179,7 @@ const pt = {
         target='_blank'
       >
         shadcn/ui
-      </Link>
+      </Link>{' '}
       e implantado na{' '}
       <Link
         href='https://vercel.com/'

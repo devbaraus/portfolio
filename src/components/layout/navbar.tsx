@@ -18,18 +18,18 @@ import NavLink from '@/components/layout/navlink';
 import LangSwitcher from '@/components/locale-switcher';
 import IconAnimated from '@/components/motion/icon-animated';
 
-function FloatingButton() {
+const FloatingButton = () => {
   'use client';
 
   const pathname = usePathname();
 
   return (
     <Link
-      href='/contact'
       className={cn(
         'fixed bottom-0 right-0 z-50 m-4 md:hidden',
         pathname === '/contact' && 'hidden'
       )}
+      href='/contact'
     >
       <Button size='icon'>
         <span className='sr-only'>Get in touch</span>
@@ -37,7 +37,7 @@ function FloatingButton() {
       </Button>
     </Link>
   );
-}
+};
 
 export default function Navbar() {
   const locale = useLocale();
@@ -46,7 +46,8 @@ export default function Navbar() {
 
   const links = [
     { href: '/', label: locales[locale].home },
-    { href: '/contact', label: locales[locale].contact }
+    { href: '/contact', label: locales[locale].contact },
+    { href: '/projects', label: locales[locale].projects }
   ];
 
   return (
@@ -55,8 +56,8 @@ export default function Navbar() {
         <nav className='container flex w-full md:gap-4'>
           <div className='flex flex-1 items-center justify-start'>
             <Link
-              href='/'
               className='inline-flex items-center gap-2 text-xl font-bold uppercase'
+              href='/'
             >
               <Logo className='block h-6 text-primary' />
               {siteName}
@@ -74,14 +75,14 @@ export default function Navbar() {
             <LangSwitcher />
             <Separator className='w-8 rotate-90' />
             <NavLink
+              className='text-primary-foreground'
               href='/contact'
               variant='default'
-              className='text-primary-foreground'
             >
               {locales[locale].button}
               <IconAnimated
-                iconVisible={RiArrowRightLine}
                 iconAppear={RiArrowRightLine}
+                iconVisible={RiArrowRightLine}
               />
             </NavLink>
           </div>
@@ -91,12 +92,12 @@ export default function Navbar() {
           </div>
 
           <Sheet
-            open={mobileNavOpen}
             onOpenChange={(open) => setMobileNavOpen(open)}
+            open={mobileNavOpen}
           >
             <SheetTrigger
-              className='md:hidden'
               asChild
+              className='md:hidden'
             >
               <Button
                 size='icon'
@@ -107,26 +108,26 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent
-              side='right'
               className='space-y-4'
+              side='right'
             >
               <menu className='space-y-4'>
                 {links.map(({ href, label }) => (
                   <li key={href}>
                     <NavLink
                       className='justify-start'
-                      onClickCapture={() => setMobileNavOpen(false)}
                       href={href}
+                      onClickCapture={() => setMobileNavOpen(false)}
                     >
                       {label}
                     </NavLink>
                   </li>
                 ))}
                 <NavLink
-                  href='/contact'
-                  variant='default'
                   className='mt-4 justify-start text-primary-foreground'
+                  href='/contact'
                   onClickCapture={() => setMobileNavOpen(false)}
+                  variant='default'
                 >
                   {locales[locale].button}
                 </NavLink>

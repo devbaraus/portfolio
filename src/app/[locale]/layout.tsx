@@ -82,8 +82,8 @@ export default function RootLayout({
             <Toaster />
             {isProduction ? (
               <script
-                defer
                 data-domain='baraus.dev'
+                defer
                 src='https://plausible.lab.baraus.dev/js/script.js'
               />
             ) : null}

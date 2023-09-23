@@ -5,13 +5,12 @@ import { RiPauseFill, RiPlayFill } from 'react-icons/ri';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Slider } from '@/components/ui/slider';
 
 type Props = {
   url: string | null;
 };
 
-export default function SpotifyPlayBadge(props: Props) {
+export default function SpotifyPlayBadge({ url }: Props) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [trackDuration, setTrackDuration] = useState(0);
@@ -27,29 +26,29 @@ export default function SpotifyPlayBadge(props: Props) {
 
   return (
     <>
-      {props.url ? (
+      {url ? (
         <audio
-          ref={audioRef}
-          src={props.url ?? ''}
-          onTimeUpdate={(e) => {
-            setTrackCurrentTime(parseInt(e.currentTarget.currentTime.toString()));
-          }}
           onDurationChange={(e) => {
             setTrackDuration(e.currentTarget.duration);
           }}
           onLoadedData={() => setLoaded(true)}
+          onTimeUpdate={(e) => {
+            setTrackCurrentTime(parseInt(e.currentTarget.currentTime.toString()));
+          }}
+          ref={audioRef}
+          src={url ?? ''}
         />
       ) : null}
 
       <Badge
-        variant='secondary'
         className='w-full space-x-4 py-0 pl-0'
+        variant='secondary'
       >
         <Button
-          size='icon'
           className='h-8 w-12'
           disabled={!loaded}
           onClick={handlePlay}
+          size='icon'
         >
           {audioRef.current?.paused ? <RiPlayFill /> : <RiPauseFill />}
         </Button>

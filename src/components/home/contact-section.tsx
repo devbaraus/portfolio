@@ -28,14 +28,14 @@ export default function ServiceSection(props: Props) {
           <SectionDescription>{locales[locale].contact.description}</SectionDescription>
         </div>
         <Link
-          href='/contact'
           className='self-end md:ml-auto'
+          href='/contact'
         >
           <Button>
             {locales[locale].contact.button}
             <IconAnimated
-              iconVisible={RiArrowRightLine}
               iconAppear={RiArrowRightLine}
+              iconVisible={RiArrowRightLine}
             />
           </Button>
         </Link>
@@ -51,8 +51,8 @@ export default function ServiceSection(props: Props) {
                     'h-12 w-12 rounded bg-secondary text-2xl text-background ',
                     href && 'transition-colors duration-500 group-hover:bg-primary'
                   )}
-                  iconVisible={Icon}
                   iconAppear={Icon}
+                  iconVisible={Icon}
                 />
                 <span
                   className={cn(href && 'transition-colors duration-500 group-hover:text-primary')}
@@ -66,9 +66,9 @@ export default function ServiceSection(props: Props) {
               <li key={label}>
                 {href ? (
                   <Link
+                    className='group flex items-center space-x-4'
                     href={href}
                     target='_blank'
-                    className='group flex items-center space-x-4'
                   >
                     {render()}
                   </Link>

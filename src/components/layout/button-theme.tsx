@@ -25,9 +25,9 @@ export default function ButtonTheme({ className, ...props }: Props) {
     <Button
       {...props}
       className={cn('rounded-full', className)}
-      variant='ghost'
-      size='icon'
       onClick={() => setTheme(oppositeTheme)}
+      size='icon'
+      variant='ghost'
     >
       {oppositeTheme != 'light' ? (
         <RiMoonFill className='text-xl' />

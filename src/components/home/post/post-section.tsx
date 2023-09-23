@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 
 import { fetcherGQL } from '@/lib/utils';
 import { useLocaleServer } from '@/hooks/use-locale-server';
-import PostCard from '@/components/home-sections/post/post-card';
+import PostCard from '@/components/home/post/post-card';
 import Section from '@/components/section/section';
 
 type Props = {};
@@ -34,10 +34,10 @@ export default async function PostSection(props: Props) {
 
   return (
     <Section
-      id='posts'
-      title={locales[locale].post.title}
       description={locales[locale].post.description}
+      id='posts'
       subtitle={locales[locale].post.subtitle}
+      title={locales[locale].post.title}
     >
       <div className='grid gap-12 md:grid-cols-2 md:gap-8 lg:grid-cols-4'>
         {article.map((article) => (

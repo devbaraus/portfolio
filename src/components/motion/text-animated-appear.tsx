@@ -38,8 +38,8 @@ export default function TextAnimatedAppear({ text, ...props }: Props) {
     <>
       {words.map((word, index) => (
         <motion.span
-          variants={ChildVariant}
           key={index}
+          variants={ChildVariant}
           {...props}
         >
           {word}{' '}

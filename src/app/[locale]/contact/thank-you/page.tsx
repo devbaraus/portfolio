@@ -18,23 +18,21 @@ export default function ContactThankYouPage() {
   const locale = useLocaleServer();
 
   return (
-    <>
-      <main className='container mb-16'>
-        <div className='flex h-screen flex-col items-center justify-center gap-4'>
-          <SectionTitle className='text-center text-4xl font-bold'>
-            {locales[locale].title}
-          </SectionTitle>
-          <SectionDescription className='text-center text-lg'>
-            {locales[locale].description}
-          </SectionDescription>
-          <Link
-            href='/'
-            className='mt-8'
-          >
-            <Button>{locales[locale].goBackButton}</Button>
-          </Link>
-        </div>
-      </main>
-    </>
+    <main className='container mb-16'>
+      <div className='flex h-screen flex-col items-center justify-center gap-4'>
+        <SectionTitle className='text-center text-4xl font-bold'>
+          {locales[locale].title}
+        </SectionTitle>
+        <SectionDescription className='text-center text-lg'>
+          {locales[locale].description}
+        </SectionDescription>
+        <Link
+          className='mt-8'
+          href='/'
+        >
+          <Button>{locales[locale].goBackButton}</Button>
+        </Link>
+      </div>
+    </main>
   );
 }

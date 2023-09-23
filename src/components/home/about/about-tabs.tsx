@@ -5,8 +5,8 @@ import { SiGithub, SiSpotify } from 'react-icons/si';
 
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import GithubCard from '@/components/home-sections/about/github-card';
-import SpotifyCard from '@/components/home-sections/about/spotify-card';
+import GithubCard from '@/components/home/about/github-card';
+import SpotifyCard from '@/components/home/about/spotify-card';
 
 type Props = {};
 
@@ -15,12 +15,6 @@ export default function AboutTabs(props: Props) {
   const timer = useRef<NodeJS.Timeout>();
 
   const cards = [
-    // {
-    //   label: 'Discord',
-    //   key: 'discord',
-    //   icon: SiDiscord,
-    //   content: DiscordCard
-    // },
     {
       label: 'Spotify',
       key: '_spotify',
@@ -48,25 +42,25 @@ export default function AboutTabs(props: Props) {
     return () => {
       clearInterval(timer.current);
     };
-  }, []);
+  }, [cards.length]);
 
   return (
     <Tabs
+      className='w-full space-x-2 md:flex'
       defaultValue={cards[0].key}
       value={cardCurrent.key}
-      className='w-full space-x-2 md:flex'
     >
       <TabsList className='flex items-start justify-start gap-4 bg-transparent md:flex-col '>
         {cards.map(({ label, key, icon: Icon }, index) => (
           <TabsTrigger
-            key={key}
-            value={key}
-            onClick={() => handleCLick(index)}
             asChild
+            key={key}
+            onClick={() => handleCLick(index)}
+            value={key}
           >
             <Button
-              variant='outline'
               className='items-center gap-2 data-[state="active"]:border-none data-[state="active"]:bg-primary data-[state="active"]:text-white'
+              variant='outline'
             >
               <Icon />
               <span>{label}</span>
@@ -77,10 +71,10 @@ export default function AboutTabs(props: Props) {
 
       {cards.map(({ content: Content, key }) => (
         <TabsContent
-          key={key}
-          value={key}
           className='w-full data-[state="active"]:block data-[state="inactive"]:hidden'
           forceMount
+          key={key}
+          value={key}
         >
           <Content />
         </TabsContent>

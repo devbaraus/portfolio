@@ -3,15 +3,16 @@ import { shuffle } from 'lodash';
 import { Badge } from '@/components/ui/badge';
 
 type Props = { tags: string[] };
-export default function ServiceTags(props: Props) {
+export default function ServiceTags({ tags }: Props) {
   const shuffledColors = shuffle(['default', 'secondary', 'outline']);
 
   return (
     <>
-      {props.tags.map((tag, jindex) => (
+      {tags.map((tag, index) => (
         <Badge
-          variant={shuffledColors[jindex % 3] as 'default' | 'secondary' | 'outline'}
           className='uppercase'
+          key={tag}
+          variant={shuffledColors[index % 3] as 'default' | 'secondary' | 'outline'}
         >
           {tag}
         </Badge>

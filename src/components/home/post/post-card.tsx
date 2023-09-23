@@ -1,47 +1,56 @@
 'use client';
 
 import Link from 'next/link';
-import { Project } from '@/gql/graphql';
-import { motion } from 'framer-motion';
-import { RiEyeFill } from 'react-icons/ri';
+import { Article } from '@/gql/graphql';
+import { motion, Variants } from 'framer-motion';
+import { RiBookmark3Fill } from 'react-icons/ri';
 
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
 import DirectusImage from '@/components/directus-image';
-import { CardVariants } from '@/components/motion';
 import IconAnimated from '@/components/motion/icon-animated';
 
 type Props = {
-  project: Project;
+  article: Article;
 };
 
-export default function ProjectCard({
-  project: { title, description, cover, published_on }
-}: Props) {
+const cardVariants: Variants = {
+  offscreen: {
+    x: 0
+  },
+  onscreen: {
+    x: '-100%',
+    transition: {
+      duration: 0.5
+    }
+  }
+};
+
+export default function PostCard({ article: { title, lead, cover, published_on } }: Props) {
   function renderCard() {
     return (
       <Card className='group border-none bg-transparent'>
         <motion.div
           initial='offscreen'
-          whileInView='onscreen'
           viewport={{ once: true, amount: 0.5 }}
+          whileInView='onscreen'
         >
           <CardContent className='relative z-0 mb-6 overflow-hidden rounded p-0'>
             <motion.div
-              variants={CardVariants}
               className='absolute left-0 top-0 z-20 h-full w-full skew-x-12 bg-background'
+              variants={cardVariants}
             />
             <DirectusImage
-              src={cover!.id}
-              alt={title!}
+              alt='Muggs Shop'
               className='z-10 aspect-video h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
-              width={500}
               height={300}
+              src={cover!.id}
+              width={500}
             />
             <IconAnimated
-              className='absolute bottom-4 right-4 h-12 w-12 rounded-full bg-secondary text-background md:h-16 md:w-16'
-              iconVisible={RiEyeFill}
-              iconAppear={RiEyeFill}
-              iconsClassName='text-2xl md:text-3xl'
+              className='absolute bottom-4 right-4 h-12 w-12 rounded-full bg-background'
+              iconAppear={RiBookmark3Fill}
+              iconVisible={RiBookmark3Fill}
+              iconsClassName='text-2xl'
             />
           </CardContent>
         </motion.div>
@@ -52,6 +61,7 @@ export default function ProjectCard({
               opacity: 0,
               y: 20
             }}
+            viewport={{ once: true, amount: 0.5 }}
             whileInView={{
               opacity: 1,
               y: 0,
@@ -59,15 +69,12 @@ export default function ProjectCard({
                 duration: 0.5
               }
             }}
-            viewport={{ once: true, amount: 0.5 }}
           >
             <CardTitle className='line-clamp-2 text-xl uppercase transition-colors duration-500 group-hover:text-primary'>
               {title}
             </CardTitle>
 
-            {/*<CardDescription className='mt-auto line-clamp-4 text-base'>*/}
-            {/*  {description}*/}
-            {/*</CardDescription>*/}
+            <CardDescription className='mt-auto line-clamp-4 text-base'>{lead}</CardDescription>
           </motion.div>
         </CardFooter>
       </Card>

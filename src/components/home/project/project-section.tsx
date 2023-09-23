@@ -1,10 +1,12 @@
+import Link from 'next/link';
 import { Project } from '@/gql/graphql';
 import locales from '@/locales';
 import gql from 'graphql-tag';
 
 import { fetcherGQL } from '@/lib/utils';
 import { useLocaleServer } from '@/hooks/use-locale-server';
-import ProjectCard from '@/components/home-sections/project/project-card';
+import { Button } from '@/components/ui/button';
+import ProjectCard from '@/components/home/project/project-card';
 import Section from '@/components/section/section';
 
 type Props = {};
@@ -31,19 +33,26 @@ export default async function ProjectSection(props: Props) {
 
   const locale = useLocaleServer();
 
+  const actionChild = (
+    <Link href='/projects'>
+      <Button>{locales[locale].project.action}</Button>
+    </Link>
+  );
+
   return (
     <Section
-      parentClassName='bg-muted/30'
-      id='projects'
-      title={locales[locale].project.title}
+      actionChild={actionChild}
       description={locales[locale].project.description}
+      id='projects'
+      parentClassName='bg-muted/30'
       subtitle={locales[locale].project.subtitle}
+      title={locales[locale].project.title}
     >
       <div className='grid gap-12 md:grid-cols-2 md:gap-8'>
         {project.map((project) => (
           <ProjectCard
-            project={project}
             key={project.id}
+            project={project}
           />
         ))}
       </div>

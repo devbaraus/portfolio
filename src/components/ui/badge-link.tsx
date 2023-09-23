@@ -13,12 +13,13 @@ export default function BadgeLink({ label, Icon, className, type, ...props }: Pr
     return (
       <button
         {...props}
-        type={type}
         className={cn(
           'inline-flex items-center rounded-full border px-4 py-1 text-sm transition-colors hover:text-primary',
 
           className
         )}
+        /* eslint-disable-next-line react/button-has-type */
+        type={type}
       >
         {Icon ? <Icon className='mr-2 inline-block text-base' /> : null}
         <span>{label}</span>

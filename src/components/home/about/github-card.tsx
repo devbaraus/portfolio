@@ -33,22 +33,20 @@ export default function GithubCard(props: Props) {
     <Card className='w-full overflow-hidden bg-foreground text-background'>
       <CardContent className='relative h-32 overflow-hidden p-0'>
         <Image
-          src={
-            'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=500'
-          }
           alt='Muggs Shop'
           className='absolute left-0 top-0 w-full rounded object-cover object-center brightness-75'
-          width={500}
           height={500}
+          src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=500'
+          width={500}
         />
       </CardContent>
       <CardFooter className='relative block space-y-4'>
         <Image
-          src={data.avatar_url}
           alt='Avatar Bruno de Araújo Alves'
           className='absolute -top-20 left-1/2 aspect-video h-24 w-24 -translate-x-1/2 rounded-full object-cover'
-          width={500}
           height={500}
+          src={data.avatar_url}
+          width={500}
         />
         <div className='flex w-full justify-between pt-8'>
           <div>
@@ -61,16 +59,16 @@ export default function GithubCard(props: Props) {
           >
             <IconAnimated
               className='hover-bg-secondary/80 rounded bg-secondary'
-              iconVisible={SiGithub}
               iconAppear={SiGithub}
+              iconVisible={SiGithub}
             />
           </Link>
         </div>
         <Separator className='bg-secondary' />
         <div className='flex flex-wrap gap-4'>
           <Badge
-            variant='secondary'
             className='space-x-2'
+            variant='secondary'
           >
             <RiUserFollowFill />
             <span>
@@ -78,8 +76,8 @@ export default function GithubCard(props: Props) {
             </span>
           </Badge>
           <Badge
-            variant='secondary'
             className='space-x-2'
+            variant='secondary'
           >
             <RiFolder2Fill />
             <span>
@@ -87,8 +85,8 @@ export default function GithubCard(props: Props) {
             </span>
           </Badge>
           <Badge
-            variant='secondary'
             className='space-x-2'
+            variant='secondary'
           >
             <RiFolderFill />
             <span>
