@@ -1,6 +1,7 @@
 import '../globals.css';
 
 import { ReactNode } from 'react';
+import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/site.config';
 import { PageParams } from '@/types';
@@ -28,8 +29,14 @@ const ogImages = [
   }
 ];
 
-export function generateMetadata({ params: { locale } }: PageParams) {
+export function generateMetadata({ params: { locale } }: PageParams): Metadata {
   return {
+    authors: [
+      {
+        name: 'Bruno de Araújo Alves',
+        url: siteUrl
+      }
+    ],
     metadataBase: new URL('https://acme.com'),
     title: {
       template: `%s • ${siteName}`,
@@ -55,7 +62,40 @@ export function generateMetadata({ params: { locale } }: PageParams) {
       title: siteTitle[locale],
       images: ogImages,
       siteName: siteName
-    }
+    },
+    icons: [
+      {
+        url: '/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      },
+      {
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      },
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png'
+      },
+      {
+        url: '/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png'
+      },
+      {
+        url: '/favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png'
+      },
+      {
+        url: '/favicon.ico',
+        sizes: '64x64 32x32 24x24 16x16',
+        type: 'image/x-icon'
+      }
+    ],
+    manifest: 'manifest.webmanifest'
   };
 }
 
