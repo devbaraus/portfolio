@@ -11,6 +11,7 @@ import ProjectTable from '@/components/project/project-table';
 import Section from '@/components/section/section';
 
 type Props = {};
+
 export function generateMetadata({ params: { locale } }: PageParams) {
   return {
     title: locales[locale].title,
@@ -56,7 +57,10 @@ export default async function Page(props: Props) {
           className='hidden md:table'
           projects={projects}
         />
-        <ProjectCollapsible projects={projects} />
+        <ProjectCollapsible
+          className='md:hidden'
+          projects={projects}
+        />
       </Section>
       <ContactSection />
     </main>
