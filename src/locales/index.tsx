@@ -7,7 +7,7 @@ const en = {
       <>
         Full Stack
         <br />
-        <span className='text-primary'>Web Developer</span>
+        <span className='text-primary'>Software Engineer</span>
       </>
     ),
     subtitle:
@@ -43,7 +43,7 @@ const en = {
         <p>
           In 2015, I embarked on a journey into the vast world of programming, which has led me to
           significant achievements. Currently, I hold a degree in Computer Science from IFG Anápolis
-          and work as a Web Developer, building various solutions that cater to the needs of
+          and work as a Software Engineer, building various solutions that cater to the needs of
           clients, private companies, and institutions.
         </p>
         <p>
@@ -101,7 +101,7 @@ const pt = {
     lead: 'Planejamento, Desenvolvimento & Criação',
     title: (
       <>
-        <span className='text-primary'>Desenvolvedor Web</span>
+        <span className='text-primary'>Engenheiro de Software</span>
         <br />
         Full Stack
       </>
@@ -139,8 +139,8 @@ const pt = {
         <p>
           Em 2015, embarquei em uma jornada no vasto mundo da programação, essa jornada me levou a
           conquistas significativas. Atualmente, sou formado em Ciência da Computação pelo IFG
-          Anápolis e atuo como Desenvolvedor Web, construindo variadas soluções que atendem a dor
-          clientes, empresas privadas e instituições.
+          Anápolis e atuo como Engenheiro de Software, construindo variadas soluções que atendem a
+          dor clientes, empresas privadas e instituições.
         </p>
         <p>
           Hoje tenho experiência na construção de modelos inteligentes e sou focado na criação de

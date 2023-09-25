@@ -17,7 +17,7 @@ const en = {
 const pt = {
   title: 'Vamos trabalhar juntos',
   description:
-    'Procurando um desenvolvedor web freelancer para levar seu site para o próximo nível? Entre em contato hoje para saber mais.',
+    'Procurando um engenheiro de software freelancer para levar seu site para o próximo nível? Entre em contato hoje para saber mais.',
   subtitle: 'Tem uma ideia?',
   form: {
     fieldsetDetails: 'SEUS DETALHES',
