@@ -51,3 +51,11 @@ export async function fetcherGQL<T>(
   }
   return json.data as T;
 }
+
+export function prettifyLink(link: string) {
+  return link.replace(/(^\w+:|^)\/\//, '').replace(/\/$/, '');
+}
+
+export function sortAlphabetically(a: string, b: string) {
+  return a.localeCompare(b);
+}

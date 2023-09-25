@@ -1,8 +1,12 @@
+import { Project } from '@/gql/graphql';
 import locales from '@/locales/projects';
 import { PageParams } from '@/types';
+import gql from 'graphql-tag';
 
+import { fetcherGQL } from '@/lib/utils';
 import { useLocaleServer } from '@/hooks/use-locale-server';
 import ContactSection from '@/components/home/contact-section';
+import ProjectCollapsible from '@/components/project/project-collapsible';
 import ProjectTable from '@/components/project/project-table';
 import Section from '@/components/section/section';
 
@@ -14,8 +18,32 @@ export function generateMetadata({ params: { locale } }: PageParams) {
   };
 }
 
+const query = gql`
+  query QueryProjectSection {
+    project(filter: { status: { _eq: "published" } }, sort: ["-date_finished"], limit: 100) {
+      id
+      title
+      description
+      published_on
+      links
+      date_finished_func {
+        year
+      }
+      cover {
+        id
+      }
+      tags
+      type
+    }
+  }
+`;
+
 export default async function Page(props: Props) {
   const locale = useLocaleServer();
+
+  const { project: projects } = await fetcherGQL<{
+    project: Project[];
+  }>(query);
 
   return (
     <main className='my-16'>
@@ -24,7 +52,11 @@ export default async function Page(props: Props) {
         description={locales[locale].description}
         title={locales[locale].title}
       >
-        <ProjectTable />
+        <ProjectTable
+          className='hidden md:table'
+          projects={projects}
+        />
+        <ProjectCollapsible projects={projects} />
       </Section>
       <ContactSection />
     </main>
