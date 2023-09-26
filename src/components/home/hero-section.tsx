@@ -31,7 +31,7 @@ export default function HeroSection() {
             {locales[locale].hero.buttonContact}
           </Button>
         </Link>
-        <Link
+        <a
           download
           href='/download/cv.pdf'
         >
@@ -41,7 +41,7 @@ export default function HeroSection() {
           >
             {locales[locale].hero.buttonCV}
           </Button>
-        </Link>
+        </a>
       </div>
     </section>
   );

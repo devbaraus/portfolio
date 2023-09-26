@@ -50,9 +50,11 @@ export default function SpotifyPlayBadge({ url }: Props) {
           onClick={handlePlay}
           size='icon'
         >
+          <span className='sr-only'>Toggle play</span>
           {audioRef.current?.paused ? <RiPlayFill /> : <RiPauseFill />}
         </Button>
         <Progress
+          aria-label='Track progress'
           className='grow'
           value={(trackCurrentTime * 100) / trackDuration}
         />

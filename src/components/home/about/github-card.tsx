@@ -57,6 +57,7 @@ export default function GithubCard(props: Props) {
             href={data.html_url}
             target='_blank'
           >
+            <span className='sr-only'>Github Link</span>
             <IconAnimated
               className='hover-bg-secondary/80 rounded bg-secondary'
               iconAppear={SiGithub}

@@ -97,6 +97,7 @@ export default function SpotifyCard(props: Props) {
             }
             target='_blank'
           >
+            <span className='sr-only'>Spotify track link</span>
             <IconAnimated
               className='hover-bg-secondary/80 rounded bg-secondary'
               iconAppear={SiSpotify}
