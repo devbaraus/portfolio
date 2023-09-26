@@ -29,10 +29,11 @@ export default function ProjectCard({ project: { title, cover, published_on } }:
               variants={CardVariants}
             />
             <DirectusImage
-              alt={title!}
+              alt={`Mockup of ${title}`}
               className='z-10 aspect-video h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
               height={300}
               src={cover!.id}
+              title={title!}
               width={500}
             />
             <IconAnimated

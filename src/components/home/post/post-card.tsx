@@ -40,10 +40,11 @@ export default function PostCard({ article: { title, lead, cover, published_on }
               variants={cardVariants}
             />
             <DirectusImage
-              alt='Muggs Shop'
+              alt={`Thumbnail of ${title}`}
               className='z-10 aspect-video h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
               height={300}
               src={cover!.id}
+              title={title!}
               width={500}
             />
             <IconAnimated
