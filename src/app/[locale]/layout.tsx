@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/site.config';
-import { PageParams } from '@/types';
+import { Lang, PageParams } from '@/types';
 
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -16,16 +16,12 @@ const poppins = Inter({
   subsets: ['latin']
 });
 
-const ogImages = [
+const ogImages = (locale: Lang) => [
   {
+    alt: siteDescription[locale],
     url: `${siteUrl}/og-wide.png`,
     width: 1200,
     height: 630
-  },
-  {
-    url: `${siteUrl}/og-square.png`,
-    width: 512,
-    height: 512
   }
 ];
 
@@ -51,7 +47,7 @@ export function generateMetadata({ params: { locale } }: PageParams): Metadata {
     twitter: {
       title: siteTitle[locale],
       description: siteDescription[locale],
-      images: ogImages,
+      images: ogImages(locale),
       creator: '@devbaraus',
       site: siteUrl
     },
@@ -60,7 +56,8 @@ export function generateMetadata({ params: { locale } }: PageParams): Metadata {
       locale: locale,
       url: siteUrl,
       title: siteTitle[locale],
-      images: ogImages,
+      images: ogImages(locale),
+      description: siteDescription[locale],
       siteName: siteName
     },
     icons: [
