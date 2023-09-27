@@ -33,7 +33,7 @@ export default function HeroSection() {
         </Link>
         <a
           download
-          href='/download/cv.pdf'
+          href={`/${locale}/curriculum.pdf`}
         >
           <Button
             className='w-full'
