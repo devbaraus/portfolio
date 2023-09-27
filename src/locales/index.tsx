@@ -44,7 +44,7 @@ const en = {
           In 2015, I embarked on a journey into the vast world of programming, which has led me to
           significant achievements. Currently, I hold a degree in Computer Science from IFG Anápolis
           and work as a Software Engineer, building various solutions that cater to the needs of
-          clients, private companies, and institutions.
+          clients, private companies, and educational institutions.
         </p>
         <p>
           Today, I have experience in building intelligent models and am focused on creating web
@@ -139,8 +139,8 @@ const pt = {
         <p>
           Em 2015, embarquei em uma jornada no vasto mundo da programação, essa jornada me levou a
           conquistas significativas. Atualmente, sou formado em Ciência da Computação pelo IFG
-          Anápolis e atuo como Engenheiro de Software, construindo variadas soluções que atendem a
-          dor clientes, empresas privadas e instituições.
+          Anápolis e atuo como Engenheiro de Software, construindo variadas soluções que atendem as
+          dores de clientes, empresas privadas e instituições de ensino.
         </p>
         <p>
           Hoje tenho experiência na construção de modelos inteligentes e sou focado na criação de
