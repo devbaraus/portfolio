@@ -19,7 +19,7 @@ const poppins = Inter({
 const ogImages = (locale: Lang) => [
   {
     alt: siteDescription[locale],
-    url: `${siteUrl}/og-wide.png`,
+    url: `${siteUrl}/${locale}/og-wide.png`,
     width: 1200,
     height: 630
   }
