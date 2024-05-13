@@ -23,7 +23,11 @@ export default function SpotifyCard(props: Props) {
   const locale = useLocale();
 
   const fetchSpotifyData = useCallback(() => {
-    fetch('/api/spotify')
+    fetch('/api/spotify'{
+      next: {
+        revalidate: 60 * 60 * 12
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setData(data);
