@@ -41,7 +41,7 @@ export async function fetcherGQL<T>(
     },
     body: JSON.stringify({ query: print(query), variables }),
     next: {
-      revalidate: 60 * 5
+      revalidate: 60 * 60 * 6
     },
     ...options
   });
