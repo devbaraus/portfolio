@@ -45,8 +45,12 @@ export async function fetcherGQL<T>(
     },
     ...options
   });
+
+  if (!res.ok) throw new Error(await res.text());
+
   const json = await res.json();
   if (json.errors) {
+    console.log(json.errors);
     throw new Error('Failed to fetch API');
   }
   return json.data as T;

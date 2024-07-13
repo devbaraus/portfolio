@@ -3,7 +3,7 @@ import { Project } from '@/gql/graphql';
 import locales from '@/locales';
 import gql from 'graphql-tag';
 
-import { fetcherGQL } from '@/lib/utils';
+import { cn, fetcherGQL } from '@/lib/utils';
 import { useLocaleServer } from '@/hooks/use-locale-server';
 import { Button } from '@/components/ui/button';
 import ProjectCard from '@/components/home/project/project-card';
@@ -16,9 +16,7 @@ const query = gql`
     project(filter: { status: { _eq: "published" }, featured: { _eq: true } }, limit: 4) {
       id
       title
-      description
       published_on
-      links
       cover {
         id
       }
@@ -48,7 +46,12 @@ export default async function ProjectSection(props: Props) {
       subtitle={locales[locale].project.subtitle}
       title={locales[locale].project.title}
     >
-      <div className='grid gap-12 md:grid-cols-2 md:gap-8'>
+      <div
+        className={cn('grid gap-12 md:gap-8', {
+          'md:grid-cols-2': project.length % 2 === 0,
+          'md:grid-cols-3': project.length % 3 === 0
+        })}
+      >
         {project.map((project) => (
           <ProjectCard
             key={project.id}
