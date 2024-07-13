@@ -26,7 +26,6 @@ const query = gql`
       title
       description
       published_on
-      links
       date_finished_func {
         year
       }
