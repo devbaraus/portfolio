@@ -1,9 +1,13 @@
+;
 /* eslint-disable */
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 
-import * as types from './graphql';
 
-const documents: any = [];
+
+
+
+// @ts-ignore
+const documents = [];
 
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -20,6 +24,7 @@ const documents: any = [];
 export function gql(source: string): unknown;
 
 export function gql(source: string) {
+  // @ts-ignore
   return (documents as any)[source] ?? {};
 }
 

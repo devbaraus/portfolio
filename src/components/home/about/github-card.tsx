@@ -25,7 +25,7 @@ export default function GithubCard(props: Props) {
     fetch('https://api.github.com/users/devbaraus', {
       next: {
         revalidate: 60 * 60 * 12
-      },
+      }
     })
       .then((res) => res.json())
       .then((data) => setData(data));
