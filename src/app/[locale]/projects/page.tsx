@@ -24,13 +24,9 @@ const query = gql`
     project(filter: { status: { _eq: "published" } }, sort: ["-date_finished"], limit: 100) {
       id
       title
-      description
       published_on
       date_finished_func {
         year
-      }
-      cover {
-        id
       }
       tags
       type
