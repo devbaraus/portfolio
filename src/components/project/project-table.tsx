@@ -51,7 +51,7 @@ export default async function ProjectTable({ projects, ...props }: Props) {
         {projects.map((project) => (
           <TableRow
             className={cn(
-              '!border-l-2 hover:border-opacity-80 [&_>_td]:py-4',
+              'whitespace-nowrap !border-l-2 hover:border-opacity-80 [&_>_td]:py-4',
               kindBorderColor(project.type as string)
             )}
             key={project.id}
