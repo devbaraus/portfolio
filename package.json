@@ -39,7 +39,7 @@
     "negotiator": "^0.6.3",
     "next": "^13.5.6",
     "next-themes": "^0.2.1",
-    "postcss": "^8.4.39",
+    "postcss": "^8.4.40",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
