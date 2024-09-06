@@ -72,9 +72,9 @@ export const socialLinks = [
     icon: RiMailFill
   },
   {
-    label: '+55 62 99379-4290',
+    label: '+55 62 99964-9042',
     title: 'Phone',
-    href: 'https://api.whatsapp.com/send?phone=+5562993794290&text=Hello%20BARAUS!',
+    href: 'https://api.whatsapp.com/send?phone=+5562999649042&text=Hello%20BARAUS!',
     icon: SiWhatsapp
   },
   {
