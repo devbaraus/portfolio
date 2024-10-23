@@ -119,22 +119,8 @@ export default function RootLayout({
             <Toaster />
             {isProduction ? (
               <>
-                <script
-                  data-domain='baraus.dev'
-                  defer
-                  src='https://plausible.lab.baraus.dev/js/script.js'
-                />
-                <script
-                  data-domain='baraus.dev'
-                  defer
-                  file-types='pdf'
-                  src='https://plausible.lab.baraus.dev/js/script.file-downloads.js'
-                />
-                <script
-                  data-domain='baraus.dev'
-                  defer
-                  src='https://plausible.lab.baraus.dev/js/script.outbound-links.js'
-                />
+                <script defer data-domain="baraus.dev" src="https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js"></script>
+                <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
               </>
             ) : null}
           </TooltipProvider>
