@@ -11,6 +11,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
+import Script from 'next/script';
 
 const poppins = Inter({
   subsets: ['latin']
@@ -26,7 +27,7 @@ const ogImages = (locale: Lang) => [
 ];
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const {locale} = await params
+  const { locale } = await params
   return {
     authors: [
       {
@@ -103,7 +104,7 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 } & PageParams) {
-  const {locale} = await params
+  const { locale } = await params
   const isProduction = process.env.NODE_ENV === 'production';
 
   return (
@@ -119,14 +120,17 @@ export default async function RootLayout({
             {children}
             <Footer />
             <Toaster />
-            {isProduction ? (
-              <>
-                <script defer data-domain="baraus.dev" src="https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js"></script>
-                <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-              </>
-            ) : null}
           </TooltipProvider>
         </ThemeProvider>
+        {isProduction ? (
+          <>
+            <script defer data-domain="baraus.dev" src="https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js"></script>
+            <Script onLoad={() => {
+              // @ts-ignore
+              window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }
+            }}></Script>
+          </>
+        ) : null}
       </body>
     </html>
   );
