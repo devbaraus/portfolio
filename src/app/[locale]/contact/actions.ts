@@ -5,9 +5,11 @@ import { redirect } from 'next/navigation';
 
 export async function formSubmit(formData: FormData) {
   'use server';
+  const nextHeaders = await headers();
+  const nextCookies = await cookies();
 
-  const ip = headers().get('x-real-ip') || headers().get('x-forwarded-for') || '';
-  const locale = cookies().get('locale')?.value || '';
+  const ip = nextHeaders.get('x-real-ip') || nextHeaders.get('x-forwarded-for') || '';
+  const locale = nextCookies.get('locale')?.value || '';
 
   const body = Object.fromEntries(formData.entries());
 

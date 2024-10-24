@@ -4,7 +4,7 @@ import { PageParams } from '@/types';
 import gql from 'graphql-tag';
 
 import { fetcherGQL } from '@/lib/utils';
-import { useLocaleServer } from '@/hooks/use-locale-server';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import ContactSection from '@/components/home/contact-section';
 import ProjectCollapsible from '@/components/project/project-collapsible';
 import ProjectTable from '@/components/project/project-table';
@@ -12,7 +12,8 @@ import Section from '@/components/section/section';
 
 type Props = {};
 
-export function generateMetadata({ params: { locale } }: PageParams) {
+export async function generateMetadata({ params }: PageParams) {
+  const { locale } = await params;
   return {
     title: locales[locale].title,
     description: locales[locale].description
@@ -35,7 +36,7 @@ const query = gql`
 `;
 
 export default async function Page(props: Props) {
-  const locale = useLocaleServer();
+  const locale = await getLocaleServer();
 
   const { project: projects } = await fetcherGQL<{
     project: Project[];

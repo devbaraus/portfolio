@@ -18,7 +18,7 @@ export default function IconAnimated({
 }: Props) {
   return (
     <div
-      className={cn('group relative aspect-square h-10 w-10 overflow-hidden', className)}
+      className={cn('group relative aspect-square size-10 overflow-hidden', className)}
       {...props}
     >
       <IconVisible

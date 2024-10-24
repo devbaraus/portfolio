@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import locales from '@/locales/contact/thank-you';
 
-import { useLocaleServer } from '@/hooks/use-locale-server';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import { Button } from '@/components/ui/button';
 import SectionDescription from '@/components/section/section-description';
 import SectionTitle from '@/components/section/section-title';
@@ -14,8 +14,8 @@ export const metadata = {
   }
 };
 
-export default function ContactThankYouPage() {
-  const locale = useLocaleServer();
+export default async function ContactThankYouPage() {
+  const locale = await getLocaleServer();
 
   return (
     <main className='container mb-16'>

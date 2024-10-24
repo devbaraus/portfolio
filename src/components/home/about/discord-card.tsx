@@ -16,7 +16,7 @@ export default function DiscordCard(props: Props) {
       <CardContent className='space-y-4'>
         <Image
           alt='Muggs Shop'
-          className='aspect-square h-full w-full rounded object-cover'
+          className='aspect-square size-full rounded object-cover'
           height={500}
           src='https://source.unsplash.com/random/?mockup&1'
           width={500}

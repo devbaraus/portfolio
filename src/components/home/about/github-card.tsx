@@ -47,7 +47,7 @@ export default function GithubCard(props: Props) {
       <CardFooter className='relative block space-y-4'>
         <Image
           alt='Avatar Bruno de Araújo Alves'
-          className='absolute -top-20 left-1/2 aspect-video h-24 w-24 -translate-x-1/2 rounded-full object-cover'
+          className='absolute -top-20 left-1/2 aspect-video size-24 -translate-x-1/2 rounded-full object-cover'
           height={500}
           src={data.avatar_url}
           width={500}

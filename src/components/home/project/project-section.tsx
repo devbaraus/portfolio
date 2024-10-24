@@ -4,7 +4,7 @@ import locales from '@/locales';
 import gql from 'graphql-tag';
 
 import { cn, fetcherGQL } from '@/lib/utils';
-import { useLocaleServer } from '@/hooks/use-locale-server';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import { Button } from '@/components/ui/button';
 import ProjectCard from '@/components/home/project/project-card';
 import Section from '@/components/section/section';
@@ -29,7 +29,7 @@ export default async function ProjectSection(props: Props) {
     project: Project[];
   }>(query);
 
-  const locale = useLocaleServer();
+  const locale = await getLocaleServer();
 
   const actionChild = (
     <Link href='/projects'>

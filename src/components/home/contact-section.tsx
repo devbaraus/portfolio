@@ -48,7 +48,7 @@ export default function ServiceSection(props: Props) {
               <>
                 <IconAnimated
                   className={cn(
-                    'h-12 w-12 rounded bg-secondary text-2xl text-background ',
+                    'size-12 rounded bg-secondary text-2xl text-background ',
                     href && 'transition-colors duration-500 group-hover:bg-primary'
                   )}
                   iconAppear={Icon}

@@ -5,7 +5,7 @@ import locales from '@/locales/projects';
 import { RiExternalLinkFill } from 'react-icons/ri';
 
 import { cn, prettifyLink, sortAlphabetically } from '@/lib/utils';
-import { useLocaleServer } from '@/hooks/use-locale-server';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import { Badge } from '@/components/ui/badge';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { kindBackgroundColor, kindBorderColor } from '@/components/project/shared';
@@ -15,7 +15,7 @@ type Props = {
 } & HTMLAttributes<HTMLDivElement>;
 
 export default async function ProjectCollapsible({ projects, ...props }: Props) {
-  const locale = useLocaleServer();
+  const locale = await getLocaleServer();
   const tableLocale = locales[locale].table;
 
   return (

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import locales from '@/locales';
 
-import { useLocaleServer } from '@/hooks/use-locale-server';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import { Button } from '@/components/ui/button';
 
-export default function HeroSection() {
-  const locale = useLocaleServer();
+export default async  function HeroSection() {
+  const locale = await getLocaleServer();
 
   return (
     <section className='container flex min-h-screen flex-col justify-center space-y-4 bg-cover py-20'>

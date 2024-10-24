@@ -133,7 +133,7 @@ export type LocaleParam = {
 };
 
 export type PageParams = {
-  params: {
+  params: Promise<{
     [key: string]: string | string[];
-  } & LocaleParam;
+  } & LocaleParam>;
 };

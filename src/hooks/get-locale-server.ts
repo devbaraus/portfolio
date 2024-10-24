@@ -5,6 +5,6 @@ import 'server-only';
 import { defaultLocalePrefix } from '@/middleware';
 import { Lang } from '@/types';
 
-export function useLocaleServer() {
-  return (cookies().get('locale')?.value || defaultLocalePrefix) as Lang;
+export async function getLocaleServer() {
+  return ((await cookies()).get('locale')?.value || defaultLocalePrefix) as Lang;
 }

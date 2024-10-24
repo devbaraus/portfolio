@@ -4,7 +4,9 @@ import { PageParams } from '@/types';
 import ContactSection from '@/components/contact/contact-section';
 import FormSection from '@/components/contact/form-section';
 
-export function generateMetadata({ params: { locale } }: PageParams) {
+export async function generateMetadata({ params }: PageParams) {
+  const {locale} = await params
+
   return {
     title: locales[locale].title,
     description: locales[locale].description

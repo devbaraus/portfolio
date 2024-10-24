@@ -1,12 +1,12 @@
 import locales from '@/locales';
 
-import { useLocaleServer } from '@/hooks/use-locale-server';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import AboutTabs from '@/components/home/about/about-tabs';
 import Section from '@/components/section/section';
 
 type Props = {};
-export default function AboutSection(props: Props) {
-  const locale = useLocaleServer();
+export default async function AboutSection(props: Props) {
+  const locale = await getLocaleServer();
 
   return (
     <Section

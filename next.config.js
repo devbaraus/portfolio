@@ -8,9 +8,6 @@ const nextConfig = {
       'i.scdn.co'
     ]
   },
-  experimental: {
-    serverActions: true
-  }
 };
 
 module.exports = nextConfig;

@@ -25,7 +25,8 @@ const ogImages = (locale: Lang) => [
   }
 ];
 
-export function generateMetadata({ params: { locale } }: PageParams): Metadata {
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const {locale} = await params
   return {
     authors: [
       {
@@ -96,16 +97,17 @@ export function generateMetadata({ params: { locale } }: PageParams): Metadata {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale }
+  params
 }: {
   children: ReactNode;
 } & PageParams) {
+  const {locale} = await params
   const isProduction = process.env.NODE_ENV === 'production';
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={poppins.className}>
         <ThemeProvider
           attribute='class'

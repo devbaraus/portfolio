@@ -3,14 +3,14 @@ import locales from '@/locales/contact';
 import { socialLinks } from '@/site.config';
 
 import { cn } from '@/lib/utils';
-import { useLocaleServer } from '@/hooks/use-locale-server';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import IconAnimated from '@/components/motion/icon-animated';
 import Section from '@/components/section/section';
 
 type Props = {};
 
-export default function ContactSection(props: Props) {
-  const locale = useLocaleServer();
+export default async function ContactSection(props: Props) {
+  const locale = await getLocaleServer();
 
   return (
     <Section
@@ -25,7 +25,7 @@ export default function ContactSection(props: Props) {
             <>
               <IconAnimated
                 className={cn(
-                  'h-12 w-12 rounded bg-secondary text-2xl text-background ',
+                  'size-12 rounded bg-secondary text-2xl text-background ',
                   href && 'transition-colors duration-500 group-hover:bg-primary'
                 )}
                 iconAppear={Icon}
