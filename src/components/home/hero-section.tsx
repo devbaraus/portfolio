@@ -4,7 +4,7 @@ import locales from '@/locales';
 import { getLocaleServer } from '@/hooks/get-locale-server';
 import { Button } from '@/components/ui/button';
 
-export default async  function HeroSection() {
+export default async function HeroSection() {
   const locale = await getLocaleServer();
 
   return (

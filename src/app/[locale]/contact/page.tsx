@@ -5,7 +5,7 @@ import ContactSection from '@/components/contact/contact-section';
 import FormSection from '@/components/contact/form-section';
 
 export async function generateMetadata({ params }: PageParams) {
-  const {locale} = await params
+  const { locale } = await params;
 
   return {
     title: locales[locale].title,

@@ -3,6 +3,7 @@ import '../globals.css';
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/site.config';
 import { Lang, PageParams } from '@/types';
 
@@ -11,7 +12,6 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
-import Script from 'next/script';
 
 const poppins = Inter({
   subsets: ['latin']
@@ -27,7 +27,7 @@ const ogImages = (locale: Lang) => [
 ];
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
-  const { locale } = await params
+  const { locale } = await params;
   return {
     authors: [
       {
@@ -104,11 +104,14 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 } & PageParams) {
-  const { locale } = await params
+  const { locale } = await params;
   const isProduction = process.env.NODE_ENV === 'production';
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+    >
       <body className={poppins.className}>
         <ThemeProvider
           attribute='class'
@@ -124,11 +127,21 @@ export default async function RootLayout({
         </ThemeProvider>
         {isProduction ? (
           <>
-            <script defer data-domain="baraus.dev" src="https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js"></script>
-            <Script onLoad={() => {
-              // @ts-ignore
-              window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }
-            }}></Script>
+            <script
+              data-domain='baraus.dev'
+              defer
+              src='https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js'
+            />
+            <Script
+              onLoad={() => {
+                // @ts-ignore
+                window.plausible =
+                  window.plausible ||
+                  function () {
+                    (window.plausible.q = window.plausible.q || []).push(arguments);
+                  };
+              }}
+            />
           </>
         ) : null}
       </body>
