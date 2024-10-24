@@ -11,6 +11,7 @@ import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import Script from 'next/script';
 
 const poppins = Inter({
   subsets: ['latin']
@@ -131,7 +132,7 @@ export default async function RootLayout({
               defer
               src='https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js'
             />
-            <script src="/main.js"/>
+            <Script src="/main.js"/>
           </>
         ) : null}
       </body>
