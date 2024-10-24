@@ -132,16 +132,7 @@ export default async function RootLayout({
               defer
               src='https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js'
             />
-            <Script
-              onLoad={() => {
-                // @ts-ignore
-                window.plausible =
-                  window.plausible ||
-                  function () {
-                    (window.plausible.q = window.plausible.q || []).push(arguments);
-                  };
-              }}
-            />
+            <script src="/main.js"/>
           </>
         ) : null}
       </body>
