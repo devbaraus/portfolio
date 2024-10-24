@@ -1,17 +1,16 @@
 import '../globals.css';
 
-import { ReactNode } from 'react';
-import { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Script from 'next/script';
 import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/site.config';
 import { Lang, PageParams } from '@/types';
+import { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { ReactNode } from 'react';
 
-import { Toaster } from '@/components/ui/toaster';
-import { TooltipProvider } from '@/components/ui/tooltip';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/toaster';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 const poppins = Inter({
   subsets: ['latin']
