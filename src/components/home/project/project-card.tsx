@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { Project } from '@/gql/graphql';
 import { motion } from 'framer-motion';
 import { RiEyeFill } from 'react-icons/ri';
 

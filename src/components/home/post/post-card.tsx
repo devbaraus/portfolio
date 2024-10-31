@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { Article } from '@/gql/graphql';
 import { motion, Variants } from 'framer-motion';
 import { RiBookmark3Fill } from 'react-icons/ri';
 

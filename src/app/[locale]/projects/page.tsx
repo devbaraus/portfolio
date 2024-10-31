@@ -1,4 +1,3 @@
-import { Project } from '@/gql/graphql';
 import locales from '@/locales/projects';
 import { PageParams } from '@/types';
 import gql from 'graphql-tag';

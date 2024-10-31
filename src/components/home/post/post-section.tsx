@@ -1,4 +1,3 @@
-import { Article } from '@/gql/graphql';
 import locales from '@/locales';
 import gql from 'graphql-tag';
 

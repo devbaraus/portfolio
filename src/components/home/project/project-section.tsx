@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Project } from '@/gql/graphql';
 import locales from '@/locales';
 import gql from 'graphql-tag';
 

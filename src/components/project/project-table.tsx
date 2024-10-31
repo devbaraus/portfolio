@@ -1,6 +1,5 @@
 import { HTMLAttributes } from 'react';
 import Link from 'next/link';
-import { Project } from '@/gql/graphql';
 import locales from '@/locales/projects';
 import { RiExternalLinkFill } from 'react-icons/ri';
 
@@ -52,7 +51,7 @@ export default async function ProjectTable({ projects, ...props }: Props) {
           <TableRow
             className={cn(
               'whitespace-nowrap !border-l-2 hover:border-opacity-80 [&_>_td]:py-4',
-              kindBorderColor(project.type as string)
+              kindBorderColor(project.type)
             )}
             key={project.id}
           >

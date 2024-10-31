@@ -1,6 +1,5 @@
 import { HTMLAttributes } from 'react';
 import Link from 'next/link';
-import { Project } from '@/gql/graphql';
 import locales from '@/locales/projects';
 import { RiExternalLinkFill } from 'react-icons/ri';
 

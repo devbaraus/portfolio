@@ -17,7 +17,7 @@ export default function AboutTabs(props: Props) {
   const cards = [
     {
       label: 'Spotify',
-      key: '_spotify',
+      key: 'spotify',
       icon: SiSpotify,
       content: SpotifyCard
     },
