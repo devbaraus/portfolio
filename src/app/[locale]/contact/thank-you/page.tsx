@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import locales from '@/locales/contact/thank-you';
 
-import { getLocaleServer } from '@/hooks/get-locale-server';
-import { Button } from '@/components/ui/button';
 import SectionDescription from '@/components/section/section-description';
 import SectionTitle from '@/components/section/section-title';
+import { getLocaleServer } from '@/hooks/get-locale-server';
+import locales from '@/locales/contact/thank-you';
+import { Button } from '@/components/ui/button';
 
 export const metadata = {
   title: 'Thank you for contacting me!',

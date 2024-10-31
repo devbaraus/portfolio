@@ -1,10 +1,10 @@
-import locales from '@/locales';
 import gql from 'graphql-tag';
 
-import { cn, fetcherGQL } from '@/lib/utils';
 import { getLocaleServer } from '@/hooks/get-locale-server';
 import PostCard from '@/components/home/post/post-card';
 import Section from '@/components/section/section';
+import { cn, fetcherGQL } from '@/lib/utils';
+import locales from '@/locales';
 
 type Props = {};
 

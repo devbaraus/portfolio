@@ -1,8 +1,7 @@
-import locales from '@/locales/contact';
-import { PageParams } from '@/types';
-
 import ContactSection from '@/components/contact/contact-section';
 import FormSection from '@/components/contact/form-section';
+import locales from '@/locales/contact';
+import { PageParams } from '@/types';
 
 export async function generateMetadata({ params }: PageParams) {
   const { locale } = await params;

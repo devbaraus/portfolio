@@ -1,11 +1,11 @@
 'use client';
 
-import { HTMLAttributes } from 'react';
-import locales from '@/locales';
 import { RiCopyrightLine } from 'react-icons/ri';
+import { HTMLAttributes } from 'react';
 
-import { cn } from '@/lib/utils';
 import { useLocale } from '@/hooks/use-locale';
+import { cn } from '@/lib/utils';
+import locales from '@/locales';
 
 type Props = HTMLAttributes<HTMLDivElement>;
 

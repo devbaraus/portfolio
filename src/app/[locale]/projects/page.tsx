@@ -1,13 +1,11 @@
-import locales from '@/locales/projects';
-import { PageParams } from '@/types';
-import gql from 'graphql-tag';
-
-import { fetcherGQL } from '@/lib/utils';
-import { getLocaleServer } from '@/hooks/get-locale-server';
-import ContactSection from '@/components/home/contact-section';
 import ProjectCollapsible from '@/components/project/project-collapsible';
+import ContactSection from '@/components/home/contact-section';
 import ProjectTable from '@/components/project/project-table';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import Section from '@/components/section/section';
+import locales from '@/locales/projects';
+import { projectsData } from '@/data';
+import { PageParams } from '@/types';
 
 type Props = {};
 
@@ -19,27 +17,9 @@ export async function generateMetadata({ params }: PageParams) {
   };
 }
 
-const query = gql`
-  query QueryProjectSection {
-    project(filter: { status: { _eq: "published" } }, sort: ["-date_finished"], limit: 100) {
-      id
-      title
-      published_on
-      date_finished_func {
-        year
-      }
-      tags
-      type
-    }
-  }
-`;
-
 export default async function Page(props: Props) {
   const locale = await getLocaleServer();
-
-  const { project: projects } = await fetcherGQL<{
-    project: Project[];
-  }>(query);
+  const projects = projectsData.filter((p) => p.status);
 
   return (
     <main className='my-16'>

@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { useRef, useState } from 'react';
 import { RiPauseFill, RiPlayFill } from 'react-icons/ri';
+import { useRef, useState } from 'react';
+import * as React from 'react';
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 type Props = {
   url: string | null;

@@ -1,9 +1,9 @@
+import { SiDiscord } from 'react-icons/si';
 import Image from 'next/image';
 import Link from 'next/link';
-import { SiDiscord } from 'react-icons/si';
 
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 type Props = {};
 

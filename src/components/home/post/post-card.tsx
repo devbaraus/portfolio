@@ -1,12 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 import { RiBookmark3Fill } from 'react-icons/ri';
+import Link from 'next/link';
 
 import { Card, CardContent, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
-import DirectusImage from '@/components/directus-image';
 import IconAnimated from '@/components/motion/icon-animated';
+import CloudinaryImage from '@/components/cloudinary-image';
 
 type Props = {
   article: Article;
@@ -38,12 +38,12 @@ export default function PostCard({ article: { title, lead, cover, published_on }
               className='absolute left-0 top-0 z-20 size-full skew-x-12 bg-background'
               variants={cardVariants}
             />
-            <DirectusImage
+            <CloudinaryImage
               alt={`Thumbnail of ${title}`}
               className='z-10 aspect-video size-full object-cover transition-transform duration-500 group-hover:scale-105'
               height={300}
-              src={cover!.id}
-              title={title!}
+              src={cover.id}
+              title={title}
               width={500}
             />
             <IconAnimated

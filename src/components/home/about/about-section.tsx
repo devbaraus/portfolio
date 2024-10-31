@@ -1,8 +1,7 @@
-import locales from '@/locales';
-
 import { getLocaleServer } from '@/hooks/get-locale-server';
 import AboutTabs from '@/components/home/about/about-tabs';
 import Section from '@/components/section/section';
+import locales from '@/locales';
 
 type Props = {};
 export default async function AboutSection(props: Props) {

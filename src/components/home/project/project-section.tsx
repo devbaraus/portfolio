@@ -1,33 +1,17 @@
 import Link from 'next/link';
-import locales from '@/locales';
-import gql from 'graphql-tag';
 
-import { cn, fetcherGQL } from '@/lib/utils';
-import { getLocaleServer } from '@/hooks/get-locale-server';
-import { Button } from '@/components/ui/button';
 import ProjectCard from '@/components/home/project/project-card';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import Section from '@/components/section/section';
+import { Button } from '@/components/ui/button';
+import { projectsData } from '@/data';
+import { cn } from '@/lib/utils';
+import locales from '@/locales';
 
 type Props = {};
 
-const query = gql`
-  query QueryProjectSection {
-    project(filter: { status: { _eq: "published" }, featured: { _eq: true } }, limit: 4) {
-      id
-      title
-      published_on
-      cover {
-        id
-      }
-    }
-  }
-`;
-
 export default async function ProjectSection(props: Props) {
-  const { project } = await fetcherGQL<{
-    project: Project[];
-  }>(query);
-
+  const projects = projectsData.filter((project) => project.featured && project.status);
   const locale = await getLocaleServer();
 
   const actionChild = (
@@ -47,11 +31,11 @@ export default async function ProjectSection(props: Props) {
     >
       <div
         className={cn('grid gap-12 md:gap-8', {
-          'md:grid-cols-2': project.length % 2 === 0,
-          'md:grid-cols-3': project.length % 3 === 0
+          'md:grid-cols-2': projects.length % 2 === 0,
+          'md:grid-cols-3': projects.length % 3 === 0
         })}
       >
-        {project.map((project) => (
+        {projects.map((project) => (
           <ProjectCard
             key={project.id}
             project={project}

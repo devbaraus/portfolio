@@ -1,10 +1,10 @@
 'use client';
 
-import { useTheme } from 'next-themes';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
+import { useTheme } from 'next-themes';
 
-import { cn } from '@/lib/utils';
 import { Button, ButtonProps } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 type Props = ButtonProps;
 

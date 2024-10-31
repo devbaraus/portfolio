@@ -1,11 +1,11 @@
-import { HTMLAttributes } from 'react';
 import { useRouter } from 'next/navigation';
-import { Lang } from '@/types';
+import { HTMLAttributes } from 'react';
 
-import { cn } from '@/lib/utils';
-import { useLocale } from '@/hooks/use-locale';
-import { Button } from '@/components/ui/button';
 import { switchLocale } from '@/app/[locale]/actions';
+import { Button } from '@/components/ui/button';
+import { useLocale } from '@/hooks/use-locale';
+import { cn } from '@/lib/utils';
+import { Lang } from '@/types';
 
 type Props = {} & HTMLAttributes<HTMLDivElement>;
 

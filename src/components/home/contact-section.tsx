@@ -1,18 +1,18 @@
 'use client';
 
-import Link from 'next/link';
-import locales from '@/locales';
-import { socialLinks } from '@/site.config';
 import { RiArrowRightLine } from 'react-icons/ri';
+import Link from 'next/link';
 
-import { cn } from '@/lib/utils';
-import { useLocale } from '@/hooks/use-locale';
-import { Button } from '@/components/ui/button';
-import IconAnimated from '@/components/motion/icon-animated';
-import Section from '@/components/section/section';
 import SectionDescription from '@/components/section/section-description';
 import SectionSubtitle from '@/components/section/section-subtitle';
 import SectionTitle from '@/components/section/section-title';
+import IconAnimated from '@/components/motion/icon-animated';
+import Section from '@/components/section/section';
+import { Button } from '@/components/ui/button';
+import { useLocale } from '@/hooks/use-locale';
+import { socialLinks } from '@/site.config';
+import { cn } from '@/lib/utils';
+import locales from '@/locales';
 
 type Props = {};
 
@@ -43,7 +43,7 @@ export default function ServiceSection(props: Props) {
       <ul className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4'>
         {socialLinks
           .filter((i) => i.footer)
-          .map(({ label, href, icon: Icon }) => {
+          .map(({ label, href, icon: Icon, id }) => {
             const render = () => (
               <>
                 <IconAnimated
@@ -63,7 +63,7 @@ export default function ServiceSection(props: Props) {
             );
 
             return (
-              <li key={label}>
+              <li key={id}>
                 {href ? (
                   <Link
                     className='group flex items-center space-x-4'

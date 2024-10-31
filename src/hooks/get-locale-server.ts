@@ -1,5 +1,4 @@
 import { cookies } from 'next/headers';
-
 import 'server-only';
 
 import { defaultLocalePrefix } from '@/middleware';

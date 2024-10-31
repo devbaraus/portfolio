@@ -1,18 +1,18 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { SiSpotify } from 'react-icons/si';
 import Image from 'next/image';
 import Link from 'next/link';
-import locales from '@/locales/about/cards';
-import { SpotifyData } from '@/types';
-import { SiSpotify } from 'react-icons/si';
 
+import SpotifyPlayBadge from '@/components/home/about/spotify-play-badge';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import IconAnimated from '@/components/motion/icon-animated';
+import { Separator } from '@/components/ui/separator';
 import { useLocale } from '@/hooks/use-locale';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import SpotifyPlayBadge from '@/components/home/about/spotify-play-badge';
-import IconAnimated from '@/components/motion/icon-animated';
+import locales from '@/locales/about/cards';
+import { SpotifyData } from '@/types';
 
 type Props = {};
 

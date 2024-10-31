@@ -1,22 +1,22 @@
 'use client';
 
-import locales from '@/locales';
-import localeServiceCards from '@/locales/service/cards';
-import { serviceStack } from '@/site.config';
 import { motion } from 'framer-motion';
 
-import { cn } from '@/lib/utils';
-import { useLocale } from '@/hooks/use-locale';
-import { Badge } from '@/components/ui/badge';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import ServiceCard, {
   SerivceCardChildVariant,
   ServiceCardContainerVariant
 } from '@/components/home/service/service-card';
-import Section from '@/components/section/section';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import SectionDescription from '@/components/section/section-description';
 import SectionSubtitle from '@/components/section/section-subtitle';
 import SectionTitle from '@/components/section/section-title';
+import localeServiceCards from '@/locales/service/cards';
+import Section from '@/components/section/section';
+import { useLocale } from '@/hooks/use-locale';
+import { Badge } from '@/components/ui/badge';
+import { serviceStack } from '@/site.config';
+import { cn } from '@/lib/utils';
+import locales from '@/locales';
 
 type Props = {};
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+
 import { defaultLocalePrefix } from '@/middleware';
 import { Lang } from '@/types';
 

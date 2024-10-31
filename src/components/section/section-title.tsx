@@ -1,12 +1,12 @@
 'use client';
 
-import { HTMLAttributes } from 'react';
 import { motion } from 'framer-motion';
+import { HTMLAttributes } from 'react';
 
-import { cn } from '@/lib/utils';
 import TextAnimatedAppear, {
   TextAnimatedAppearVariant
 } from '@/components/motion/text-animated-appear';
+import { cn } from '@/lib/utils';
 
 type Props = {} & HTMLAttributes<HTMLHeadingElement>;
 

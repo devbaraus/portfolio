@@ -1,18 +1,18 @@
 'use client';
 
+import { RiFolder2Fill, RiFolderFill, RiUserFollowFill } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
+import { SiGithub } from 'react-icons/si';
 import Image from 'next/image';
 import Link from 'next/link';
-import locales from '@/locales/about/cards';
-import { GitHubUser } from '@/types';
-import { RiFolder2Fill, RiFolderFill, RiUserFollowFill } from 'react-icons/ri';
-import { SiGithub } from 'react-icons/si';
 
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import IconAnimated from '@/components/motion/icon-animated';
+import { Separator } from '@/components/ui/separator';
 import { useLocale } from '@/hooks/use-locale';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import IconAnimated from '@/components/motion/icon-animated';
+import locales from '@/locales/about/cards';
+import { GitHubUser } from '@/types';
 
 type Props = {};
 

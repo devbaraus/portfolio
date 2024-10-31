@@ -13,15 +13,15 @@ export async function formSubmit(formData: FormData) {
 
   const body = Object.fromEntries(formData.entries());
 
-  const res = await fetch(process.env.NEXT_PRIVATE_API_CONTACT_FORM!, {
+  const res = await fetch(process.env.NEXT_PRIVATE_FORM_HOOK!, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      ...body,
-      ip,
-      locale
+      content: `:e_mail: Novo contato via Website :e_mail:\n--\n**Nome:** ${body.name}\n**Email:** ${body.email}\n**Telefone:** ${body.phone}\n**Mensagem:** ${body.message}\n\n**IP:** ${ip}\n**Locale:** ${locale}`,
+      embeds: null,
+      attachments: []
     })
   });
 

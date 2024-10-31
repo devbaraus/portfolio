@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import locales from '@/locales';
 
 import { getLocaleServer } from '@/hooks/get-locale-server';
 import { Button } from '@/components/ui/button';
+import locales from '@/locales';
 
 export default async function HeroSection() {
   const locale = await getLocaleServer();

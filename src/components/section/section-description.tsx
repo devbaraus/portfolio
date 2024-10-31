@@ -1,7 +1,7 @@
 'use client';
 
-import { HTMLAttributes } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
+import { HTMLAttributes } from 'react';
 
 import { cn } from '@/lib/utils';
 

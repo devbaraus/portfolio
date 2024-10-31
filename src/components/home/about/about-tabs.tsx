@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { SiGithub, SiSpotify } from 'react-icons/si';
+import { useEffect, useRef, useState } from 'react';
 
-import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import GithubCard from '@/components/home/about/github-card';
 import SpotifyCard from '@/components/home/about/spotify-card';
+import GithubCard from '@/components/home/about/github-card';
+import { Button } from '@/components/ui/button';
 
 type Props = {};
 

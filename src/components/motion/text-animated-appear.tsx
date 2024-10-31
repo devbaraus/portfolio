@@ -1,5 +1,5 @@
+import { type HTMLMotionProps, motion } from 'framer-motion';
 import { HTMLAttributes } from 'react';
-import { motion, type HTMLMotionProps } from 'framer-motion';
 
 type Props = { text: string } & HTMLMotionProps<'span'> & HTMLAttributes<HTMLSpanElement>;
 

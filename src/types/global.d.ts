@@ -1,15 +1,13 @@
 declare type Project = {
   id: string;
+  cover: string;
+  status: boolean;
   title: string;
-  published_on: string;
-  date_finished_func: {
-    year: string;
-  };
-  cover: {
-    id: string;
-  };
-  tags: string[];
   type: string;
+  date_finished: string | null;
+  tags: string[];
+  published_on: string;
+  featured: boolean;
 };
 
 declare type Article = {

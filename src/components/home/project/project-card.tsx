@@ -1,13 +1,13 @@
 'use client';
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { RiEyeFill } from 'react-icons/ri';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
-import DirectusImage from '@/components/directus-image';
-import { CardVariants } from '@/components/motion';
 import IconAnimated from '@/components/motion/icon-animated';
+import CloudinaryImage from '@/components/cloudinary-image';
+import { CardVariants } from '@/components/motion';
 
 type Props = {
   project: Project;
@@ -27,12 +27,12 @@ export default function ProjectCard({ project: { title, cover, published_on } }:
               className='absolute left-0 top-0 z-20 size-full skew-x-12 bg-background'
               variants={CardVariants}
             />
-            <DirectusImage
+            <CloudinaryImage
               alt={`Mockup of ${title}`}
               className='z-10 aspect-video size-full object-cover transition-transform duration-500 group-hover:scale-105'
               height={300}
-              src={cover!.id}
-              title={title!}
+              src={cover}
+              title={title}
               width={500}
             />
             <IconAnimated

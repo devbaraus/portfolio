@@ -1,4 +1,3 @@
-import { RiGithubFill, RiMailFill, RiMap2Fill } from 'react-icons/ri';
 import {
   SiBootstrap,
   SiDirectus,
@@ -21,6 +20,8 @@ import {
   SiWebstorm,
   SiWhatsapp
 } from 'react-icons/si';
+import { RiGithubFill, RiMailFill, RiMap2Fill } from 'react-icons/ri';
+import { v7 } from 'uuid';
 
 export const siteName = 'BARAUS';
 export const siteDescription = {
@@ -38,6 +39,7 @@ export const siteTitle = {
 
 export const socialLinks = [
   {
+    id: v7(),
     label: 'devbaraus',
     title: 'GitHub',
     icon: RiGithubFill,
@@ -45,6 +47,7 @@ export const socialLinks = [
     footer: true
   },
   {
+    id: v7(),
     label: 'devbaraus',
     title: 'LinkedIn',
     href: 'https://linkedin.com/in/devbaraus',
@@ -52,6 +55,7 @@ export const socialLinks = [
     footer: true
   },
   {
+    id: v7(),
     label: 'devbaraus',
     title: 'Instagram',
     href: 'https://instagram.com/devbaraus',
@@ -59,6 +63,7 @@ export const socialLinks = [
     footer: true
   },
   {
+    id: v7(),
     label: 'baraus.dev',
     title: 'Discord',
     href: 'https://discord.com/users/765572736214761512',
@@ -66,18 +71,21 @@ export const socialLinks = [
     footer: true
   },
   {
+    id: v7(),
     label: 'me@baraus.dev',
     title: 'Email',
     href: 'mailto:me@baraus.dev',
     icon: RiMailFill
   },
   {
+    id: v7(),
     label: '+55 62 99964-9042',
     title: 'Phone',
     href: 'https://api.whatsapp.com/send?phone=+5562999649042&text=Hello%20BARAUS!',
     icon: SiWhatsapp
   },
   {
+    id: v7(),
     label: 'Anápolis, Goiás, Brazil',
     title: 'Location',
     icon: RiMap2Fill

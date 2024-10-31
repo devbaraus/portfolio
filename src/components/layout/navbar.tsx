@@ -1,22 +1,22 @@
 'use client';
 
+import { RiArrowRightLine, RiMenu2Fill } from 'react-icons/ri';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import locales from '@/locales/navbar';
-import { siteName } from '@/site.config';
-import { RiArrowRightLine, RiMenu2Fill } from 'react-icons/ri';
 
-import { cn } from '@/lib/utils';
-import { useLocale } from '@/hooks/use-locale';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import ButtonTheme from '@/components/layout/button-theme';
-import Logo from '@/components/layout/logo';
-import NavLink from '@/components/layout/navlink';
-import LangSwitcher from '@/components/locale-switcher';
 import IconAnimated from '@/components/motion/icon-animated';
+import ButtonTheme from '@/components/layout/button-theme';
+import LangSwitcher from '@/components/locale-switcher';
+import { Separator } from '@/components/ui/separator';
+import NavLink from '@/components/layout/navlink';
+import { Button } from '@/components/ui/button';
+import { useLocale } from '@/hooks/use-locale';
+import Logo from '@/components/layout/logo';
+import { siteName } from '@/site.config';
+import locales from '@/locales/navbar';
+import { cn } from '@/lib/utils';
 
 const FloatingButton = () => {
   'use client';

@@ -1,9 +1,9 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
-import { cn } from '@/lib/utils';
 import SectionDescription from '@/components/section/section-description';
 import SectionSubtitle from '@/components/section/section-subtitle';
 import SectionTitle from '@/components/section/section-title';
+import { cn } from '@/lib/utils';
 
 type Props = {
   subtitle?: string;

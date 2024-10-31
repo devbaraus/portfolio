@@ -1,20 +1,20 @@
 'use client';
 
-import { HTMLAttributes } from 'react';
-import locales from '@/locales/contact';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { HTMLAttributes } from 'react';
 import { z } from 'zod';
 
-import { cn } from '@/lib/utils';
-import { useLocale } from '@/hooks/use-locale';
+import { formSubmit } from '@/app/[locale]/contact/actions';
+import { useToast } from '@/components/ui/use-toast';
+import { TextArea } from '@/components/ui/textarea';
+import Section from '@/components/section/section';
 import { Button } from '@/components/ui/button';
+import { useLocale } from '@/hooks/use-locale';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { TextArea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
-import Section from '@/components/section/section';
-import { formSubmit } from '@/app/[locale]/contact/actions';
+import locales from '@/locales/contact';
+import { cn } from '@/lib/utils';
 
 function FloatingLabel({
   children,

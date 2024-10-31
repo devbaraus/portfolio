@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import locales from '@/locales/contact';
-import { socialLinks } from '@/site.config';
 
-import { cn } from '@/lib/utils';
-import { getLocaleServer } from '@/hooks/get-locale-server';
 import IconAnimated from '@/components/motion/icon-animated';
+import { getLocaleServer } from '@/hooks/get-locale-server';
 import Section from '@/components/section/section';
+import { socialLinks } from '@/site.config';
+import locales from '@/locales/contact';
+import { cn } from '@/lib/utils';
 
 type Props = {};
 
@@ -20,7 +20,7 @@ export default async function ContactSection(props: Props) {
       title={locales[locale].title}
     >
       <ul className='w-max space-y-4'>
-        {socialLinks.map(({ label, href, icon: Icon }) => {
+        {socialLinks.map(({ label, href, icon: Icon, id }) => {
           const render = () => (
             <>
               <IconAnimated
@@ -40,7 +40,7 @@ export default async function ContactSection(props: Props) {
           );
 
           return (
-            <li key={label}>
+            <li key={id}>
               {href ? (
                 <Link
                   className='group flex items-center space-x-4'

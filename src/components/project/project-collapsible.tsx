@@ -1,13 +1,13 @@
+import { RiExternalLinkFill } from 'react-icons/ri';
 import { HTMLAttributes } from 'react';
 import Link from 'next/link';
-import locales from '@/locales/projects';
-import { RiExternalLinkFill } from 'react-icons/ri';
 
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { kindBackgroundColor, kindBorderColor } from '@/components/project/shared';
 import { cn, prettifyLink, sortAlphabetically } from '@/lib/utils';
 import { getLocaleServer } from '@/hooks/get-locale-server';
 import { Badge } from '@/components/ui/badge';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { kindBackgroundColor, kindBorderColor } from '@/components/project/shared';
+import locales from '@/locales/projects';
 
 type Props = {
   projects: Project[];
