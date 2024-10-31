@@ -1,17 +1,17 @@
 import '../globals.css';
 
-import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/site.config';
-import { Lang, PageParams } from '@/types';
+import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ReactNode } from 'react';
+import Script from 'next/script';
+import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from '@/site.config';
+import { Lang, PageParams } from '@/types';
 
+import { Toaster } from '@/components/ui/toaster';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import Footer from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
-import { Toaster } from '@/components/ui/toaster';
-import { TooltipProvider } from '@/components/ui/tooltip';
-import Script from 'next/script';
 
 const poppins = Inter({
   subsets: ['latin']
@@ -132,7 +132,7 @@ export default async function RootLayout({
               defer
               src='https://plausible.lab.baraus.dev/js/script.file-downloads.outbound-links.js'
             />
-            <Script src="/main.js"/>
+            <Script src='/main.js' />
           </>
         ) : null}
       </body>
