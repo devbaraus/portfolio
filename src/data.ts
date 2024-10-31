@@ -1,5 +1,7 @@
 import { v7 } from 'uuid';
 
+export const articlesData: Array<Article> = [];
+
 export const projectsData: Array<Project> = [
   {
     id: v7(),

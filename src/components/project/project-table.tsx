@@ -56,7 +56,7 @@ export default async function ProjectTable({ projects, ...props }: Props) {
             key={project.id}
           >
             <TableCell className='font-medium'>{project.title}</TableCell>
-            <TableCell className='text-center'>{project.date_finished_func?.year ?? '~'}</TableCell>
+            <TableCell className='text-center'>{project.date_finished ?? '~'}</TableCell>
             <TableCell>
               <div className='flex gap-1'>
                 {project.tags

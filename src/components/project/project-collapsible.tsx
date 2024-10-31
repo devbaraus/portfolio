@@ -35,7 +35,7 @@ export default async function ProjectCollapsible({ projects, ...props }: Props) 
               <p className='text-left align-middle text-sm font-medium text-muted-foreground '>
                 {tableLocale.columns.year}
               </p>
-              <p>{project.date_finished_func?.year ?? '~'}</p>
+              <p>{project.date_finished ?? '~'}</p>
             </div>
             {project.published_on ? (
               <div className='space-y-2'>

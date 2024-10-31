@@ -1,33 +1,14 @@
-import gql from 'graphql-tag';
-
 import { getLocaleServer } from '@/hooks/get-locale-server';
 import PostCard from '@/components/home/post/post-card';
 import Section from '@/components/section/section';
-import { cn, fetcherGQL } from '@/lib/utils';
+import { articlesData } from '@/data';
+import { cn } from '@/lib/utils';
 import locales from '@/locales';
 
 type Props = {};
 
-const query = gql`
-  query QueryPostSection {
-    article(filter: { status: { _eq: "published" }, featured: { _eq: true } }, limit: 4) {
-      id
-      title
-      lead
-      published_on
-      cover {
-        id
-        width
-        height
-      }
-    }
-  }
-`;
-
 export default async function PostSection(props: Props) {
-  const { article } = await fetcherGQL<{
-    article: Article[];
-  }>(query);
+  const article = articlesData;
 
   const locale = await getLocaleServer();
 
