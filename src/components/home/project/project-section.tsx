@@ -11,7 +11,9 @@ import locales from '@/locales';
 type Props = {};
 
 export default async function ProjectSection(props: Props) {
-  const projects = projectsData.filter((project) => project.featured && project.status);
+  const projects = projectsData
+    .filter((project) => project.featured && project.status)
+    .sort((a, b) => Number(a.date_finished) - Number(b.date_finished));
   const locale = await getLocaleServer();
 
   const actionChild = (

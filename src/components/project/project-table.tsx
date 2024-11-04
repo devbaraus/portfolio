@@ -81,7 +81,7 @@ export default async function ProjectTable({ projects, ...props }: Props) {
                   <span>{prettifyLink(project.published_on)}</span>
                   <RiExternalLinkFill className='inline-block' />
                 </Link>
-              ) : null}
+              ) : '~'}
             </TableCell>
           </TableRow>
         ))}

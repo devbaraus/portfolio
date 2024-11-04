@@ -19,7 +19,13 @@ export async function generateMetadata({ params }: PageParams) {
 
 export default async function Page(props: Props) {
   const locale = await getLocaleServer();
-  const projects = projectsData.filter((p) => p.status);
+  const projects = projectsData
+    .filter((p) => p.status)
+    .sort((a, b) =>  {
+      if (!a.date_finished) return -1;
+      if (!b.date_finished) return 1;
+      return  Number(b.date_finished) - Number(a.date_finished);
+    });
 
   return (
     <main className='my-16'>

@@ -42,14 +42,18 @@ export default async function ProjectCollapsible({ projects, ...props }: Props) 
                 <p className='text-left align-middle text-sm font-medium text-muted-foreground '>
                   {tableLocale.columns.link}
                 </p>
-                <Link
-                  className='space-x-2 hover:text-primary'
-                  href={project.published_on}
-                  target='_blank'
-                >
-                  <span>{prettifyLink(project.published_on)}</span>
-                  <RiExternalLinkFill className='inline-block' />
-                </Link>
+                {
+                  project.published_on ? (
+                    <Link
+                      className='space-x-2 hover:text-primary'
+                      href={project.published_on}
+                      target='_blank'
+                    >
+                      <span>{prettifyLink(project.published_on)}</span>
+                      <RiExternalLinkFill className='inline-block' />
+                    </Link>
+                  ) : '~'
+                }
               </div>
             ) : null}
             <div className='space-y-2'>
