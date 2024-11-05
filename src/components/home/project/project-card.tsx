@@ -31,7 +31,7 @@ export default function ProjectCard({ project: { title, cover, published_on } }:
               alt={`Mockup of ${title}`}
               className='z-10 aspect-video size-full object-cover transition-transform duration-500 group-hover:scale-105'
               height={300}
-              src={cover}
+              src={cover!}
               title={title}
               width={500}
             />
