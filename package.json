@@ -12,7 +12,7 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
-    "@formatjs/intl-localematcher": "^0.5.5",
+    "@formatjs/intl-localematcher": "^0.5.6",
     "@hookform/resolvers": "^3.9.0",
     "@octokit/core": "^5.2.0",
     "@radix-ui/react-collapsible": "^1.1.1",
