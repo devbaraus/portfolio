@@ -43,7 +43,7 @@ export const projectsData: Array<Project> = [
     title: 'Domain Driven Diagram',
     type: 'side_project',
     date_finished: null,
-    tags: ['hono', 'svelte'],
+    tags: ['expressjs', 'vscode', 'd3js', 'svelte'],
     published_on: 'https://dddiagram.baraus.dev',
     featured: false
   },
@@ -110,6 +110,28 @@ export const projectsData: Array<Project> = [
     type: 'college',
     date_finished: '2019',
     tags: ['yii2', 'apexcharts'],
+    published_on: 'https://computacaoifg.edu.br/pai',
+    featured: false
+  },
+  {
+    id: v7(),
+    cover: null,
+    status: true,
+    title: 'Spotiminy',
+    type: 'side_project',
+    date_finished: '2020',
+    tags: ['nuxt','spotify','tailwindcss'],
+    published_on: 'https://spotiminy.baraus.dev',
+    featured: false
+  },
+  {
+    id: v7(),
+    cover: null,
+    status: true,
+    title: 'SoyTrack',
+    type: 'side_project',
+    date_finished: null,
+    tags: ['nuxt','golang'],
     published_on: null,
     featured: false
   }
