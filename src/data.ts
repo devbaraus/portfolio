@@ -42,7 +42,7 @@ export const projectsData: Array<Project> = [
     status: true,
     title: 'Domain Driven Diagram',
     type: 'side_project',
-    date_finished: null,
+    date_finished: '2024',
     tags: ['expressjs', 'vscode', 'd3js', 'svelte'],
     published_on: 'https://dddiagram.baraus.dev',
     featured: false
